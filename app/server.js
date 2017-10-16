@@ -3,18 +3,13 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
-
-import * as Polls from './controllers/poll_controller';
+import apiRouter from './router';
 
 // initialize
 const app = express();
-
-// DB Setup
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cs52poll';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/webadventure';
 mongoose.connect(mongoURI);
-// set mongoose promises to es6 default
 mongoose.Promise = global.Promise;
-
 
 // enable/disable cross origin resource sharing if necessary
 app.use(cors());
@@ -32,41 +27,12 @@ app.use(bodyParser.json());
 
 // default index route
 app.get('/', (req, res) => {
-  // we will later be able to get the polls by calling a function, but let's pass in no polls for now
-  Polls.getPolls().then((polls) => {
-    res.render('index', { polls });
-  }).catch((error) => {
-    res.send(`error: ${error}`);
-  });
+  res.send('hi');
 });
 
-app.get('/new', (req, res) => {
-  // we will later be able to get the polls by calling a function, but let's pass in no polls for now
-  Polls.getPolls().then((polls) => {
-    res.render('new');
-  }).catch((error) => {
-    res.send(`error: ${error}`);
-  });
-});
-
-app.post('/new', (req, res) => {
-  // we will later be able to get the polls by calling a function, but let's pass in no polls for now
-  const newpoll = {
-    text: req.body.text,
-    imageURL: req.body.imageURL,
-  };
-  Polls.createPoll(newpoll).then((poll) => {
-    res.redirect('/');
-  });
-});
-
-app.post('/vote/:id', (req, res) => {
-  // we will later be able to get the polls by calling a function, but let's pass in no polls for now
-  const vote = (req.body.vote === 'up');// convert to bool
-  Polls.vote(req.params.id, vote).then((result) => {
-    res.send(result);
-  });
-});
+// REGISTER OUR ROUTES -------------------------------
+// all of our routes will be prefixed with /api
+app.use('/api', apiRouter);
 
 // START THE SERVER
 // =============================================================================
