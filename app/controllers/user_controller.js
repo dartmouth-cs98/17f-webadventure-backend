@@ -1,7 +1,11 @@
 import User from '../models/user_model';
 
-export const getUsers = () => {
-  return User.find({});
+// export const getUsers = () => {
+//   return User.find({});
+// };
+
+export const signin = (req, res, next) => {
+  res.send({ token: req.user, id: req.user._id });
 };
 
 export const signup = (req, res, next) => {
