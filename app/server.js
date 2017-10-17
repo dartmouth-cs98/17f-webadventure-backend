@@ -8,7 +8,9 @@ import apiRouter from './router';
 // initialize
 const app = express();
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/webadventure';
-mongoose.connect(mongoURI);
+mongoose.connect(mongoURI, {
+  useMongoClient: true,
+});
 mongoose.Promise = global.Promise;
 
 // enable/disable cross origin resource sharing if necessary

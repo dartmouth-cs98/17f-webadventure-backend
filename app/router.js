@@ -12,9 +12,6 @@ router.post('/signin', User.signin);
 // router.get('/users', User.getUsers);
 router.post('/signup', User.signup);
 
-// Return a user's information
-// router.route('/users/:userId')
-//   .get(requireAuth, UserController.fetchUser)
-//   .put(requireAuth, UserController.updateUser);
+router.get('/user', User.getUser);
 
 export default router;

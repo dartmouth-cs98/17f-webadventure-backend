@@ -1,9 +1,24 @@
-# starter express app template
+# WebAdventure Backend
 
-* node with babel
-* expressjs
-* airbnb eslint rules
+This is the repository for the backend of the WebAdventure Project. For more information see the repo: https://github.com/dartmouth-cs98/17f-webadventure
 
-Procfile set up to run on [heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app)
+## Setup
+To run the backend first make sure you have MongoDB installed and start a local MongoDB server:
+```
+mongod
+```
+The `npm install` and `npm start` the repo.
+The backend server should now be running on localhost:9090
 
-Finished assignment 5/8/17
+
+## REST Routes
+Currently the server supports the follows:
+
+* {URL}/api - GET: returns a fun message
+* {URL}/api/user - GET: gets or creates user with a given username
+  req: {
+    username,
+    playerColor (optional): {
+      r, g, b
+      }
+    }

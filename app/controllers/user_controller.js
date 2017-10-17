@@ -1,21 +1,19 @@
 import User from '../models/user_model';
 
-// const cleanUser = (user) => {
-//   return { id: user._id, author_name: user.author_name };
-// };
-//
-// export const getUser = (req, res) => {
-//   User.findById(req.params.userId, (err, u) => {
-//     if (u) {
-//       res.json(cleanUser(u));
-//     } else {
-//       res.status(500).json({ err });
-//     }
-//   });
-// };
+export const getUser = (req, res, next) => {
+  User.findOne({ username: req.username }, (err, user) => {
+    if (user == null) {
+      user = new User();
+      user.username = req.body.username;
+      user.playerColor = req.body.playerColor;
+      user.save()
+      .then((result) => { return res.send(result); });
+    }
+  });
+};
 
 export const signin = (req, res, next) => {
-  res.send({ token: req.user, id: req.user._id });
+  res.send({ user: req.user });
 };
 
 export const signup = (req, res, next) => {
