@@ -1,16 +1,24 @@
 import mongoose, { Schema } from 'mongoose';
 
+/*
+Snakes {
+Snake_ID,
+	NPC_Color,
+	Location,
+	Snake_Length, /// for now, it can just be 1
+	}
+*/
+
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const UserSchema = new Schema({
-  username: { type: String, unique: true },
-  playerColor: {
+const SnakeSchema = new Schema({
+  NPC_Color: {
     r: Number,
     g: Number,
     b: Number,
   },
-  curLocation: ObjectId, // why is current location being represented by the objectID
-  curScore: { type: Number, default: 0 },
+  curLocation: ObjectId, 			// why objectID??
+  Snake_Length: { type: Number}
 }, {
   toJSON: {
     virtuals: true,
