@@ -3,10 +3,18 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
+import socketio from 'socket.io';
+import http from 'http';
 import apiRouter from './router';
+
+import * as UserController from './controllers/user_controller';
+
 
 // initialize
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
+
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/webadventure';
 mongoose.connect(mongoURI, {
   useMongoClient: true,
@@ -39,6 +47,27 @@ app.use('/api', apiRouter);
 // START THE SERVER
 // =============================================================================
 const port = process.env.PORT || 9090;
-app.listen(port);
+server.listen(port);
 
 console.log(`listening on: ${port}`);
+
+
+// connection server
+io.on('connection', (socket) => {
+  UserController.getUsers(null, (users) => {
+    socket.emit('players', users);
+  });
+
+  const pushPlayers = () => {
+    UserController.getUsers(null, (users) => {
+      io.sockets.emit('players', users);
+    });
+  };
+
+  socket.on('getPlayer', (fields) => {
+    UserController.getUser(fields, (result) => {
+      socket.emit('curPlayer', result);
+      pushPlayers();
+    });
+  });
+});
