@@ -7,8 +7,14 @@ export const getUser = (req, res, next) => {
       user.username = req.body.username;
       user.playerColor = req.body.playerColor;
       user.save()
-      .then((result) => { return res.send(result); });
+      .then((result) => { return res(result); });
     }
+  });
+};
+
+export const getUsers = (req, res) => {
+  User.find({}, (err, users) => {
+    res(users);
   });
 };
 
