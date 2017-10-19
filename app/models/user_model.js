@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     g: Number,
     b: Number,
   },
-  curLocation: ObjectId,
+  curLocation: ObjectId, // why is current location being represented by the objectID
   curScore: { type: Number, default: 0 },
 }, {
   toJSON: {
