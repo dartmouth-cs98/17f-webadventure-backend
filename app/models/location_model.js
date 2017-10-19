@@ -1,4 +1,4 @@
-location_model.js
+import mongoose, { Schema } from 'mongoose';
 
 /*
 Location {
@@ -10,10 +10,10 @@ Location {
 */
 
 const LocationSchema = new Schema({
-  Section_ID: { type: Number},
-  Sentence_ID: { type: Number},		// Sentence_Number???
-  Word_ID: { type: Number},			// Word_Number???
-  Player_ID: { type: Number}
+  Section_ID: { type: Number },
+  Sentence_ID: { type: Number },		// Sentence_Number???
+  Word_ID: { type: Number },			// Word_Number???
+  Player_ID: { type: Number },
 }, {
   toJSON: {
     virtuals: true,
