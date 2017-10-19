@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-/* 
+/*
 Section {
 	Section_ID, <char>
 	Sentence_ID, <char> // there will be a list of sentences
