@@ -12,6 +12,7 @@ router.post('/signin', User.signin);
 // router.get('/users', User.getUsers);
 router.post('/signup', User.signup);
 
-router.get('/user', User.getUser);
+router.get('/user/:username', User.getUser);
+router.get('/users', User.getUsers);
 
 export default router;
