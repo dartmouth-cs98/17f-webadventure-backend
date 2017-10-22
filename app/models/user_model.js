@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const ObjectId = mongoose.Schema.Types.ObjectId;
+// const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const UserSchema = new Schema({
   username: { type: String, unique: true },
@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     g: Number,
     b: Number,
   },
-  curLocation: ObjectId,
+  curLocation: { type: Schema.Types.ObjectId, ref: 'Location' },
   curScore: { type: Number, default: 0 },
 }, {
   toJSON: {

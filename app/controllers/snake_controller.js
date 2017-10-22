@@ -1,4 +1,4 @@
-import User from '../models/snake_model';
+import Snake from '../models/snake_model';
 
 export const getSnake = (req, res, next) => {
   User.findOne({ Snake_ID: req.Snake_ID }, (err, snake) => {
@@ -21,9 +21,9 @@ export const getSnakes = (req, res) => {
 export const createSnake = (res, next) => {
   const Snake_ID = 11; // snake eyes
 
-  if (!Snake_ID) {
-    return res.status(422).send('should ALWAYS have Snake_ID = 11 so idk why youre seeing this');
-  }
+  // if (!Snake_ID) {
+  //   return res.status(422).send('should ALWAYS have Snake_ID = 11 so idk why youre seeing this');
+  // }
 
   const newSnake = new Snake();
   newSnake.Snake_ID = Snake_ID;

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-/* 
+/*
 Questions {
 	Question_ID, <char>
 	Question, <string>
@@ -10,8 +10,8 @@ Questions {
 
 const QuestionSchema = new Schema({
   Question_ID: { type: Number, unique: true },
-  Question: { type: String},
-  Answer: { type: String},
+  Question: { type: String },
+  Answer: { type: String },
 }, {
   toJSON: {
     virtuals: true,

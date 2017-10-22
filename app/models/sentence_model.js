@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-/* 
+/*
 Sentence {
 	Sentence_ID, <char>
 	Sentence_Owner, <char>
@@ -12,10 +12,10 @@ Sentence {
 
 const SentenceSchema = new Schema({
   Sentence_ID: { type: Number, unique: true },
-  Section_Owner: { type: Number},
-  Question_ID: { type: Number},
-  Power_Attribute: { type: Number},
-  Sentence_Points: { type: Number},
+  Section_Owner: { type: Number },
+  Question_ID: { type: Number },
+  Power_Attribute: { type: Number },
+  Sentence_Points: { type: Number },
   Words_ID: [{
     type: Schema.Types.ObjectId, ref: 'Word',
   }],

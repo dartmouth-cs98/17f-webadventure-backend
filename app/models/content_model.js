@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-/* 
+/*
 Content {
   Content_ID, <wikipedia URL>
   Section_ID, <char>
@@ -9,10 +9,10 @@ Content {
 */
 
 // const ObjectId = mongoose.Schema.Types.ObjectId;
-å
+
 const ContentSchema = new Schema({
   Content_ID: { type: String, unique: true },
-  Section_ID: { type: Number},
+  Section_ID: { type: Number },
   Players_ID: [{
     type: Schema.Types.ObjectId, ref: 'User',
   }],
