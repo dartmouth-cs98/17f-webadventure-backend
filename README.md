@@ -10,6 +10,8 @@ mongod
 The `npm install` and `npm start` the repo.
 The backend server should now be running on localhost:9090
 
+Testing remote url
+
 ## REST Routes
 Currently the server supports the follows:
 
