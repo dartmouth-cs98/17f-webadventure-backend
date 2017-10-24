@@ -1,23 +1,30 @@
 import User from '../models/user_model';
 
-// const cleanUsers = (users) => {
-//   return users.map((user) => {
-//     return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
-//   });
-// };
+const cleanUsers = (users) => {
+  return users.map((user) => {
+    return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
+  });
+};
 
 const cleanUser = (user) => {
   console.log(user.username);
   return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
 };
 
-export const getUser = (req, res) => {
-  User.findOne({ username: req.params.username }, (err, u) => {
-    if (u) {
-      res.json(cleanUser(u));
-    } else {
-      res.status(500).json({ err });
-    }
+// export const getUser = (req, res) => {
+//   User.findOne({ username: req.params.username }, (err, u) => {
+//     if (u) {
+//       res.json(cleanUser(u));
+//     } else {
+//       res.status(500).json({ err });
+//     }
+//   });
+// };
+
+export const getUser = (username, res) => {
+  User.findOne({ username })
+  .then((data) => {
+    res(cleanUser(data));
   });
 };
 
@@ -35,14 +42,21 @@ export const getUser = (req, res) => {
 // };
 
 export const getUsers = (req, res) => {
-  User.find({}, (err, users) => {
-    res(users);
+  User.find({})
+  .then((data) => {
+    res(cleanUsers(data));
   });
 };
 
-export const signin = (req, res, next) => {
-  res.send({ user: req.user });
-};
+// export const getUsers = (req, res) => {
+//   User.find({}, (err, users) => {
+//     res(users);
+//   });
+// };
+
+// export const signin = (req, res, next) => {
+//   res.send({ user: req.user });
+// };
 
 export const signup = (req, res, next) => {
   const username = req.body.username;
@@ -59,7 +73,7 @@ export const signup = (req, res, next) => {
   newUser.playerColor.b = color.b;
   newUser.save()
     .then((result) => {
-      res.send({ token: result, id: result._id });
+      res({ token: result, id: result._id });
     })
     .catch((error) => {
       res.status(422).send('User with that username already exists');
