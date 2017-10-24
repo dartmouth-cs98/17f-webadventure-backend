@@ -24,6 +24,7 @@ const cleanUser = (user) => {
 export const getUser = (username, res) => {
   User.findOne({ username })
   .then((data) => {
+    console.log(`got data: ${data}`);
     res(cleanUser(data));
   });
 };
@@ -58,7 +59,9 @@ export const getUsers = (req, res) => {
 //   res.send({ user: req.user });
 // };
 
-export const signup = (req, res, next) => {
+
+// probably buggy
+export const signup = (req, res) => {
   const username = req.body.username;
   const color = req.body.playerColor;
 

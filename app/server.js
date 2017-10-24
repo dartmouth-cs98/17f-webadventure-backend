@@ -67,10 +67,13 @@ io.on('connection', (socket) => {
     });
   };
 
-  socket.on('getPlayer', (username) => {
+  socket.on('getPlayer', (username, callback) => {
+    // console.log('threeAA');
+    console.log(`username in socket is ${username}`);
     UserController.getUser(username, (result) => {
-      console.log('three');
-      socket.emit('curPlayer', result);
+      callback(result);
+      // console.log(`result is ${result.username}`);
+      // socket.emit('curPlayer', callback(result));
       pushPlayers();
     });
   });

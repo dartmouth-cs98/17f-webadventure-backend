@@ -1,4 +1,5 @@
 import Location from '../models/location_model';
+import User from '../models/user_model';
 
 export const getLocations = (req, res) => {
   Location.find({}, (err, location) => {
@@ -6,30 +7,21 @@ export const getLocations = (req, res) => {
   });
 };
 
-export const getLocation = (req, res, next) => {
-  Location.findOne({ username: req.username }, (err, user) => {
+export const getLocation = (username, res) => {
+  Location.findOne({ username }, (err, user) => {
+    // res is a callback
     res(user.curLocation);
   });
 };
 
-export const makeLocation = (req, res, next) => {
-  const username = req.body.username;
-  const color = req.body.playerColor;
-
-  if (!username) {
-    return res.status(422).send('You must provide a username');
-  }
-
-  const newUser = new User();
-  newUser.username = username;
-  newUser.playerColor.r = color.r;
-  newUser.playerColor.g = color.g;
-  newUser.playerColor.b = color.b;
-  newUser.save()
-    .then((result) => {
-      res.send({ token: result, id: result._id });
-    })
-    .catch((error) => {
-      res.status(422).send('User with that username already exists');
-    });
+export const makeLocation = (sectionID, sentenceID, wordID, playerUsername, res) => {
+  User.get({ playerUsername }, (err, user) => {
+    const location = new Location();
+    location.sectionID = sectionID;
+    location.sentenceID = sentenceID;
+    location.wordID = wordID;
+    location.playerUsername = playerUsername;
+    location.save();
+    res(location);
+  });
 };
