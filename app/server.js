@@ -58,24 +58,52 @@ console.log(`listening on: ${port}`);
 // connection server
 io.on('connection', (socket) => {
   UserController.getUsers(null, (users) => {
-    console.log('one');
     socket.emit('players', users);
   });
 
   // emits to every socket
   const pushPlayers = () => {
     UserController.getUsers(null, (users) => {
-      console.log('two');
       io.sockets.emit('players', users);
     });
   };
 
-  LocationController.getLocations(null, (locations) => {
-    console.log('one');
-    socket.emit('locations', locations);
+  socket.on('getPlayer', (username, callback) => {
+    console.log(`username in socket is ${username}`);
+    UserController.getUser(username, (result) => {
+      callback(result);
+      pushPlayers();
+    });
   });
 
-  // the point of pushLocations? Necessary
+  // fields are the superkey
+
+  // catch error?
+  // probably change it, use then and return the result
+  socket.on('signup', (username, callback) => {
+    UserController.signup(username, (result) => {
+      callback(result);
+      pushPlayers();
+    });
+    // }).catch((error) => {
+    //   console.log(error);
+    //   socket.emit('error', 'signup failed');
+    // });
+  });
+
+  // smoothed later?
+  // for updating location, score, and color?
+  socket.on('updatePlayer', (username, fields, callback) => {
+    console.log('callback');
+    UserController.updateUser(username, fields, (result) => {
+      callback(result);
+      pushPlayers();
+    });
+  });
+
+
+  // LOCATION
+
   const pushLocations = () => {
     LocationController.getLocations(null, (locations) => {
       console.log('two');
@@ -83,50 +111,25 @@ io.on('connection', (socket) => {
     });
   };
 
-  socket.on('getPlayer', (username, callback) => {
-    // console.log('threeAA');
-    console.log(`username in socket is ${username}`);
-    UserController.getUser(username, (result) => {
-      callback(result);
-      // console.log(`result is ${result.username}`);
-      // socket.emit('curPlayer', callback(result));
-      pushPlayers();
+// fields should be passed in as a JSON object
+  socket.on('createLocation', (username, fields) => {
+    LocationController.createLocation(username, fields)
+    .then((result) => {
+      pushLocations();
     });
   });
 
-  // fields are the superkey
+  LocationController.getLocations(null, (locations) => {
+    socket.emit('locations', locations);
+  });
+
+
   socket.on('getLocation', (username, callback) => {
     // console.log('threeAA');
     LocationController.getLocation(username, (result) => {
       callback(result);
       // console.log(`result is ${result.username}`);
       // socket.emit('curPlayer', callback(result));
-      pushLocations();
-    });
-  });
-
-  // UNTESTED
-  socket.on('signup', (username) => {
-    UserController.signup(username, (result) => {
-      pushPlayers();
-    }).catch((error) => {
-      console.log(error);
-      socket.emit('error', 'signup failed');
-    });
-  });
-
-  // smoothed later?
-  // for updating location, score, and color?
-  socket.on('updatePlayer', (username, fields) => {
-    UserController.updatePlayer(username, fields).then(() => {
-      pushPlayers();
-    });
-  });
-
-// fields should be passed in as a JSON object
-  socket.on('createLocation', (username, fields) => {
-    LocationController.createLocation(username, fields)
-    .then((result) => {
       pushLocations();
     });
   });
