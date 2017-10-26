@@ -29,18 +29,6 @@ export const getUser = (username, res) => {
   });
 };
 
-// TWO GET USERS -- which one? Depends on how Alma implements the frontend
-
-// getUsers should return username and locations
-// export const getUsers = (req, res) => {
-//   User.find({}).sort({ created_at: -1 })
-//   .then((result) => {
-//     res.json(cleanUsers(result));
-//   })
-//   .catch((error) => {
-//     res.status(500).json({ error });
-//   });
-// };
 
 export const getUsers = (req, res) => {
   User.find({})
@@ -49,36 +37,26 @@ export const getUsers = (req, res) => {
   });
 };
 
-// export const getUsers = (req, res) => {
-//   User.find({}, (err, users) => {
-//     res(users);
-//   });
-// };
-
-// export const signin = (req, res, next) => {
-//   res.send({ user: req.user });
-// };
-
+// fields should pass in location, color, and score information
+export const updateUser = (username, fields) => {
+  return User.findOne({ username })
+  .then((user) => {
+    Object.keys(fields).forEach((k) => {
+      user[k] = fields[k];
+    });
+    return user.save();
+  });
+};
 
 // probably buggy
-export const signup = (req, res) => {
-  const username = req.body.username;
-  const color = req.body.playerColor;
-
-  if (!username) {
-    return res.status(422).send('You must provide a username');
-  }
-
+export const signup = (username, res) => {
   const newUser = new User();
   newUser.username = username;
-  newUser.playerColor.r = color.r;
-  newUser.playerColor.g = color.g;
-  newUser.playerColor.b = color.b;
-  newUser.save()
-    .then((result) => {
-      res({ token: result, id: result._id });
-    })
-    .catch((error) => {
-      res.status(422).send('User with that username already exists');
-    });
+  newUser.PlayerColor.r = 0;
+  newUser.PlayerColor.g = 0;
+  newUser.PlayerColor.b = 0;
+
+  // update location here
+
+  return newUser.save();
 };

@@ -4,10 +4,13 @@ import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
 import socketio from 'socket.io';
-import http from 'http'; // https 
+import http from 'http'; // https
+// import throttle from 'lodash.throttle';
+// import debounce from 'lodash.debounce';
 import apiRouter from './router';
 
 import * as UserController from './controllers/user_controller';
+import * as LocationController from './controllers/location_controller';
 
 
 // initialize
@@ -67,6 +70,19 @@ io.on('connection', (socket) => {
     });
   };
 
+  LocationController.getLocations(null, (locations) => {
+    console.log('one');
+    socket.emit('locations', locations);
+  });
+
+  // the point of pushLocations? Necessary
+  const pushLocations = () => {
+    LocationController.getLocations(null, (locations) => {
+      console.log('two');
+      io.sockets.emit('locations', locations);
+    });
+  };
+
   socket.on('getPlayer', (username, callback) => {
     // console.log('threeAA');
     console.log(`username in socket is ${username}`);
@@ -77,4 +93,42 @@ io.on('connection', (socket) => {
       pushPlayers();
     });
   });
+
+  // fields are the superkey
+  socket.on('getLocation', (username, callback) => {
+    // console.log('threeAA');
+    LocationController.getLocation(username, (result) => {
+      callback(result);
+      // console.log(`result is ${result.username}`);
+      // socket.emit('curPlayer', callback(result));
+      pushLocations();
+    });
+  });
+
+  // UNTESTED
+  socket.on('signup', (username) => {
+    UserController.signup(username, (result) => {
+      pushPlayers();
+    }).catch((error) => {
+      console.log(error);
+      socket.emit('error', 'signup failed');
+    });
+  });
+
+  // smoothed later?
+  // for updating location, score, and color?
+  socket.on('updatePlayer', (username, fields) => {
+    UserController.updatePlayer(username, fields).then(() => {
+      pushPlayers();
+    });
+  });
+
+// fields should be passed in as a JSON object
+  socket.on('createLocation', (username, fields) => {
+    LocationController.createLocation(username, fields)
+    .then((result) => {
+      pushLocations();
+    });
+  });
+  // end
 });
