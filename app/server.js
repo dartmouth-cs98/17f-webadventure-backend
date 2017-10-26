@@ -55,18 +55,25 @@ console.log(`listening on: ${port}`);
 // connection server
 io.on('connection', (socket) => {
   UserController.getUsers(null, (users) => {
+    console.log('one');
     socket.emit('players', users);
   });
 
+  // emits to every socket
   const pushPlayers = () => {
     UserController.getUsers(null, (users) => {
+      console.log('two');
       io.sockets.emit('players', users);
     });
   };
 
-  socket.on('getPlayer', (fields) => {
-    UserController.getUser(fields, (result) => {
-      socket.emit('curPlayer', result);
+  socket.on('getPlayer', (username, callback) => {
+    // console.log('threeAA');
+    console.log(`username in socket is ${username}`);
+    UserController.getUser(username, (result) => {
+      callback(result);
+      // console.log(`result is ${result.username}`);
+      // socket.emit('curPlayer', callback(result));
       pushPlayers();
     });
   });
