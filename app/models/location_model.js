@@ -10,9 +10,11 @@ Location {
 */
 
 const LocationSchema = new Schema({
-  Section_ID: { type: Number },
-  Sentence_ID: { type: Number },		// Sentence_Number???
-  Word_ID: { type: Number },			// Word_Number???
+  hashKey: { type: String, unique: true },
+  url: { type: String },
+  sectionID: { type: Number },
+  sentenceID: { type: Number },
+  character: { type: Number },
   playerUsername: { type: String },
 }, {
   toJSON: {

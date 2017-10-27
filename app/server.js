@@ -4,10 +4,13 @@ import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
 import socketio from 'socket.io';
-import http from 'http'; // https 
+import http from 'http'; // https
+// import throttle from 'lodash.throttle';
+// import debounce from 'lodash.debounce';
 import apiRouter from './router';
 
 import * as UserController from './controllers/user_controller';
+import * as LocationController from './controllers/location_controller';
 
 
 // initialize
@@ -55,26 +58,80 @@ console.log(`listening on: ${port}`);
 // connection server
 io.on('connection', (socket) => {
   UserController.getUsers(null, (users) => {
-    console.log('one');
     socket.emit('players', users);
   });
 
   // emits to every socket
   const pushPlayers = () => {
     UserController.getUsers(null, (users) => {
-      console.log('two');
       io.sockets.emit('players', users);
     });
   };
 
   socket.on('getPlayer', (username, callback) => {
-    // console.log('threeAA');
     console.log(`username in socket is ${username}`);
     UserController.getUser(username, (result) => {
       callback(result);
-      // console.log(`result is ${result.username}`);
-      // socket.emit('curPlayer', callback(result));
       pushPlayers();
     });
   });
+
+  // fields are the superkey
+
+  // catch error?
+  // probably change it, use then and return the result
+  socket.on('signup', (username, callback) => {
+    UserController.signup(username, (result) => {
+      callback(result);
+      pushPlayers();
+    });
+    // }).catch((error) => {
+    //   console.log(error);
+    //   socket.emit('error', 'signup failed');
+    // });
+  });
+
+  // smoothed later?
+  // for updating location, score, and color?
+  socket.on('updatePlayer', (username, fields, callback) => {
+    console.log('callback');
+    UserController.updateUser(username, fields, (result) => {
+      callback(result);
+      pushPlayers();
+    });
+  });
+
+
+  // LOCATION
+
+  const pushLocations = () => {
+    LocationController.getLocations(null, (locations) => {
+      console.log('two');
+      io.sockets.emit('locations', locations);
+    });
+  };
+
+// fields should be passed in as a JSON object
+  socket.on('createLocation', (location, callback) => {
+    LocationController.createLocation(location, (result) => {
+      callback(result);
+      pushLocations();
+    });
+  });
+
+  LocationController.getLocations(null, (locations) => {
+    socket.emit('locations', locations);
+  });
+
+
+  socket.on('getLocation', (username, callback) => {
+    // console.log('threeAA');
+    LocationController.getLocation(username, (result) => {
+      callback(result);
+      // console.log(`result is ${result.username}`);
+      // socket.emit('curPlayer', callback(result));
+      pushLocations();
+    });
+  });
+  // end
 });

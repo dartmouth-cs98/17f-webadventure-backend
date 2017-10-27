@@ -1,4 +1,5 @@
 import User from '../models/user_model';
+import * as LocationController from './location_controller';
 
 const cleanUsers = (users) => {
   return users.map((user) => {
@@ -11,16 +12,6 @@ const cleanUser = (user) => {
   return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
 };
 
-// export const getUser = (req, res) => {
-//   User.findOne({ username: req.params.username }, (err, u) => {
-//     if (u) {
-//       res.json(cleanUser(u));
-//     } else {
-//       res.status(500).json({ err });
-//     }
-//   });
-// };
-
 export const getUser = (username, res) => {
   User.findOne({ username })
   .then((data) => {
@@ -29,19 +20,6 @@ export const getUser = (username, res) => {
   });
 };
 
-// TWO GET USERS -- which one? Depends on how Alma implements the frontend
-
-// getUsers should return username and locations
-// export const getUsers = (req, res) => {
-//   User.find({}).sort({ created_at: -1 })
-//   .then((result) => {
-//     res.json(cleanUsers(result));
-//   })
-//   .catch((error) => {
-//     res.status(500).json({ error });
-//   });
-// };
-
 export const getUsers = (req, res) => {
   User.find({})
   .then((data) => {
@@ -49,36 +27,53 @@ export const getUsers = (req, res) => {
   });
 };
 
-// export const getUsers = (req, res) => {
-//   User.find({}, (err, users) => {
-//     res(users);
+// fields should pass in location, color, and score information
+// export const updateUser = (username, fields, res) => {
+//   return User.findOne({ username })
+//   .then((user) => {
+//     Object.keys(fields).forEach((k) => {
+//       user[k] = fields[k];
+//     });
+//     user.save();
+//     res(user);
 //   });
 // };
 
-// export const signin = (req, res, next) => {
-//   res.send({ user: req.user });
-// };
+//  ADD LOCATION INFORMATION
+export const updateUser = (username, fields, res) => {
+  User.findOne({ username })
+  .then((user) => {
+    // console.log(fields.curScore);
+    // console.log(fields.playerColor.b);
+    user.curScore = fields.curScore ? fields.curScore : user.curScore;
+    user.playerColor = fields.playerColor ? fields.playerColor : user.playerColor;
 
+    if (fields.location) {
+      console.log('true');
+    } else {
+      console.log('false');
+    }
 
-// probably buggy
-export const signup = (req, res) => {
-  const username = req.body.username;
-  const color = req.body.playerColor;
+    user.save();
+    res(user);
+  });
+};
 
-  if (!username) {
-    return res.status(422).send('You must provide a username');
-  }
-
+export const signup = (username, res) => {
   const newUser = new User();
   newUser.username = username;
-  newUser.playerColor.r = color.r;
-  newUser.playerColor.g = color.g;
-  newUser.playerColor.b = color.b;
-  newUser.save()
-    .then((result) => {
-      res({ token: result, id: result._id });
-    })
-    .catch((error) => {
-      res.status(422).send('User with that username already exists');
-    });
+
+  // set a random color
+  newUser.playerColor = { r: 1, g: 0, b: 0 };
+
+  newUser.save();
+  res(cleanUser(newUser));
+};
+
+export const updateUserLocation = (username, location) => {
+  User.findOne({ username })
+  .then((user) => {
+    user.curLocation = location;
+    user.save();
+  });
 };
