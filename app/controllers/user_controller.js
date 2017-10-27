@@ -1,5 +1,5 @@
 import User from '../models/user_model';
-// import Location from '../models/location_model';
+import * as LocationController from './location_controller';
 
 const cleanUsers = (users) => {
   return users.map((user) => {
@@ -39,8 +39,9 @@ export const getUsers = (req, res) => {
 //   });
 // };
 
+//  ADD LOCATION INFORMATION
 export const updateUser = (username, fields, res) => {
-  return User.findOne({ username })
+  User.findOne({ username })
   .then((user) => {
     // console.log(fields.curScore);
     // console.log(fields.playerColor.b);
@@ -67,4 +68,12 @@ export const signup = (username, res) => {
 
   newUser.save();
   res(cleanUser(newUser));
+};
+
+export const updateUserLocation = (username, location) => {
+  User.findOne({ username })
+  .then((user) => {
+    user.curLocation = location;
+    user.save();
+  });
 };

@@ -112,9 +112,9 @@ io.on('connection', (socket) => {
   };
 
 // fields should be passed in as a JSON object
-  socket.on('createLocation', (username, fields) => {
-    LocationController.createLocation(username, fields)
-    .then((result) => {
+  socket.on('createLocation', (location, callback) => {
+    LocationController.createLocation(location, (result) => {
+      callback(result);
       pushLocations();
     });
   });

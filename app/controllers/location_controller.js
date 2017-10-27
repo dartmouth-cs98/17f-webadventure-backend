@@ -1,5 +1,5 @@
 import Location from '../models/location_model';
-import User from '../models/user_model';
+import * as UserController from './user_controller';
 
 export const getLocations = (req, res) => {
   Location.find({})
@@ -28,20 +28,24 @@ export const getLocation = (username, res) => {
 //   });
 // };
 
-export const createLocation = (playerUsername, fields) => {
+// export const updateLocation = (username, res) => {
+//   Location.find
+// };
+
+export const createLocation = (loc, res) => {
   const location = new Location();
-  location.sectionID = fields.sectionID;
-  location.sentenceID = fields.sentenceID;
-  location.wordID = fields.wordID;
-  location.playerUsername = playerUsername;
+  location.url = loc.url;
+  location.sectionID = loc.sectionID;
+  location.sentenceID = loc.sentenceID;
+  location.character = loc.character;
+
+  const h = loc.url + loc.sectionID + loc.sentenceID + loc.character;
+  location.hashKey = h;
+
+  location.playerUsername = loc.playerUsername;
   location.save();
 
   // save location and update the player
-  User.findOne({ playerUsername }, (user) => {
-    if (user) {
-      user.curLocation = location;
-    }
-  });
-
-  return location;
+  UserController.updateUserLocation(loc.playerUsername, location);
+  res(location);
 };
