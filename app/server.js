@@ -94,7 +94,6 @@ io.on('connection', (socket) => {
   // smoothed later?
   // for updating location, score, and color?
   socket.on('updatePlayer', (username, fields, callback) => {
-    console.log('callback');
     UserController.updateUser(username, fields, (result) => {
       callback(result);
       pushPlayers();
@@ -104,6 +103,10 @@ io.on('connection', (socket) => {
 
   // LOCATION
 
+  LocationController.getLocations(null, (locations) => {
+    socket.emit('locations', locations);
+  });
+
   const pushLocations = () => {
     LocationController.getLocations(null, (locations) => {
       console.log('two');
@@ -112,26 +115,35 @@ io.on('connection', (socket) => {
   };
 
 // fields should be passed in as a JSON object
-  socket.on('createLocation', (location, callback) => {
-    LocationController.createLocation(location, (result) => {
+  socket.on('createLocation', (username, location, callback) => {
+    LocationController.createLocation(username, location, (result) => {
       callback(result);
       pushLocations();
     });
   });
 
-  LocationController.getLocations(null, (locations) => {
-    socket.emit('locations', locations);
+  socket.on('getLocationsByPlayer', (username, callback) => {
+    LocationController.getLocationsByPlayer(username, (result) => {
+      callback(result);
+      pushLocations();
+    });
   });
-
 
   socket.on('getLocation', (username, callback) => {
-    // console.log('threeAA');
     LocationController.getLocation(username, (result) => {
+      console.log('getLocation');
       callback(result);
-      // console.log(`result is ${result.username}`);
-      // socket.emit('curPlayer', callback(result));
       pushLocations();
     });
   });
+
+  socket.on('updateLocationPlayer', (username, location, callback) => {
+    console.log('hellooooo');
+    LocationController.updateLocationPlayer(username, location, (result) => {
+      callback(result);
+      pushLocations();
+    });
+  });
+
   // end
 });

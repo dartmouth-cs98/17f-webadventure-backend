@@ -8,31 +8,31 @@ export const getLocations = (req, res) => {
   });
 };
 
-
-// key is username, or superkey?
-export const getLocation = (username, res) => {
-  Location.findOne({ playerUsername: username })
-  .then((data) => {
-    res(data);
+export const getLocationsByPlayer = (username, res) => {
+  Location.find({ playerUsername: username })
+  .then((locs) => {
+    res(locs);
   });
 };
 
-// export const makeLocation = (sectionID, sentenceID, wordID, playerUsername) => {
-//   User.get({ playerUsername }, (err, user) => {
-//     const location = new Location();
-//     location.sectionID = sectionID;
-//     location.sentenceID = sentenceID;
-//     location.wordID = wordID;
-//     location.playerUsername = playerUsername;
-//     location.save();
-//   });
-// };
+export const getLocationByHashKey = (hashKey, res) => {
+  Location.findOne({ hashKey })
+  .then((loc) => {
+    res(loc);
+  });
+};
 
-// export const updateLocation = (username, res) => {
-//   Location.find
-// };
+export const updateLocationPlayer = (username, loc, res) => {
+  const hashKey = loc.url + loc.sectionID + loc.sentenceID + loc.character;
+  Location.findOne({ hashKey })
+  .then((location) => {
+    location.playerUsername = username;
+    location.save();
+    res(location);
+  });
+};
 
-export const createLocation = (loc, res) => {
+export const createLocation = (username, loc, res) => {
   const location = new Location();
   location.url = loc.url;
   location.sectionID = loc.sectionID;
@@ -42,10 +42,10 @@ export const createLocation = (loc, res) => {
   const h = loc.url + loc.sectionID + loc.sentenceID + loc.character;
   location.hashKey = h;
 
-  location.playerUsername = loc.playerUsername;
+  location.playerUsername = username;
   location.save();
 
   // save location and update the player
-  UserController.updateUserLocation(loc.playerUsername, location);
+  UserController.updateUserLocation(username, location);
   res(location);
 };

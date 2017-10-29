@@ -39,19 +39,30 @@ export const getUsers = (req, res) => {
 //   });
 // };
 
-//  ADD LOCATION INFORMATION
+// ADD LOCATION INFORMATION
+// ADD VALIDATION
 export const updateUser = (username, fields, res) => {
   User.findOne({ username })
   .then((user) => {
-    // console.log(fields.curScore);
-    // console.log(fields.playerColor.b);
     user.curScore = fields.curScore ? fields.curScore : user.curScore;
     user.playerColor = fields.playerColor ? fields.playerColor : user.playerColor;
 
     if (fields.location) {
-      console.log('true');
-    } else {
-      console.log('false');
+      const hashKey = fields.location.url + fields.location.sectionID + fields.location.sentenceID + fields.location.character;
+      console.log(hashKey);
+      LocationController.getLocationByHashKey(hashKey, (loc) => {
+        // location exists: update on location end and user end
+        if (loc) {
+          LocationController.updateLocationPlayer(username, loc, (updatedLoc) => {
+            user.curLocation = updatedLoc;
+          });
+        } else {
+          // const h = fields.location.url + fields.location.sectionID + fields.location.sentenceID + fields.location.character;
+          LocationController.createLocation(username, fields.location, (newLoc) => {
+            user.curLocation = newLoc;
+          });
+        }
+      });
     }
 
     user.save();
@@ -63,7 +74,7 @@ export const signup = (username, res) => {
   const newUser = new User();
   newUser.username = username;
 
-  // set a random color
+  // set a default
   newUser.playerColor = { r: 1, g: 0, b: 0 };
 
   newUser.save();
