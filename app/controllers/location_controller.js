@@ -1,27 +1,51 @@
 import Location from '../models/location_model';
-import User from '../models/user_model';
+import * as UserController from './user_controller';
 
 export const getLocations = (req, res) => {
-  Location.find({}, (err, location) => {
-    res(location);
+  Location.find({})
+  .then((data) => {
+    res(data);
   });
 };
 
-export const getLocation = (username, res) => {
-  Location.findOne({ username }, (err, user) => {
-    // res is a callback
-    res(user.curLocation);
+export const getLocationsByPlayer = (username, res) => {
+  Location.find({ playerUsername: username })
+  .then((locs) => {
+    res(locs);
   });
 };
 
-export const makeLocation = (sectionID, sentenceID, wordID, playerUsername, res) => {
-  User.get({ playerUsername }, (err, user) => {
-    const location = new Location();
-    location.sectionID = sectionID;
-    location.sentenceID = sentenceID;
-    location.wordID = wordID;
-    location.playerUsername = playerUsername;
+export const getLocationByHashKey = (hashKey, res) => {
+  Location.findOne({ hashKey })
+  .then((loc) => {
+    res(loc);
+  });
+};
+
+export const updateLocationPlayer = (username, loc, res) => {
+  const hashKey = loc.url + loc.sectionID + loc.sentenceID + loc.character;
+  Location.findOne({ hashKey })
+  .then((location) => {
+    location.playerUsername = username;
     location.save();
     res(location);
   });
+};
+
+export const createLocation = (username, loc, res) => {
+  const location = new Location();
+  location.url = loc.url;
+  location.sectionID = loc.sectionID;
+  location.sentenceID = loc.sentenceID;
+  location.character = loc.character;
+
+  const h = loc.url + loc.sectionID + loc.sentenceID + loc.character;
+  location.hashKey = h;
+
+  location.playerUsername = username;
+  location.save();
+
+  // save location and update the player
+  UserController.updateUserLocation(username, location);
+  res(location);
 };
