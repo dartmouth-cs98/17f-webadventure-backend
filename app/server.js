@@ -8,6 +8,7 @@ import http from 'http'; // https
 // import throttle from 'lodash.throttle';
 // import debounce from 'lodash.debounce';
 import apiRouter from './router';
+import mockWiki from './mockWiki';
 
 import * as UserController from './controllers/user_controller';
 import * as LocationController from './controllers/location_controller';
@@ -40,7 +41,7 @@ app.use(bodyParser.json());
 
 // default index route
 app.get('/', (req, res) => {
-  res.send('hi');
+  res.send(mockWiki);
 });
 
 // REGISTER OUR ROUTES -------------------------------

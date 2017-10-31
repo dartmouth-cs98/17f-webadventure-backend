@@ -27,7 +27,7 @@ export const createSnake = (res, next) => {
 
   const newSnake = new Snake();
   newSnake.Snake_ID = Snake_ID;
-  newSnake.NPC_Color = {r: 0, g: 200, b: 100},
+  newSnake.NPC_Color = { r: 0, g: 200, b: 100 },
   newSnake.save()
     .then((result) => {
       res.send({ token: result, id: result._id });
