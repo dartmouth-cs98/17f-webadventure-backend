@@ -27,3 +27,27 @@ socket.on('signup', (username, callback)
 ```
 **Parameters**: username, callback function
 - Creates a player with a relevant username. The default color of the player is red and the current score is set to 0. The created player information is passed into the callback function.
+
+```
+socket.on('updatePlayer', (username, fields, callback)
+```
+**Parameters**: username, fields, callback function
+- Updates a player identified by its username with the relevant fields. `fields` is a JSON object that may contain curScore, playerColor, and location (though not all those fields need to be included)
+- Example fields object:
+
+```const fields = {
+ curScore: 50,
+ playerColor: {
+   r: 0,
+   g: 0,
+   b: 1,
+ },
+ // location needs at least these 4 fields
+ location: {
+   url: 'en.wikipedia.org/wiki/Dartmouth',
+   sectionID: 10,
+   sentenceID: 2,
+   character: 1,
+ },
+};
+```
