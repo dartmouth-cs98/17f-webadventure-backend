@@ -81,6 +81,7 @@ export const signup = (username, res) => {
   res(cleanUser(newUser));
 };
 
+// change location to the user
 export const updateUserLocation = (username, location) => {
   User.findOne({ username })
   .then((user) => {

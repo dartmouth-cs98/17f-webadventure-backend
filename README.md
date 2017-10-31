@@ -7,7 +7,7 @@ To run the backend first make sure you have MongoDB installed and start a local 
 ```
 mongod
 ```
-The `npm install` and `npm start` the repo.
+Then `npm install` and `npm start` the repo.
 The backend server should now be running on localhost:9090
 
 Testing remote url
@@ -15,11 +15,9 @@ Testing remote url
 ## REST Routes
 Currently the server supports the follows:
 
-* {URL}/api - GET: returns a fun message
-* {URL}/api/user - GET: gets or creates user with a given username
-  req: {
-    username,
-    playerColor (optional): {
-      r, g, b
-      }
-    }
+
+```
+socket.on('getPlayer', (username, callback)
+```
+- Parameters: username, callback function
+- getPlayer finds the player with the associated username and passes the information into the callback function
