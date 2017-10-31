@@ -19,7 +19,7 @@ Currently the server supports the follows:
 ```
 socket.on('getPlayer', (username, callback)
 ```
-**Parameters**: username, callback function
+*Parameters*: username, callback function
 - Finds the player with the associated username and passes the information into the callback function.
 
 
@@ -27,7 +27,7 @@ socket.on('getPlayer', (username, callback)
 ```
 socket.on('signup', (username, callback)
 ```
-**Parameters**: username, callback function
+*Parameters*: username, callback function
 - Creates a player with a relevant username. The default color of the player is red and the current score is set to 0. The created player information is passed into the callback function.
 
 
@@ -35,7 +35,7 @@ socket.on('signup', (username, callback)
 ```
 socket.on('updatePlayer', (username, fields, callback)
 ```
-**Parameters**: username, fields, callback function
+*Parameters*: username, fields, callback function
 - Updates a player identified by its username with the relevant fields. `fields` is a JSON object that may contain curScore, playerColor, and location (though not all those fields need to be included)
 - Example fields object:
 
