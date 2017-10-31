@@ -13,7 +13,7 @@ The backend server should now be running on localhost:9090
 Testing remote url
 
 ## Server Routes
-Currently the server supports the follows:
+Currently the server supports the following:
 
 ### getPlayer
 ```
