@@ -66,3 +66,18 @@ socket.on('createLocation', (username, location, callback)
 - Creates a new location object.
 - 'location' is a JSON object that must have an (1) URL, (2) sectionID, (3) sentenceID, and (4) character (see above fields const as an example)
 - Locations must have an 'owner' to be created. The player with the passed-in username will be set as the owner of the location.
+- New location information will be passed into the callback function
+
+### getLocationsByPlayer
+```
+socket.on('getLocationsByPlayer', (username, callback)
+```
+*Parameters*: username, callback function
+- Get all locations owned by the player with the passed in username. The JSON object of locations will be passed into the callback function.
+
+### updateLocationPlayer
+```
+socket.on('updateLocationPlayer', (username, location, callback)
+```
+*Parameters*: username, location, callback function
+- Update the location with a new player, who is identified by the passed-in username.

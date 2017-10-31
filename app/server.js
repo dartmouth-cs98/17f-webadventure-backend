@@ -129,6 +129,7 @@ io.on('connection', (socket) => {
     });
   });
 
+  // get location by hashkey?
   socket.on('getLocation', (username, callback) => {
     LocationController.getLocation(username, (result) => {
       console.log('getLocation');
@@ -138,7 +139,6 @@ io.on('connection', (socket) => {
   });
 
   socket.on('updateLocationPlayer', (username, location, callback) => {
-    console.log('hellooooo');
     LocationController.updateLocationPlayer(username, location, (result) => {
       callback(result);
       pushLocations();
