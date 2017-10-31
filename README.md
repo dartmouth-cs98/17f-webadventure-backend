@@ -12,22 +12,26 @@ The backend server should now be running on localhost:9090
 
 Testing remote url
 
-## REST Routes
+## Server Routes
 Currently the server supports the follows:
 
-
+### getPlayer
 ```
 socket.on('getPlayer', (username, callback)
 ```
 **Parameters**: username, callback function
 - Finds the player with the associated username and passes the information into the callback function.
 
+
+### signup
 ```
 socket.on('signup', (username, callback)
 ```
 **Parameters**: username, callback function
 - Creates a player with a relevant username. The default color of the player is red and the current score is set to 0. The created player information is passed into the callback function.
 
+
+### updatePlayer
 ```
 socket.on('updatePlayer', (username, fields, callback)
 ```
