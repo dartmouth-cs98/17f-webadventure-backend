@@ -39,7 +39,8 @@ socket.on('updatePlayer', (username, fields, callback)
 - Updates a player identified by its username with the relevant fields. `fields` is a JSON object that may contain curScore, playerColor, and location (though not all those fields need to be included)
 - Example fields object:
 
-```const fields = {
+```
+const fields = {
  curScore: 50,
  playerColor: {
    r: 0,
@@ -55,3 +56,13 @@ socket.on('updatePlayer', (username, fields, callback)
  },
 };
 ```
+- Location object need not be created. updatePlayer checks if location exists before updating location; if it does not a new location object is created.
+
+### createLocation
+```
+socket.on('createLocation', (username, location, callback)
+```
+*Parameters*: username, location, callback function
+- Creates a new location object.
+- 'location' is a JSON object that must have an (1) URL, (2) sectionID, (3) sentenceID, and (4) character (see above fields const as an example)
+- Locations must have an 'owner' to be created. The player with the passed-in username will be set as the owner of the location.
