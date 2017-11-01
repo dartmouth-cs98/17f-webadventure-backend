@@ -21,7 +21,7 @@ export const getUser = (username, res) => {
 };
 
 export const getUsers = (req, res) => {
-  User.find({})
+  User.find({}).populate('curLocation')
   .then((data) => {
     res(cleanUsers(data));
   });
