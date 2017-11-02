@@ -58,6 +58,7 @@ console.log(`listening on: ${port}`);
 
 // connection server
 io.on('connection', (socket) => {
+  // startup information
   UserController.getUsers(null, (users) => {
     socket.emit('players', users);
   });
@@ -73,16 +74,14 @@ io.on('connection', (socket) => {
     console.log(`username in socket is ${username}`);
     UserController.getUser(username, (result) => {
       callback(result);
-      pushPlayers();
     });
   });
 
-  // fields are the superkey
 
   // catch error?
   // probably change it, use then and return the result
-  socket.on('signup', (username, callback) => {
-    UserController.signup(username, (result) => {
+  socket.on('signup', (username, playerColor, callback) => {
+    UserController.signup(username, playerColor, (result) => {
       callback(result);
       pushPlayers();
     });
@@ -94,9 +93,14 @@ io.on('connection', (socket) => {
 
   // smoothed later?
   // for updating location, score, and color?
-  socket.on('updatePlayer', (username, fields, callback) => {
+  socket.on('updatePlayer', (username, fields) => {
     UserController.updateUser(username, fields, (result) => {
-      callback(result);
+      pushPlayers();
+    });
+  });
+
+  socket.on('gameOver', (username) => {
+    UserController.removeUserFromGame(username, (result) => {
       pushPlayers();
     });
   });
@@ -110,7 +114,6 @@ io.on('connection', (socket) => {
 
   const pushLocations = () => {
     LocationController.getLocations(null, (locations) => {
-      console.log('two');
       io.sockets.emit('locations', locations);
     });
   };
@@ -133,7 +136,6 @@ io.on('connection', (socket) => {
   // get location by hashkey?
   socket.on('getLocation', (username, callback) => {
     LocationController.getLocation(username, (result) => {
-      console.log('getLocation');
       callback(result);
       pushLocations();
     });
