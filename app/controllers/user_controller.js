@@ -38,22 +38,17 @@ export const updateUser = (username, fields, res) => {
   } else { User.findOneAndUpdate({ username }, update).then(res); }
 };
 
-export const signup = (username, res) => {
+export const signup = (username, playerColor, res) => {
   const newUser = new User();
   newUser.username = username;
-
-  // set a default
-  newUser.playerColor = { r: 1, g: 0, b: 0 };
-
+  newUser.playerColor = playerColor;
   newUser.save();
   res(cleanUser(newUser));
 };
 
-// change location to the user
-export const updateUserLocation = (username, location) => {
-  User.findOne({ username })
+export const removeUserFromGame = (username, res) => {
+  User.findOneAndUpdate({ username }, { curLocation: null })
   .then((user) => {
-    user.curLocation = location;
-    user.save();
+    LocationController.clearUserLocations(username);
   });
 };

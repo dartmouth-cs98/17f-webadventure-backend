@@ -80,8 +80,8 @@ io.on('connection', (socket) => {
 
   // catch error?
   // probably change it, use then and return the result
-  socket.on('signup', (username, callback) => {
-    UserController.signup(username, (result) => {
+  socket.on('signup', (username, playerColor, callback) => {
+    UserController.signup(username, playerColor, (result) => {
       callback(result);
       pushPlayers();
     });
@@ -95,6 +95,12 @@ io.on('connection', (socket) => {
   // for updating location, score, and color?
   socket.on('updatePlayer', (username, fields) => {
     UserController.updateUser(username, fields, (result) => {
+      pushPlayers();
+    });
+  });
+
+  socket.on('gameOver', (username) => {
+    UserController.removeUserFromGame(username, (result) => {
       pushPlayers();
     });
   });

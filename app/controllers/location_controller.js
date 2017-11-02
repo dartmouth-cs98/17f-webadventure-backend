@@ -52,3 +52,9 @@ export const getOrCreateLocation = (loc, username, res) => {
     return res(result);
   });
 };
+
+export const clearUserLocations = (username, res) => {
+  Location.deleteMany({ playerUsername: username })
+  .then((result) => { return console.log(result); })
+  .catch((error) => { return console.log(error); });
+};
