@@ -1,5 +1,4 @@
 import Location from '../models/location_model';
-import * as UserController from './user_controller';
 
 export const getLocations = (req, res) => {
   Location.find({})
@@ -32,20 +31,24 @@ export const updateLocationPlayer = (username, loc, res) => {
   });
 };
 
-export const createLocation = (username, loc, res) => {
+export const createLocation = (loc, username, res) => {
   const location = new Location();
   location.url = loc.url;
   location.sectionID = loc.sectionID;
   location.sentenceID = loc.sentenceID;
   location.character = loc.character;
-
   const h = loc.url + loc.sectionID + loc.sentenceID + loc.character;
   location.hashKey = h;
-
   location.playerUsername = username;
-  location.save();
+  return location.save();
+};
 
-  // save location and update the player
-  UserController.updateUserLocation(username, location);
-  res(location);
+export const getOrCreateLocation = (loc, username, res) => {
+  const hashKey = loc.url + loc.sectionID + loc.sentenceID + loc.character;
+  Location.findOne({ hashKey }).then((result) => {
+    if (!result) {
+      createLocation(loc, username).then((newLoc) => { return res(newLoc); });
+    }
+    return res(result);
+  });
 };

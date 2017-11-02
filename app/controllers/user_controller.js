@@ -15,59 +15,27 @@ const cleanUser = (user) => {
 export const getUser = (username, res) => {
   User.findOne({ username })
   .then((data) => {
-    console.log(`got data: ${data}`);
     res(cleanUser(data));
   });
 };
 
-export const getUsers = (req, res) => {
+export const getUsers = (req, callback) => {
   User.find({}).populate('curLocation')
   .then((data) => {
-    res(cleanUsers(data));
+    callback(cleanUsers(data));
   });
 };
 
-// fields should pass in location, color, and score information
-// export const updateUser = (username, fields, res) => {
-//   return User.findOne({ username })
-//   .then((user) => {
-//     Object.keys(fields).forEach((k) => {
-//       user[k] = fields[k];
-//     });
-//     user.save();
-//     res(user);
-//   });
-// };
-
-// ADD LOCATION INFORMATION
-// ADD VALIDATION
 export const updateUser = (username, fields, res) => {
-  User.findOne({ username })
-  .then((user) => {
-    user.curScore = fields.curScore ? fields.curScore : user.curScore;
-    user.playerColor = fields.playerColor ? fields.playerColor : user.playerColor;
-
-    if (fields.location) {
-      const hashKey = fields.location.url + fields.location.sectionID + fields.location.sentenceID + fields.location.character;
-      console.log(hashKey);
-      LocationController.getLocationByHashKey(hashKey, (loc) => {
-        // location exists: update on location end and user end
-        if (loc) {
-          LocationController.updateLocationPlayer(username, loc, (updatedLoc) => {
-            user.curLocation = updatedLoc;
-          });
-        } else {
-          // const h = fields.location.url + fields.location.sectionID + fields.location.sentenceID + fields.location.character;
-          LocationController.createLocation(username, fields.location, (newLoc) => {
-            user.curLocation = newLoc;
-          });
-        }
-      });
-    }
-
-    user.save();
-    res(user);
-  });
+  const update = {};
+  if (fields.curScore) { update.curScore = fields.curScore; }
+  if (fields.playerColor) { update.playerColor = fields.playerColor; }
+  if (fields.location) {
+    LocationController.getOrCreateLocation(fields.location, username, (loc) => {
+      update.curLocation = loc;
+      User.findOneAndUpdate({ username }, update).then(res);
+    });
+  } else { User.findOneAndUpdate({ username }, update).then(res); }
 };
 
 export const signup = (username, res) => {
