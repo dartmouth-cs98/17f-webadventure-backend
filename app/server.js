@@ -107,7 +107,8 @@ io.on('connection', (socket) => {
     UserController.updateUser(username, fields, (result) => {
       pushPlayers();
       if (result.curLocation) {
-        pushLocationsByURL(result.curLocation.url);
+        console.log(result.curLocation);
+        pushLocationsByURL(result.curLocation);
       }
     });
   });
