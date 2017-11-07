@@ -7,6 +7,13 @@ export const getLocations = (req, res) => {
   });
 };
 
+export const getLocationsByURL = (url, res) => {
+  Location.find({ url })
+  .then((locs) => {
+    res(locs);
+  });
+};
+
 export const getLocationsByPlayer = (username, res) => {
   Location.find({ playerUsername: username })
   .then((locs) => {

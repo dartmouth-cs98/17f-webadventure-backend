@@ -11,6 +11,7 @@ const UserSchema = new Schema({
   },
   curLocation: { type: Schema.Types.ObjectId, ref: 'Location' },
   curScore: { type: Number, default: 0 },
+  highScore: { type: Number, default: 0 },
 }, {
   toJSON: {
     virtuals: true,
