@@ -1,5 +1,11 @@
 import Location from '../models/location_model';
 
+const cleanLocations = (locs) => {
+  return locs.map((loc) => {
+    return { id: loc._id, hashKey: loc.hashKey, sectionID: loc.sectionID, sentenceID: loc.sentenceID, character: loc.character, playerUsername: loc.playerUsername };
+  });
+};
+
 export const getLocations = (req, res) => {
   Location.find({})
   .then((data) => {
@@ -7,10 +13,10 @@ export const getLocations = (req, res) => {
   });
 };
 
-export const getLocationsByURL = (url, res) => {
+export const getLocationsByURL = (url, callback) => {
   Location.find({ url })
   .then((locs) => {
-    res(locs);
+    callback(cleanLocations(locs));
   });
 };
 

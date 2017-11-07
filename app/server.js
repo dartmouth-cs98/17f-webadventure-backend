@@ -70,6 +70,12 @@ io.on('connection', (socket) => {
     });
   };
 
+  const pushLocationsByURL = (url) => {
+    LocationController.getLocationsByURL(url, (locations) => {
+      io.sockets.emit('locations', locations);
+    });
+  };
+
   socket.on('getPlayer', (username, callback) => {
     console.log(`username in socket is ${username}`);
     UserController.getUser(username, (result) => {
@@ -96,6 +102,10 @@ io.on('connection', (socket) => {
   socket.on('updatePlayer', (username, fields) => {
     UserController.updateUser(username, fields, (result) => {
       pushPlayers();
+      if (result.curLocation) {
+        console.log(result);
+        pushLocationsByURL(result.curLocation.url);
+      }
     });
   });
 
@@ -112,24 +122,19 @@ io.on('connection', (socket) => {
     socket.emit('locations', locations);
   });
 
-  const pushLocations = () => {
-    LocationController.getLocations(null, (locations) => {
-      io.sockets.emit('locations', locations);
-    });
-  };
-
 // fields should be passed in as a JSON object
   socket.on('createLocation', (username, location, callback) => {
     LocationController.createLocation(username, location, (result) => {
       callback(result);
-      pushLocations();
+      console.log('location created backend');
+      pushLocationsByURL(result.url);
     });
   });
 
   socket.on('getLocationsByPlayer', (username, callback) => {
     LocationController.getLocationsByPlayer(username, (result) => {
       callback(result);
-      pushLocations();
+      pushLocationsByURL(result.url);
     });
   });
 
@@ -137,14 +142,14 @@ io.on('connection', (socket) => {
   socket.on('getLocation', (username, callback) => {
     LocationController.getLocation(username, (result) => {
       callback(result);
-      pushLocations();
+      pushLocationsByURL(result.url);
     });
   });
 
   socket.on('updateLocationPlayer', (username, location, callback) => {
     LocationController.updateLocationPlayer(username, location, (result) => {
       callback(result);
-      pushLocations();
+      pushLocationsByURL(result.url);
     });
   });
 
