@@ -7,6 +7,13 @@ const cleanUsers = (users) => {
   });
 };
 
+export const getUsers = (req, callback) => {
+  User.find({}).populate('curLocation')
+  .then((data) => {
+    callback(cleanUsers(data));
+  });
+};
+
 const cleanUser = (user) => {
   console.log(user.username);
   return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
@@ -16,13 +23,6 @@ export const getUser = (username, res) => {
   User.findOne({ username })
   .then((data) => {
     res(cleanUser(data));
-  });
-};
-
-export const getUsers = (req, callback) => {
-  User.find({}).populate('curLocation')
-  .then((data) => {
-    callback(cleanUsers(data));
   });
 };
 
