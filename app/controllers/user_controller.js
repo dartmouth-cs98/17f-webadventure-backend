@@ -29,6 +29,7 @@ export const getUsers = (req, callback) => {
 export const updateUser = (username, fields, res) => {
   const update = {};
   if (fields.curScore) { update.curScore = fields.curScore; }
+  if (fields.highScore) { update.highScore = fields.highScore; }
   if (fields.playerColor) { update.playerColor = fields.playerColor; }
   if (fields.location) {
     LocationController.getOrCreateLocation(fields.location, username, (loc) => {
@@ -47,7 +48,16 @@ export const signup = (username, playerColor, res) => {
 };
 
 export const removeUserFromGame = (username, res) => {
-  User.findOneAndUpdate({ username }, { curLocation: null })
+  User.findOne({ username })
+  .then((user) => {
+    const update = {};
+    update.curLocation = null;
+    if (user.curScore > user.highScore) {
+      update.highScore = user.curScore;
+    }
+
+    User.findOneAndUpdate({ username }, update).then(res);
+  })
   .then((user) => {
     LocationController.clearUserLocations(username);
   });
