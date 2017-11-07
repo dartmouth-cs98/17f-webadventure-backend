@@ -1,8 +1,8 @@
 import Location from '../models/location_model';
 
-const cleanLocation = (loc) => {
-  return { id: loc._id, hashKey: loc.hashKey, sectionID: loc.sectionID, sentenceID: loc.sentenceID, character: loc.character, playerUsername: loc.playerUsername };
-};
+// const cleanLocation = (loc) => {
+//   return { id: loc._id, hashKey: loc.hashKey, sectionID: loc.sectionID, sentenceID: loc.sentenceID, character: loc.character, playerUsername: loc.playerUsername };
+// };
 
 const cleanLocations = (locs) => {
   return locs.map((loc) => {
@@ -25,10 +25,8 @@ export const getLocations = (req, res) => {
 // };
 
 export const getLocationsByURL = (locID, callback) => {
-  console.log(`locID is ${locID}`);
   Location.findOne({ _id: locID })
   .then((loc) => {
-    console.log(`location is ${cleanLocation(loc)}`);
     Location.find({ url: loc.url })
     .then((locs) => {
       callback(cleanLocations(locs));
