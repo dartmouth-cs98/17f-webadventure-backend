@@ -3,7 +3,7 @@ import * as LocationController from './location_controller';
 
 const cleanUsers = (users) => {
   return users.map((user) => {
-    return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
+    return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore, highScore: user.highScore };
   });
 };
 
@@ -16,7 +16,7 @@ export const getUsers = (req, callback) => {
 
 const cleanUser = (user) => {
   console.log(user.username);
-  return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore };
+  return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore, highScore: user.highScore };
 };
 
 export const getUser = (username, res) => {
