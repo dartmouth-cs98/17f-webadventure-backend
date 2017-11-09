@@ -55,6 +55,7 @@ export const removeUserFromGame = (username, res) => {
     if (user.curScore > user.highScore) {
       update.highScore = user.curScore;
     }
+    update.curScore = null;
 
     User.findOneAndUpdate({ username }, update).then(res);
   })
