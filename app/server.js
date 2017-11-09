@@ -63,10 +63,20 @@ io.on('connection', (socket) => {
     socket.emit('players', users);
   });
 
+  LocationController.getLocations(null, (locations) => {
+    socket.emit('locations', locations);
+  });
+
   // emits to every socket
   const pushPlayers = () => {
     UserController.getUsers(null, (users) => {
       io.sockets.emit('players', users);
+    });
+  };
+
+  const pushLocationsByURL = (url) => {
+    LocationController.getLocationsByURL(url, (locations) => {
+      io.sockets.emit('locations', locations);
     });
   };
 
@@ -96,6 +106,10 @@ io.on('connection', (socket) => {
   socket.on('updatePlayer', (username, fields) => {
     UserController.updateUser(username, fields, (result) => {
       pushPlayers();
+      if (result.curLocation) {
+        console.log(result.curLocation);
+        pushLocationsByURL(result.curLocation);
+      }
     });
   });
 
@@ -106,47 +120,36 @@ io.on('connection', (socket) => {
   });
 
 
-  // LOCATION
-
-  LocationController.getLocations(null, (locations) => {
-    socket.emit('locations', locations);
-  });
-
-  const pushLocations = () => {
-    LocationController.getLocations(null, (locations) => {
-      io.sockets.emit('locations', locations);
-    });
-  };
-
 // fields should be passed in as a JSON object
-  socket.on('createLocation', (username, location, callback) => {
-    LocationController.createLocation(username, location, (result) => {
-      callback(result);
-      pushLocations();
-    });
-  });
-
-  socket.on('getLocationsByPlayer', (username, callback) => {
-    LocationController.getLocationsByPlayer(username, (result) => {
-      callback(result);
-      pushLocations();
-    });
-  });
-
-  // get location by hashkey?
-  socket.on('getLocation', (username, callback) => {
-    LocationController.getLocation(username, (result) => {
-      callback(result);
-      pushLocations();
-    });
-  });
-
-  socket.on('updateLocationPlayer', (username, location, callback) => {
-    LocationController.updateLocationPlayer(username, location, (result) => {
-      callback(result);
-      pushLocations();
-    });
-  });
+  // socket.on('createLocation', (username, location, callback) => {
+  //   LocationController.createLocation(username, location, (result) => {
+  //     callback(result);
+  //     console.log('location created backend');
+  //     pushLocationsByURL(result.url);
+  //   });
+  // });
+  //
+  // socket.on('getLocationsByPlayer', (username, callback) => {
+  //   LocationController.getLocationsByPlayer(username, (result) => {
+  //     callback(result);
+  //     pushLocationsByURL(result.url);
+  //   });
+  // });
+  //
+  // // get location by hashkey?
+  // socket.on('getLocation', (username, callback) => {
+  //   LocationController.getLocation(username, (result) => {
+  //     callback(result);
+  //     pushLocationsByURL(result.url);
+  //   });
+  // });
+  //
+  // socket.on('updateLocationPlayer', (username, location, callback) => {
+  //   LocationController.updateLocationPlayer(username, location, (result) => {
+  //     callback(result);
+  //     pushLocationsByURL(result.url);
+  //   });
+  // });
 
   // end
 });
