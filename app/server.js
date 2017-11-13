@@ -82,9 +82,10 @@ io.on('connection', (socket) => {
 
   socket.on('getPlayer', (username, callback) => {
     console.log(`username in socket is ${username}`);
-    UserController.getUser(username, (result) => {
-      callback(result);
-    });
+    UserController.getUser(username, callback);
+  });
+  socket.on('getPlayers', (callback) => {
+    UserController.getUsers(null, callback);
   });
 
 
