@@ -39,12 +39,19 @@ export const updateUser = (username, fields, res) => {
   } else { User.findOneAndUpdate({ username }, update).then(res); }
 };
 
+// check if exists
 export const signup = (username, playerColor, res) => {
-  const newUser = new User();
-  newUser.username = username;
-  newUser.playerColor = playerColor;
-  newUser.save();
-  res(cleanUser(newUser));
+  User.findOne({ username })
+  .then((user) => {
+    if (user) {
+      res(cleanUser(user));
+    }
+    const newUser = new User();
+    newUser.username = username;
+    newUser.playerColor = playerColor;
+    newUser.save();
+    res(cleanUser(newUser));
+  });
 };
 
 export const removeUserFromGame = (username, res) => {
