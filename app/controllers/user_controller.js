@@ -45,12 +45,13 @@ export const signup = (username, playerColor, res) => {
   .then((user) => {
     if (user) {
       res(cleanUser(user));
+    } else {
+      const newUser = new User();
+      newUser.username = username;
+      newUser.playerColor = playerColor;
+      newUser.save();
+      res(cleanUser(newUser));
     }
-    const newUser = new User();
-    newUser.username = username;
-    newUser.playerColor = playerColor;
-    newUser.save();
-    res(cleanUser(newUser));
   });
 };
 
