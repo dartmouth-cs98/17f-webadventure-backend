@@ -7,7 +7,7 @@ import socketio from 'socket.io';
 import http from 'http'; // https
 // import throttle from 'lodash.throttle';
 // import debounce from 'lodash.debounce';
-import apiRouter from './router';
+// import apiRouter from './router';
 import mockWiki from './mockWiki';
 
 import * as UserController from './controllers/user_controller';
@@ -44,10 +44,6 @@ app.get('/', (req, res) => {
   res.send(mockWiki);
 });
 
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/api', apiRouter);
-
 // START THE SERVER
 // =============================================================================
 const port = process.env.PORT || 9090;
@@ -67,6 +63,13 @@ io.on('connection', (socket) => {
     socket.emit('locations', locations);
   });
 
+  socket.on('getPlayer', (username, callback) => {
+    console.log(`username in socket is ${username}`);
+    UserController.getUser(username, (result) => {
+      callback(result);
+    });
+  });
+
   // emits to every socket
   const pushPlayers = () => {
     UserController.getUsers(null, (users) => {
@@ -80,15 +83,11 @@ io.on('connection', (socket) => {
     });
   };
 
-  socket.on('getPlayer', (username, callback) => {
-    console.log(`username in socket is ${username}`);
-    UserController.getUser(username, callback);
-  });
   socket.on('getPlayers', (callback) => {
     UserController.getUsers(null, callback);
   });
 
-
+  
   // catch error?
   // probably change it, use then and return the result
   socket.on('signup', (username, playerColor, callback) => {
@@ -119,38 +118,5 @@ io.on('connection', (socket) => {
       pushPlayers();
     });
   });
-
-
-// fields should be passed in as a JSON object
-  // socket.on('createLocation', (username, location, callback) => {
-  //   LocationController.createLocation(username, location, (result) => {
-  //     callback(result);
-  //     console.log('location created backend');
-  //     pushLocationsByURL(result.url);
-  //   });
-  // });
-  //
-  // socket.on('getLocationsByPlayer', (username, callback) => {
-  //   LocationController.getLocationsByPlayer(username, (result) => {
-  //     callback(result);
-  //     pushLocationsByURL(result.url);
-  //   });
-  // });
-  //
-  // // get location by hashkey?
-  // socket.on('getLocation', (username, callback) => {
-  //   LocationController.getLocation(username, (result) => {
-  //     callback(result);
-  //     pushLocationsByURL(result.url);
-  //   });
-  // });
-  //
-  // socket.on('updateLocationPlayer', (username, location, callback) => {
-  //   LocationController.updateLocationPlayer(username, location, (result) => {
-  //     callback(result);
-  //     pushLocationsByURL(result.url);
-  //   });
-  // });
-
   // end
 });

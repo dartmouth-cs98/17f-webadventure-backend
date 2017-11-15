@@ -3,7 +3,11 @@
 This is the repository for the backend of the WebAdventure Project. For more information see the repo: https://github.com/dartmouth-cs98/17f-webadventure
 
 ## Setup
-To run the backend first make sure you have MongoDB installed and start a local MongoDB server:
+The backend is automatically build via heroku.
+
+The server points to https://webadventure-api.herokuapp.com/.
+
+To run the backend **locally** first make sure you have MongoDB installed and start a local MongoDB server:
 ```
 mongod
 ```
@@ -29,7 +33,8 @@ socket.on('signup', (username, callback)
 ```
 *Parameters*: username, callback function
 - Creates a player with a relevant username. The default color of the player is red and the current score is set to 0. The created player information is passed into the callback function.
-
+- If a player is already created, then the user is simply returned into the callback function.
+- Pushes all player information to other sockets.
 
 ### updatePlayer
 ```
@@ -57,27 +62,25 @@ const fields = {
 };
 ```
 - Location object need not be created. updatePlayer checks if location exists before updating location; if it does not a new location object is created.
+- Push the current locations of all the players to other sockets.
 
-### createLocation
+### Game Over
 ```
-socket.on('createLocation', (username, location, callback)
+socket.on('gameOver', (username)
 ```
-*Parameters*: username, location, callback function
-- Creates a new location object.
-- 'location' is a JSON object that must have an (1) URL, (2) sectionID, (3) sentenceID, and (4) character (see above fields const as an example)
-- Locations must have an 'owner' to be created. The player with the passed-in username will be set as the owner of the location.
-- New location information will be passed into the callback function
+*Parameters*: username
+- Removes the user from the game (purging all locations held by that user)
+- Pushes updated player information to all other sockets.
 
-### getLocationsByPlayer
-```
-socket.on('getLocationsByPlayer', (username, callback)
-```
-*Parameters*: username, callback function
-- Get all locations owned by the player with the passed in username. The JSON object of locations will be passed into the callback function.
+## Helper Server Functions
 
-### updateLocationPlayer
 ```
-socket.on('updateLocationPlayer', (username, location, callback)
+pushPlayers
 ```
-*Parameters*: username, location, callback function
-- Update the location with a new player, who is identified by the passed-in username.
+- Emits all player information to the frontend
+
+```
+pushLocationsByURL
+```
+- Emits all location information (given a URL) to the frontend
+- Done so that people on a page can see others
