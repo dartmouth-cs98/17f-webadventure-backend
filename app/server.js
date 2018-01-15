@@ -87,7 +87,6 @@ io.on('connection', (socket) => {
     UserController.getUsers(null, callback);
   });
 
-  
   // catch error?
   // probably change it, use then and return the result
   socket.on('signup', (username, playerColor, callback) => {
