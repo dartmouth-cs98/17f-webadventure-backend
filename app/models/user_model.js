@@ -1,17 +1,21 @@
 import mongoose, { Schema } from 'mongoose';
 
-// const ObjectId = mongoose.Schema.Types.ObjectId;
-
 const UserSchema = new Schema({
   username: { type: String, unique: true },
-  playerColor: {
-    r: Number,
-    g: Number,
-    b: Number,
+  // playerColor: {
+  //   r: Number,
+  //   g: Number,
+  //   b: Number,
+  // },
+  curLocation: {
+    // hashKey: { type: String, unique: true },
+    url: { type: String },
+    sectionID: { type: Number },
+    sentenceID: { type: Number },
   },
-  curLocation: { type: Schema.Types.ObjectId, ref: 'Location' },
-  curScore: { type: Number, default: 0 },
-  highScore: { type: Number, default: 0 },
+  prevURL: { type: String },
+  curNumClicks: { type: Number, default: 0 },
+  curSecsElapsed: { type: Number, default: 0 }, // unit is seconds
 }, {
   toJSON: {
     virtuals: true,

@@ -7,7 +7,6 @@ import socketio from 'socket.io';
 import http from 'http'; // https
 // import throttle from 'lodash.throttle';
 // import debounce from 'lodash.debounce';
-// import apiRouter from './router';
 import mockWiki from './mockWiki';
 
 import * as UserController from './controllers/user_controller';
@@ -37,7 +36,6 @@ app.set('views', path.join(__dirname, '../app/views'));
 // enable json message body for posting data to API
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 
 // default index route
 app.get('/', (req, res) => {
@@ -77,38 +75,32 @@ io.on('connection', (socket) => {
     });
   };
 
-  const pushLocationsByURL = (url) => {
-    LocationController.getLocationsByURL(url, (locations) => {
-      io.sockets.emit('locations', locations);
-    });
-  };
+  // const pushLocationsByURL = (url) => {
+  //   LocationController.getLocationsByURL(url, (locations) => {
+  //     io.sockets.emit('locations', locations);
+  //   });
+  // };
 
   socket.on('getPlayers', (callback) => {
     UserController.getUsers(null, callback);
   });
 
-  // catch error?
-  // probably change it, use then and return the result
-  socket.on('signup', (username, playerColor, callback) => {
-    UserController.signup(username, playerColor, (result) => {
+  // CREATE USER -- done
+  socket.on('signup', (username, callback) => {
+    UserController.signup(username, (result) => {
       callback(result);
       pushPlayers();
     });
-    // }).catch((error) => {
-    //   console.log(error);
-    //   socket.emit('error', 'signup failed');
-    // });
   });
 
-  // smoothed later?
-  // for updating location, score, and color?
+  // UPDATED USER -- working on
   socket.on('updatePlayer', (username, fields) => {
     UserController.updateUser(username, fields, (result) => {
       pushPlayers();
-      if (result.curLocation) {
-        console.log(result.curLocation);
-        pushLocationsByURL(result.curLocation);
-      }
+      // if (result.curLocation) {
+      //   console.log(result.curLocation);
+      //   pushLocationsByURL(result.curLocation);
+      // }
     });
   });
 

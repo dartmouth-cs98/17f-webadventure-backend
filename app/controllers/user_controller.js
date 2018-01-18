@@ -3,12 +3,18 @@ import * as LocationController from './location_controller';
 
 const cleanUsers = (users) => {
   return users.map((user) => {
-    return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore, highScore: user.highScore };
+    return { id: user._id,
+      username: user.username,
+      curLocation: user.curLocation,
+      prevURL: user.prevURL,
+      curNumClicks: user.curNumClicks,
+      curSecsElapsed: user.curSecsElapsed };
   });
 };
 
 export const getUsers = (req, callback) => {
-  User.find({}).populate('curLocation')
+  // User.find({}).populate('curLocation')
+  User.find({})
   .then((data) => {
     callback(cleanUsers(data));
   });
@@ -16,7 +22,12 @@ export const getUsers = (req, callback) => {
 
 const cleanUser = (user) => {
   console.log(user.username);
-  return { id: user._id, username: user.username, playerColor: user.playerColor, curLocation: user.curLocation, curScore: user.curScore, highScore: user.highScore };
+  return { id: user._id,
+    username: user.username,
+    curLocation: user.curLocation,
+    prevURL: user.prevURL,
+    curNumClicks: user.curNumClicks,
+    curSecsElapsed: user.curSecsElapsed };
 };
 
 export const getUser = (username, res) => {
@@ -40,7 +51,7 @@ export const updateUser = (username, fields, res) => {
 };
 
 // check if exists
-export const signup = (username, playerColor, res) => {
+export const signup = (username, res) => {
   User.findOne({ username })
   .then((user) => {
     if (user) {
@@ -48,7 +59,6 @@ export const signup = (username, playerColor, res) => {
     } else {
       const newUser = new User();
       newUser.username = username;
-      newUser.playerColor = playerColor;
       newUser.save();
       res(cleanUser(newUser));
     }
