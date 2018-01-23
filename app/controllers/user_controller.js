@@ -21,7 +21,6 @@ export const getUsers = (req, callback) => {
 };
 
 const cleanUser = (user) => {
-  console.log(user.username);
   return { id: user._id,
     username: user.username,
     curLocation: user.curLocation,
@@ -39,16 +38,28 @@ export const getUser = (username, res) => {
 
 export const updateUser = (username, fields, res) => {
   const update = {};
-  if (fields.curScore) { update.curScore = fields.curScore; }
-  if (fields.highScore) { update.highScore = fields.highScore; }
-  if (fields.playerColor) { update.playerColor = fields.playerColor; }
-  if (fields.location) {
-    LocationController.getOrCreateLocation(fields.location, username, (loc) => {
-      update.curLocation = loc;
-      User.findOneAndUpdate({ username }, update).then(res);
-    });
-  } else { User.findOneAndUpdate({ username }, update).then(res); }
+  if (fields.curLocation) { update.curLocation = fields.curLocation; }
+  if (fields.prevURL) { update.prevURL = fields.prevURL; }
+  if (fields.curNumClicks) { update.curNumClicks = fields.curNumClicks; }
+  if (fields.curSecsElapsed) { update.curSecsElapsed = fields.curSecsElapsed; }
+  User.findOneAndUpdate({ username }, update, { new: true })
+  .then((data) => {
+    console.log(data);
+    res(cleanUser(data));
+  });
 };
+
+// export const updateUser = (username, fields, res) => {
+//   const update = {};
+//   if (fields.highScore) { update.highScore = fields.highScore; }
+//   if (fields.playerColor) { update.playerColor = fields.playerColor; }
+//   if (fields.location) {
+//     LocationController.getOrCreateLocation(fields.location, username, (loc) => {
+//       update.curLocation = loc;
+//       User.findOneAndUpdate({ username }, update).then(res);
+//     });
+//   } else { User.findOneAndUpdate({ username }, update).then(res); }
+// };
 
 // check if exists
 export const signup = (username, res) => {

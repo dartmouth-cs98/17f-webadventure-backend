@@ -10,7 +10,9 @@ import http from 'http'; // https
 import mockWiki from './mockWiki';
 
 import * as UserController from './controllers/user_controller';
-import * as LocationController from './controllers/location_controller';
+import * as GameController from './controllers/game_controller';
+
+// import * as LocationController from './controllers/location_controller';
 
 
 // initialize
@@ -57,15 +59,8 @@ io.on('connection', (socket) => {
     socket.emit('players', users);
   });
 
-  LocationController.getLocations(null, (locations) => {
-    socket.emit('locations', locations);
-  });
-
-  socket.on('getPlayer', (username, callback) => {
-    console.log(`username in socket is ${username}`);
-    UserController.getUser(username, (result) => {
-      callback(result);
-    });
+  GameController.getGames(null, (games) => {
+    socket.emit('games', games);
   });
 
   // emits to every socket
@@ -75,12 +70,27 @@ io.on('connection', (socket) => {
     });
   };
 
+  const pushGames = () => {
+    GameController.getGames(null, (games) => {
+      socket.emit('games', games);
+    });
+  };
+
   // const pushLocationsByURL = (url) => {
   //   LocationController.getLocationsByURL(url, (locations) => {
   //     io.sockets.emit('locations', locations);
   //   });
   // };
 
+  // READ USER (singular) -- done
+  socket.on('getPlayer', (username, callback) => {
+    console.log(`username in socket is ${username}`);
+    UserController.getUser(username, (result) => {
+      callback(result);
+    });
+  });
+
+  // READ USER (multiple) -- done
   socket.on('getPlayers', (callback) => {
     UserController.getUsers(null, callback);
   });
@@ -93,9 +103,10 @@ io.on('connection', (socket) => {
     });
   });
 
-  // UPDATED USER -- working on
-  socket.on('updatePlayer', (username, fields) => {
+  // UPDATE USER -- working on
+  socket.on('updatePlayer', (username, fields, callback) => {
     UserController.updateUser(username, fields, (result) => {
+      callback(result);
       pushPlayers();
       // if (result.curLocation) {
       //   console.log(result.curLocation);
@@ -103,6 +114,18 @@ io.on('connection', (socket) => {
       // }
     });
   });
+
+  socket.on('createGame', (username, endpoints, callback) => {
+    console.log(`game created with user${username}`);
+    GameController.createGame(username, endpoints, (result) => {
+      // pushGames();
+      callback(result);
+      pushGames();
+    });
+  });
+
+  socket.on('makeGameActive');
+
 
   socket.on('gameOver', (username) => {
     UserController.removeUserFromGame(username, (result) => {
