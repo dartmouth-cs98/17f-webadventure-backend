@@ -7,11 +7,12 @@ import socketio from 'socket.io';
 import http from 'http'; // https
 // import throttle from 'lodash.throttle';
 // import debounce from 'lodash.debounce';
-// import apiRouter from './router';
 import mockWiki from './mockWiki';
 
 import * as UserController from './controllers/user_controller';
-import * as LocationController from './controllers/location_controller';
+import * as GameController from './controllers/game_controller';
+
+// import * as LocationController from './controllers/location_controller';
 
 
 // initialize
@@ -38,7 +39,6 @@ app.set('views', path.join(__dirname, '../app/views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 // default index route
 app.get('/', (req, res) => {
   res.send(mockWiki);
@@ -59,15 +59,8 @@ io.on('connection', (socket) => {
     socket.emit('players', users);
   });
 
-  LocationController.getLocations(null, (locations) => {
-    socket.emit('locations', locations);
-  });
-
-  socket.on('getPlayer', (username, callback) => {
-    console.log(`username in socket is ${username}`);
-    UserController.getUser(username, (result) => {
-      callback(result);
-    });
+  GameController.getGames(null, (games) => {
+    socket.emit('games', games);
   });
 
   // emits to every socket
@@ -77,40 +70,62 @@ io.on('connection', (socket) => {
     });
   };
 
-  const pushLocationsByURL = (url) => {
-    LocationController.getLocationsByURL(url, (locations) => {
-      io.sockets.emit('locations', locations);
+  const pushGames = () => {
+    GameController.getGames(null, (games) => {
+      socket.emit('games', games);
     });
   };
 
+  // const pushLocationsByURL = (url) => {
+  //   LocationController.getLocationsByURL(url, (locations) => {
+  //     io.sockets.emit('locations', locations);
+  //   });
+  // };
+
+  // READ USER (singular) -- done
+  socket.on('getPlayer', (username, callback) => {
+    console.log(`username in socket is ${username}`);
+    UserController.getUser(username, (result) => {
+      callback(result);
+    });
+  });
+
+  // READ USER (multiple) -- done
   socket.on('getPlayers', (callback) => {
     UserController.getUsers(null, callback);
   });
 
-  // catch error?
-  // probably change it, use then and return the result
-  socket.on('signup', (username, playerColor, callback) => {
-    UserController.signup(username, playerColor, (result) => {
+  // CREATE USER -- done
+  socket.on('signup', (username, callback) => {
+    UserController.signup(username, (result) => {
       callback(result);
       pushPlayers();
     });
-    // }).catch((error) => {
-    //   console.log(error);
-    //   socket.emit('error', 'signup failed');
-    // });
   });
 
-  // smoothed later?
-  // for updating location, score, and color?
-  socket.on('updatePlayer', (username, fields) => {
+  // UPDATE USER -- working on
+  socket.on('updatePlayer', (username, fields, callback) => {
     UserController.updateUser(username, fields, (result) => {
+      callback(result);
       pushPlayers();
-      if (result.curLocation) {
-        console.log(result.curLocation);
-        pushLocationsByURL(result.curLocation);
-      }
+      // if (result.curLocation) {
+      //   console.log(result.curLocation);
+      //   pushLocationsByURL(result.curLocation);
+      // }
     });
   });
+
+  socket.on('createGame', (username, endpoints, callback) => {
+    console.log(`game created with user${username}`);
+    GameController.createGame(username, endpoints, (result) => {
+      // pushGames();
+      callback(result);
+      pushGames();
+    });
+  });
+
+  socket.on('makeGameActive');
+
 
   socket.on('gameOver', (username) => {
     UserController.removeUserFromGame(username, (result) => {
