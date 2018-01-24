@@ -1,5 +1,4 @@
 import User from '../models/user_model';
-import * as LocationController from './location_controller';
 
 const cleanUsers = (users) => {
   return users.map((user) => {
@@ -15,8 +14,8 @@ const cleanUsers = (users) => {
 export const getUsers = (req, callback) => {
   // User.find({}).populate('curLocation')
   User.find({})
-  .then((data) => {
-    callback(cleanUsers(data));
+  .then((result) => {
+    callback(cleanUsers(result));
   });
 };
 
@@ -31,8 +30,8 @@ const cleanUser = (user) => {
 
 export const getUser = (username, res) => {
   User.findOne({ username })
-  .then((data) => {
-    res(cleanUser(data));
+  .then((result) => {
+    res(cleanUser(result));
   });
 };
 
@@ -43,9 +42,9 @@ export const updateUser = (username, fields, res) => {
   if (fields.curNumClicks) { update.curNumClicks = fields.curNumClicks; }
   if (fields.curSecsElapsed) { update.curSecsElapsed = fields.curSecsElapsed; }
   User.findOneAndUpdate({ username }, update, { new: true })
-  .then((data) => {
-    console.log(data);
-    res(cleanUser(data));
+  .then((result) => {
+    console.log(result);
+    res(cleanUser(result));
   });
 };
 
@@ -70,25 +69,27 @@ export const signup = (username, res) => {
     } else {
       const newUser = new User();
       newUser.username = username;
-      newUser.save();
-      res(cleanUser(newUser));
+      newUser.save()
+      .then((result) => {
+        res(cleanUser(result));
+      });
     }
   });
 };
 
-export const removeUserFromGame = (username, res) => {
-  User.findOne({ username })
-  .then((user) => {
-    const update = {};
-    update.curLocation = null;
-    if (user.curScore > user.highScore) {
-      update.highScore = user.curScore;
-    }
-    update.curScore = 0;
-
-    User.findOneAndUpdate({ username }, update).then(res);
-  })
-  .then((user) => {
-    LocationController.clearUserLocations(username);
-  });
-};
+// export const removeUserFromGame = (username, res) => {
+//   User.findOne({ username })
+//   .then((user) => {
+//     const update = {};
+//     update.curLocation = null;
+//     if (user.curScore > user.highScore) {
+//       update.highScore = user.curScore;
+//     }
+//     update.curScore = 0;
+//
+//     User.findOneAndUpdate({ username }, update).then(res);
+//   })
+//   .then((user) => {
+//     LocationController.clearUserLocations(username);
+//   });
+// };
