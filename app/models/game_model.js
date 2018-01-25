@@ -1,16 +1,14 @@
 import mongoose, { Schema } from 'mongoose';
 
 const GameSchema = new Schema({
-  start_page: { type: String },
-  goal_page: { type: String },
-  // host: { type: Schema.Types.ObjectId, ref: 'User' }, // or should be stored as string?
-  host: { type: String },
+  startPage: { type: String },
+  goalPage: { type: String },
+  host: { type: Schema.Types.ObjectId, ref: 'User' },
   // hostUsername: { type: String },
-  players_scores: [{
+  playersInformation: [{
     path: [{ type: String }],
     secsElapsed: { type: Number },
     numClicks: { type: Number },
-    // player_username: { type: String },
     player: { type: Schema.Types.ObjectId, ref: 'User' },
   }],
   active: { type: Boolean, default: false },

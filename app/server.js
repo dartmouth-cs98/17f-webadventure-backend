@@ -124,8 +124,20 @@ io.on('connection', (socket) => {
     });
   });
 
-  socket.on('makeGameActive');
+  // Untested
+  socket.on('activateGame', (id, callback) => {
+    GameController.activateGame(id, (result) => {
+      callback(result);
+      pushGames();
+    });
+  });
 
+  socket.on('deactivateGame', (id, callback) => {
+    GameController.deactivateGame(id, (result) => {
+      callback(result);
+      pushGames();
+    });
+  });
 
   socket.on('gameOver', (username) => {
     UserController.removeUserFromGame(username, (result) => {

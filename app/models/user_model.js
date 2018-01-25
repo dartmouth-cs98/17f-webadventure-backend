@@ -14,6 +14,7 @@ const UserSchema = new Schema({
     sentenceID: { type: Number },
   },
   prevURL: { type: String },
+  path: [{ type: String }],
   curNumClicks: { type: Number, default: 0 },
   curSecsElapsed: { type: Number, default: 0 }, // unit is seconds
 }, {
