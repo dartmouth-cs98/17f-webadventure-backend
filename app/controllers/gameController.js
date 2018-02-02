@@ -61,7 +61,7 @@ export const joinNewGame = (gameId, username, callback) => {
     username,
     finishTime: -1,
     numClicks: 0,
-    curUrl: null,
+    curUrl: '',
   };
   Game.findById(gameId, (game) => {
     game.players = game.players.push(newPlayer);
@@ -80,7 +80,7 @@ export const leaveNewGame = (gameId, username, callback) => {
 };
 
 export const updatePlayer = (gameId, username,
-  playerInfo = { finishTime: -1, numClicks: 0, curUrl: null }, callback) => {
+  playerInfo = { finishTime: -1, numClicks: 0, curUrl: '' }, callback) => {
   return Game.findById(gameId, (game) => {
     const newPlayers = game.players.map((player) => {
       if (player.username === username) {

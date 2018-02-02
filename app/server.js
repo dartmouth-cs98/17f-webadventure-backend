@@ -16,9 +16,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/webadventure';
-mongoose.connect(mongoURI, {
-  useMongoClient: true,
-});
+mongoose.connect(mongoURI);
 mongoose.Promise = global.Promise;
 
 // enable/disable cross origin resource sharing if necessary
