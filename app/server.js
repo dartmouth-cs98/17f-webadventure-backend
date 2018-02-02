@@ -4,16 +4,12 @@ import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
 import socketio from 'socket.io';
-import http from 'http'; // https
-// import throttle from 'lodash.throttle';
-// import debounce from 'lodash.debounce';
+import http from 'http';
+
+import setupLobby from './lobbyServer';
+import * as UserController from './controllers/userController';
+import * as GameController from './controllers/gameController';
 import mockWiki from './mockWiki';
-
-import * as UserController from './controllers/user_controller';
-import * as GameController from './controllers/game_controller';
-
-// import * as LocationController from './controllers/location_controller';
-
 
 // initialize
 const app = express();
@@ -51,6 +47,7 @@ server.listen(port);
 
 console.log(`listening on: ${port}`);
 
+setupLobby(io);
 
 // connection server
 io.on('connection', (socket) => {
