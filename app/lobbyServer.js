@@ -7,13 +7,13 @@ const setupLobby = (io) => {
   lobby.on('connection', (socket) => {
     const pushGames = () => {
       GameController.getNewGames((games) => {
-        socket.emit('games', games);
+        lobby.sockets.emit('games', games);
       });
     };
 
     const pushUsers = () => {
       UserController.getActiveUsers((users) => {
-        socket.emit('users', users);
+        lobby.sockets.emit('users', users);
       });
     };
 

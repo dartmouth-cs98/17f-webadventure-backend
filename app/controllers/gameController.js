@@ -81,18 +81,17 @@ export const leaveNewGame = (gameId, username, callback) => {
 
 export const updatePlayer = (gameId, username,
   playerInfo = { finishTime: -1, numClicks: 0, curUrl: null }, callback) => {
-  Game.findById(gameId, (game) => {
+  return Game.findById(gameId, (game) => {
     const newPlayers = game.players.map((player) => {
       if (player.username === username) {
-        player.finishTime = playerInfo.finishTime;
-        player.numClicks = playerInfo.numClicks;
-        player.curUrl = playerInfo.curUrl;
+        playerInfo.forEach((key) => {
+          player[key] = playerInfo[key];
+        });
       }
       return player;
     });
     game.players = newPlayers;
     game.save();
-    callback(game);
   });
 };
 
