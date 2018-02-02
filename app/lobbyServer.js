@@ -5,43 +5,54 @@ const setupLobby = (io) => {
   const lobby = io.of('/lobby');
 
   lobby.on('connection', (socket) => {
+    const username = socket.handshake.query.username;
+    UserController.getOrCreateUser(username, (user) => {
+      if (!user) {
+        socket.close();
+        return;
+      }
+      socket.emit('curUser', user);
+    });
+
     const pushGames = () => {
       GameController.getNewGames((games) => {
-        lobby.sockets.emit('games', games);
+        lobby.emit('games', games);
       });
     };
 
     const pushUsers = () => {
       UserController.getActiveUsers((users) => {
-        lobby.sockets.emit('users', users);
+        lobby.emit('users', users);
       });
     };
 
     pushGames();
     pushUsers();
 
-    lobby.on('createGame', (req, callback) => {
+    socket.on('createGame', (req, callback) => {
       GameController.createGame(req.username, req.endpoints, (results) => {
         pushGames();
+        console.log('game created');
         callback(results);
       });
     });
 
-    lobby.on('joinNewGame', (req, callback) => {
+    socket.on('joinNewGame', (req, callback) => {
       GameController.joinNewGame(req.gameId, req.username, (results) => {
         pushGames();
         callback(results);
       });
     });
 
-    lobby.on('leaveNewGame', (req, callback) => {
+    socket.on('leaveNewGame', (req, callback) => {
       GameController.leaveNewGame(req.gameId, req.username, (results) => {
         pushGames();
         callback(results);
       });
     });
 
-    lobby.on('startGame', (gameId, callback) => {
+// Should only startGame if not started
+    socket.on('startGame', (gameId, callback) => {
       GameController.startGame(gameId).then((game) => {
         const logoutPlayers = game.players.map((player) => {
           return UserController.logoutUser(player.username);
@@ -53,8 +64,7 @@ const setupLobby = (io) => {
       });
     });
 
-  // This should be on client disconnecting, but need to get username...
-    lobby.on('logout', (username) => {
+    socket.on('disconnect', () => {
       UserController.logoutUser(username).then(() => {
         pushUsers();
       }).catch((err) => { console.log(err); });
