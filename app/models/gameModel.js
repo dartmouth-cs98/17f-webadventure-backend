@@ -1,18 +1,16 @@
 import mongoose, { Schema } from 'mongoose';
 
 const GameSchema = new Schema({
-  startPage: { type: String },
-  goalPage: { type: String },
+  startPage: String,
+  goalPage: String,
   host: { type: Schema.Types.ObjectId, ref: 'User' },
-  // hostUsername: { type: String },
-  playersInformation: [{
-    path: [{ type: String }],
-    secsElapsed: { type: Number },
-    numClicks: { type: Number },
-    player: { type: Schema.Types.ObjectId, ref: 'User' },
+  players: [{
+    finishTime: Number,
+    numClicks: Number,
+    username: String,
+    curUrl: String,
   }],
   active: { type: Boolean, default: false },
-  // createdAt: { type: Date, default: Date.now },
 },
   {
     timestamps: { createdAt: 'created_at' },
