@@ -26,6 +26,12 @@ const setupLobby = (io) => {
       });
     };
 
+    socket.on('updateUsername', (req, callback) => {
+      UserController.getOrCreateUser(req.username, (user) => {
+        socket.emit('curUser', user);
+      });
+    });
+
     pushGames();
     pushUsers();
 

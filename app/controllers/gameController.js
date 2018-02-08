@@ -6,6 +6,7 @@ export const cleanGame = (game) => {
     startPage: game.startPage,
     goalPage: game.goalPage,
     host: game.host,
+    isPrivate: game.isPrivate,
     players: game.players,
     active: game.active };
 };
@@ -23,7 +24,7 @@ export const getGames = (filter, callback) => {
 };
 
 export const getNewGames = (callback) => {
-  getGames({ active: false }, callback);
+  getGames({ active: false, isPrivate: false }, callback);
 };
 
 export const getGame = (id, res) => {
