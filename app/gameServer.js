@@ -7,11 +7,10 @@ const setupGameServer = (io) => {
     const gameId = socket.handshake.query.gameId;
 
     const pushGame = () => {
-      GameController.getGame(gameId, (users) => {
-        io.to(roomhost).emit('players', users);
+      GameController.getGame(gameId, (game) => {
+        io.to(roomhost).emit('game', game);
       });
     };
-
     socket.join(roomhost, () => {
       pushGame();
     });
