@@ -3,7 +3,7 @@ import mongoose, { Schema } from 'mongoose';
 const GameSchema = new Schema({
   startPage: String,
   goalPage: String,
-  host: { type: Schema.Types.ObjectId, ref: 'User' },
+  host: String,
   isPrivate: { type: Boolean, default: false },
   players: [{
     finishTime: Number,
