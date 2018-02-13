@@ -33,7 +33,7 @@ export const getGame = (id, res) => {
   });
 };
 
-export const createGame = (username, endpoints, callback) => {
+export const createGame = (username, isPrivate, endpoints, callback) => {
   const newGame = new Game();
 
   // Generate start and end here
@@ -43,7 +43,8 @@ export const createGame = (username, endpoints, callback) => {
   User.findOne({ username })
   .then((user) => {
     newGame.host = user;
-    newGame.playersInformation = [{
+    newGame.isPrivate = isPrivate;
+    newGame.players = [{
       finishTime: -1,
       numClicks: 0,
       username: user.username,
