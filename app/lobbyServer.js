@@ -5,14 +5,16 @@ const setupLobby = (io) => {
   const lobby = io.of('/lobby');
 
   lobby.on('connection', (socket) => {
-    const username = socket.handshake.query.username;
-    UserController.getOrCreateUser(username, (user) => {
-      if (!user) {
-        socket.close();
-        return;
-      }
-      socket.emit('curUser', user);
-    });
+    let username = socket.handshake.query.username;
+    if (username) {
+      UserController.getOrCreateUser(username, (user) => {
+        if (!user) {
+          socket.close();
+          return;
+        }
+        socket.emit('curUser', user);
+      });
+    }
 
     const pushGames = () => {
       GameController.getNewGames((games) => {
@@ -26,19 +28,27 @@ const setupLobby = (io) => {
       });
     };
 
-    socket.on('updateUsername', (req, callback) => {
-      UserController.getOrCreateUser(req.username, (user) => {
-        socket.emit('curUser', user);
-      });
-    });
-
     pushGames();
     pushUsers();
 
+    socket.on('getOrCreateUser', (req, callback) => {
+      username = req.username;
+      UserController.getOrCreateUser(req.username, (user) => {
+        callback(user);
+      });
+    });
+
+    socket.on('updateUser', (req, callback) => {
+      UserController.updateUser(req.username, { avatar: req.avatar }, (user) => {
+        callback(user);
+      });
+    });
+
     socket.on('createGame', (req, callback) => {
-      GameController.createGame(req.username, req.endpoints, (results) => {
+      // get endpoints here
+      const endpoints = req.endpoints ? req.endpoints : ['https://en.wikipedia.org/wiki/Architectural_style', 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes'];
+      GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
         pushGames();
-        console.log('game created');
         callback(results);
       });
     });
