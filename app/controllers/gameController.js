@@ -12,7 +12,7 @@ export const cleanGame = (game) => {
 };
 
 export const cleanGames = (games) => {
-  return games.map(cleanGame);
+  return games ? games.map(cleanGame) : [];
 };
 
 
@@ -29,7 +29,7 @@ export const createGame = (username, isPrivate, endpoints, callback) => {
 
   // Generate start and end here
   newGame.startPage = endpoints.startPage;
-  newGame.goalPage = endpoints.endPage;
+  newGame.goalPage = endpoints.goalPage;
 
   if (isPrivate) {
     User.findOne({ username })
@@ -76,7 +76,8 @@ export const getNewGames = (callback) => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
-        const endpoints = ['https://en.wikipedia.org/wiki/Architectural_style', 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes'];
+        const endpoints = { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
+          goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
         createGame('Public Game', false, endpoints, (game) => { return console.log(game); });
         // combine promises of create game
       }
