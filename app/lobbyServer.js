@@ -5,8 +5,10 @@ const setupLobby = (io) => {
   const lobby = io.of('/lobby');
 
   lobby.on('connection', (socket) => {
+    console.log('connected');
     let username = socket.handshake.query.username;
-    if (username) {
+    if (username && username !== null) {
+      console.log(`get User ${username}`);
       UserController.getOrCreateUser(username, (user) => {
         if (!user) {
           socket.close();
@@ -30,8 +32,11 @@ const setupLobby = (io) => {
 
     pushGames();
     pushUsers();
+    console.log('pushed');
 
     socket.on('getOrCreateUser', (req, callback) => {
+      console.log('getOrCreateUser');
+      console.log(req);
       username = req.username;
       UserController.getOrCreateUser(req.username, (user) => {
         callback(user);
@@ -46,7 +51,8 @@ const setupLobby = (io) => {
 
     socket.on('createGame', (req, callback) => {
       // get endpoints here
-      const endpoints = req.endpoints ? req.endpoints : ['https://en.wikipedia.org/wiki/Architectural_style', 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes'];
+      const endpoints = req.endpoints ? req.endpoints : { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
+        goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
       GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
         pushGames();
         callback(results);
