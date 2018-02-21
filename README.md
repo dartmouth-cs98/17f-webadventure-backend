@@ -19,7 +19,9 @@ Testing remote url
 
 ## Models:
 The backend stores 3 models in MongoDB:
-* Game : {
+* Game :
+```
+{
   startPage(String): the starting URL in the game,
   goalPage(String): the goal/ending URL in the game,
   host(String): username of the user hosting the game. If the game is public game, "public" is the host,
@@ -33,6 +35,7 @@ The backend stores 3 models in MongoDB:
   }],
   active(Boolean): boolean that indicates if the player is currently playing a game; default value is false,
 }
+```
 
 
 ## Lobby Server
