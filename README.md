@@ -3,9 +3,10 @@
 This is the repository for the backend of the WebAdventure Project. For more information see the repo: https://github.com/dartmouth-cs98/17f-webadventure
 
 ## Setup
-The backend is automatically build via heroku.
+The backend is automatically build via heroku and uses socket.io to deploy websockets.
 
 The server points to https://webadventure-api.herokuapp.com/.
+There are two servers types of connections to the backend server: Lobby Server and Game Server.
 
 To run the backend **locally** first make sure you have MongoDB installed and start a local MongoDB server:
 ```
@@ -16,7 +17,25 @@ The backend server should now be running on localhost:9090
 
 Testing remote url
 
-## Server Routes
+## Models:
+The backend stores 3 models in MongoDB:
+* Game : {
+  startPage(String): the starting URL in the game,
+  goalPage(String): the goal/ending URL in the game,
+  host(String): username of the user hosting the game. If the game is public game, "public" is the host,
+  isPrivate(Boolean): boolean that indicates whether or not the game is private,
+  players: array of players in the game. Max of 5 players.
+  [{
+    finishTime(Number): the number of seconds it takes for the user to reach the goalPage. If the user has not reached the goalPage, default value is -1,
+    numClicks(Number): the number of clicks (links the user goes through) in the game,
+    username(String): username of the player,
+    curUrl(String): current URL the player is on,
+  }],
+  active(Boolean): boolean that indicates if the player is currently playing a game; default value is false,
+}
+
+
+## Lobby Server
 Currently the server supports the following:
 
 ### getPlayer
