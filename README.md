@@ -18,8 +18,8 @@ The backend server should now be running on localhost:9090
 Testing remote url
 
 ## Models:
-The backend stores 3 models in MongoDB:
-* Game :
+The backend stores 3 models using Mongoose with MongoDB:
+* Game : represents a game
 ```
 {
   startPage(String): the starting URL in the game,
@@ -33,76 +33,47 @@ The backend stores 3 models in MongoDB:
     username(String): username of the player,
     curUrl(String): current URL the player is on,
   }],
-  active(Boolean): boolean that indicates if the player is currently playing a game; default value is false,
+  active(Boolean): boolean that indicates if the game has been started; default value is false,
+}
+```
+* User: represents a user
+```
+{
+  username(String): unique string that identifies a user,
+  active(Boolean): boolean that identifies whether the player is currently playing a game,
+  avatar([String]): an array/pair of urls to the avatar gifs of the player. The element avatar[0] = left-facing and avatar[1] = right-facing,
+}
+```
+* GamePath: represents the path a user takes in a particular game
+```
+{
+  game (Game): stores the ObjectId of the Game object connected to this game path,
+  player (User): stores the ObjectId of the User object connected to this game path,
+  path([String]): an array of urls as strings in the order the user takes to get to the goalPage,
 }
 ```
 
 
 ## Lobby Server
-Currently the server supports the following:
+The player connects to the lobby server before playing the game. The lobby contains information about what public games are available and handles players joining or creating games.
 
-### getPlayer
-```
-socket.on('getPlayer', (username, callback)
-```
-*Parameters*: username, callback function
-- Finds the player with the associated username and passes the information into the callback function.
+The events the server emits are:
+* 'games', (games) => {}: pushes the public games available for the user to join
+* 'users', (users) => {}: pushes the players currently live, but not playing a games
 
+The events the server responds to are:
+* 'getOrCreateUser', (username), (user) => {}: gets or creates a user with the given username
+* 'updateUser', (username, fields), (user) => {}: update the username
+* 'createGame', (username, endpoints, isPrivate), (game) => {}: creates a new game
+* 'joinNewGame', (gameId, username), (game) => {}: user with the provided username is added to the list of players in the games
+* 'leaveNewGame', (gameId, username), (game) => {}: user with provided username removed from the list of players in the games
+* 'startGame', (gameId), (game) => {}: starts a game by setting the game to active, logging out all the players in the game and emitting a start game event
 
-### signup
-```
-socket.on('signup', (username, callback)
-```
-*Parameters*: username, callback function
-- Creates a player with a relevant username. The default color of the player is red and the current score is set to 0. The created player information is passed into the callback function.
-- If a player is already created, then the user is simply returned into the callback function.
-- Pushes all player information to other sockets.
+## Game Server
+When the game begins the player connects to the game server.
 
-### updatePlayer
-```
-socket.on('updatePlayer', (username, fields, callback)
-```
-*Parameters*: username, fields, callback function
-- Updates a player identified by its username with the relevant fields. `fields` is a JSON object that may contain curScore, playerColor, and location (though not all those fields need to be included)
-- Example fields object:
+The events the server emits are:
+* 'game', (game) => {}: pushes the current games
 
-```
-const fields = {
- curScore: 50,
- playerColor: {
-   r: 0,
-   g: 0,
-   b: 1,
- },
- // location needs at least these 4 fields
- location: {
-   url: 'en.wikipedia.org/wiki/Dartmouth',
-   sectionID: 10,
-   sentenceID: 2,
-   character: 1,
- },
-};
-```
-- Location object need not be created. updatePlayer checks if location exists before updating location; if it does not a new location object is created.
-- Push the current locations of all the players to other sockets.
-
-### Game Over
-```
-socket.on('gameOver', (username)
-```
-*Parameters*: username
-- Removes the user from the game (purging all locations held by that user)
-- Pushes updated player information to all other sockets.
-
-## Helper Server Functions
-
-```
-pushPlayers
-```
-- Emits all player information to the frontend
-
-```
-pushLocationsByURL
-```
-- Emits all location information (given a URL) to the frontend
-- Done so that people on a page can see others
+The events the server responds to are:
+* 'updatePlayer', (gameId, username, playerInfo): updates the player's numClicks, curUrl and finishTime
