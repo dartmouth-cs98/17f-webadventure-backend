@@ -2,13 +2,18 @@ import Game from '../models/gameModel';
 import User from '../models/userModel';
 
 export const cleanGame = (game) => {
-  return { id: game._id,
-    startPage: game.startPage,
-    goalPage: game.goalPage,
-    host: game.host,
-    isPrivate: game.isPrivate,
-    players: game.players,
-    active: game.active };
+  if (game) {
+    return {
+      id: game._id,
+      startPage: game.startPage,
+      goalPage: game.goalPage,
+      host: game.host,
+      isPrivate: game.isPrivate,
+      players: game.players,
+      active: game.active,
+    };
+  }
+  return new Error('game does not exist');
 };
 
 export const cleanGames = (games) => {
@@ -64,11 +69,12 @@ export const joinNewGame = (gameId, username, callback) => {
     numClicks: 0,
     curUrl: '',
   };
-  Game.findById(gameId, (game) => {
-    game.players = game.players.push(newPlayer);
-    game.save();
-    callback(game);
-  });
+  Game.findByIdAndUpdate(gameId,
+    { $push: { players: newPlayer } },
+    { new: true },
+    (error, game) => {
+      callback(game);
+    });
 };
 
 export const getNewGames = (callback) => {
@@ -87,8 +93,12 @@ export const getNewGames = (callback) => {
 };
 
 export const getGame = (id, res) => {
-  Game.findById(id).then((result) => {
+  Game.findById(id)
+  .then((result) => {
     res(cleanGame(result));
+  })
+  .catch((error) => {
+    console.log(error);
   });
 };
 
