@@ -62,21 +62,6 @@ export const createGame = (username, isPrivate, endpoints, callback) => {
   }
 };
 
-export const joinNewGame = (gameId, username, callback) => {
-  const newPlayer = {
-    username,
-    finishTime: -1,
-    numClicks: 0,
-    curUrl: '',
-  };
-  Game.findByIdAndUpdate(gameId,
-    { $push: { players: newPlayer } },
-    { new: true },
-    (error, game) => {
-      callback(cleanGame(game));
-    });
-};
-
 export const getNewGames = (callback) => {
   getGames({ active: false, isPrivate: false }, (games) => {
     if (games.length < 5) {
@@ -102,12 +87,33 @@ export const getGame = (id, res) => {
   });
 };
 
+export const joinNewGame = (gameId, username, callback) => {
+  const newPlayer = {
+    username,
+    finishTime: -1,
+    numClicks: 0,
+    curUrl: '',
+  };
+  Game.findByIdAndUpdate(gameId,
+    { $push: { players: newPlayer } },
+    { new: true },
+    (error, game) => {
+      if (error) {
+        console.log(error);
+      }
+      callback(cleanGame(game));
+    });
+};
+
 export const leaveNewGame = (gameId, username, callback) => {
-  Game.findById(gameId, (game) => {
-    const newPlayers = game.players.filter((player) => { return player.username !== username; });
-    game.players = newPlayers;
-    game.save();
-    callback(game);
+  Game.findByIdAndUpdate(gameId,
+  { $pull: { players: { username } } },
+  { new: true },
+  (error, game) => {
+    if (error) {
+      console.log(error);
+    }
+    callback(cleanGame(game));
   });
 };
 
