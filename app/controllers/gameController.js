@@ -73,7 +73,7 @@ export const joinNewGame = (gameId, username, callback) => {
     { $push: { players: newPlayer } },
     { new: true },
     (error, game) => {
-      callback(game);
+      callback(cleanGame(game));
     });
 };
 
