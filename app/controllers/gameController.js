@@ -121,22 +121,24 @@ export const updatePlayer = (gameId, username,
   playerInfo = { finishTime: -1, numClicks: 0, curUrl: '' }, callback) => {
   return Game.findById(gameId, (game) => {
     const newPlayers = game.players.map((player) => {
+      const updatedPlayer = player;
       if (player.username === username) {
         playerInfo.forEach((key) => {
-          player[key] = playerInfo[key];
+          updatedPlayer[key] = playerInfo[key];
         });
       }
-      return player;
+      return updatedPlayer;
     });
     game.players = newPlayers;
     game.save();
+    callback(cleanGame(game));
   });
 };
 
 export const updateGame = (id, update, callback) => {
-  Game.findOneAndUpdate(id, update, callback);
+  return Game.findByIdAndUpdate(id, update, { new: true }, callback);
 };
 
-export const startGame = (gameId) => {
-  return Game.findByIdandUpdate(gameId, { active: true });
+export const startGame = (gameId, callback) => {
+  return Game.findByIdAndUpdate(gameId, { active: true }, { new: true }).then(callback);
 };
