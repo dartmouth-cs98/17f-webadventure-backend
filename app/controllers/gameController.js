@@ -62,21 +62,6 @@ export const createGame = (username, isPrivate, endpoints, callback) => {
   }
 };
 
-export const joinNewGame = (gameId, username, callback) => {
-  const newPlayer = {
-    username,
-    finishTime: -1,
-    numClicks: 0,
-    curUrl: '',
-  };
-  Game.findByIdAndUpdate(gameId,
-    { $push: { players: newPlayer } },
-    { new: true },
-    (error, game) => {
-      callback(cleanGame(game));
-    });
-};
-
 export const getNewGames = (callback) => {
   getGames({ active: false, isPrivate: false }, (games) => {
     if (games.length < 5) {
@@ -84,7 +69,7 @@ export const getNewGames = (callback) => {
         // get random endpoints here
         const endpoints = { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
           goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
-        createGame('Public Game', false, endpoints, (game) => { return console.log(game); });
+        createGame(`Game ${i + 1}`, false, endpoints, (game) => { return console.log(game); });
         // combine promises of create game
       }
     }
@@ -102,12 +87,33 @@ export const getGame = (id, res) => {
   });
 };
 
+export const joinNewGame = (gameId, username, callback) => {
+  const newPlayer = {
+    username,
+    finishTime: -1,
+    numClicks: 0,
+    curUrl: '',
+  };
+  Game.findByIdAndUpdate(gameId,
+    { $push: { players: newPlayer } },
+    { new: true },
+    (error, game) => {
+      if (error) {
+        console.log(error);
+      }
+      callback(cleanGame(game));
+    });
+};
+
 export const leaveNewGame = (gameId, username, callback) => {
-  Game.findById(gameId, (game) => {
-    const newPlayers = game.players.filter((player) => { return player.username !== username; });
-    game.players = newPlayers;
-    game.save();
-    callback(game);
+  Game.findByIdAndUpdate(gameId,
+  { $pull: { players: { username } } },
+  { new: true },
+  (error, game) => {
+    if (error) {
+      console.log(error);
+    }
+    callback(cleanGame(game));
   });
 };
 
