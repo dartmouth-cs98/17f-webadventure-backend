@@ -41,7 +41,7 @@ const setupLobby = (io) => {
     });
 
     socket.on('updateUser', (req, callback) => {
-      UserController.updateUser(req.username, { avatar: req.avatar }, (user) => {
+      UserController.updateUser(req.username, req.fields, (user) => {
         callback(user);
       });
     });
