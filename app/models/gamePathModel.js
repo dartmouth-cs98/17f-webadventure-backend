@@ -4,6 +4,7 @@ const GamePathSchema = new Schema({
   game: { type: Schema.Types.ObjectId, ref: 'Game' },
   player: { type: Schema.Types.ObjectId, ref: 'User' },
   path: [String],
+}, {
   toJSON: {
     virtuals: true,
   },

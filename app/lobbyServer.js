@@ -32,11 +32,8 @@ const setupLobby = (io) => {
 
     pushGames();
     pushUsers();
-    console.log('pushed');
 
     socket.on('getOrCreateUser', (req, callback) => {
-      console.log('getOrCreateUser');
-      console.log(req);
       username = req.username;
       UserController.getOrCreateUser(req.username, (user) => {
         callback(user);
