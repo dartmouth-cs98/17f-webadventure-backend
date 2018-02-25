@@ -58,7 +58,7 @@ export const createGame = (username, isPrivate, endpoints, callback) => {
     newGame.isPrivate = false;
     newGame.players = [];
     newGame.save();
-    callback(newGame);
+    callback(cleanGame(newGame));
   }
 };
 
@@ -78,12 +78,9 @@ export const getNewGames = (callback) => {
 };
 
 export const getGame = (id, res) => {
-  Game.findById(id)
-  .then((result) => {
+  Game.findById(id, (err, result) => {
+    if (err) { console.log(err); return; }
     res(cleanGame(result));
-  })
-  .catch((error) => {
-    console.log(error);
   });
 };
 
@@ -119,24 +116,30 @@ export const leaveNewGame = (gameId, username, callback) => {
 
 export const updatePlayer = (gameId, username,
   playerInfo = { finishTime: -1, numClicks: 0, curUrl: '' }, callback) => {
-  return Game.findById(gameId, (game) => {
+  return Game.findById(gameId, (err, game) => {
+    if (err) { console.log(err); }
     const newPlayers = game.players.map((player) => {
+      const updatedPlayer = player;
       if (player.username === username) {
-        playerInfo.forEach((key) => {
-          player[key] = playerInfo[key];
+        Object.keys(playerInfo).forEach((key) => {
+          updatedPlayer[key] = playerInfo[key];
         });
       }
-      return player;
+      return updatedPlayer;
     });
     game.players = newPlayers;
-    game.save();
+    game.save((err, updatedGame) => {
+      callback(cleanGame(updatedGame));
+    });
   });
 };
 
 export const updateGame = (id, update, callback) => {
-  Game.findOneAndUpdate(id, update, callback);
+  return Game.findByIdAndUpdate(id, update, { new: true },
+    (game) => { return callback(cleanGame(game)); });
 };
 
-export const startGame = (gameId) => {
-  return Game.findByIdandUpdate(gameId, { active: true });
+export const startGame = (gameId, callback) => {
+  return Game.findByIdAndUpdate(gameId, { active: true }, { new: true })
+  .then((game) => { return callback(cleanGame(game)); });
 };
