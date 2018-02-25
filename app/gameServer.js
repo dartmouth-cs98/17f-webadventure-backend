@@ -10,6 +10,7 @@ const setupGameServer = (io) => {
         io.to(gameId).emit('game', game);
       });
     };
+
     socket.join(gameId, () => {
       pushGame();
     });
