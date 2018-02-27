@@ -48,7 +48,7 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
         curUrl: null,
       }];
       newGame.save();
-      callback(newGame);
+      callback(cleanGame(newGame));
     }).catch((err) => {
       console.log(err);
       callback(null);
