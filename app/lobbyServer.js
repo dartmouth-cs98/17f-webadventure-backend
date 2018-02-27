@@ -35,6 +35,7 @@ const setupLobby = (io) => {
     socket.on('getOrCreateUser', (req, callback) => {
       username = req.username;
       UserController.getOrCreateUser(req.username, (user) => {
+        pushUsers();
         callback(user);
       });
     });
@@ -88,7 +89,7 @@ const setupLobby = (io) => {
     });
 
     socket.on('disconnect', () => {
-      UserController.logoutUser(username).then(() => {
+      UserController.deleteUser(username).then(() => {
         pushUsers();
       }).catch((err) => { console.log(err); });
     });

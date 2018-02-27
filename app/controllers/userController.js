@@ -40,8 +40,14 @@ export const updateUser = (username, fields, res) => {
   }).catch((err) => { console.log(err); });
 };
 
+// do we need this now?
 export const logoutUser = (username) => {
   return User.findOneAndUpdate({ username }, { active: false });
+};
+
+// is active obsolete now?
+export const deleteUser = (username) => {
+  return User.remove({ username });
 };
 
 export const getOrCreateUser = (username, res) => {
