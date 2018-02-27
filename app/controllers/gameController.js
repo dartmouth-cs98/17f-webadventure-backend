@@ -29,7 +29,7 @@ export const getGames = (filter, callback) => {
 };
 
 
-export const createGame = (username, isPrivate, endpoints, callback) => {
+export const createGame = (username, endpoints, isPrivate, callback) => {
   const newGame = new Game();
 
   // Generate start and end here
