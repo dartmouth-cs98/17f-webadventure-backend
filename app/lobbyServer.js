@@ -35,6 +35,7 @@ const setupLobby = (io) => {
     socket.on('getOrCreateUser', (req, callback) => {
       username = req.username;
       UserController.getOrCreateUser(req.username, (user) => {
+        pushUsers();
         callback(user);
       });
     });

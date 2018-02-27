@@ -40,6 +40,7 @@ export const updateUser = (username, fields, res) => {
   }).catch((err) => { console.log(err); });
 };
 
+// do we need this now?
 export const logoutUser = (username) => {
   return User.findOneAndUpdate({ username }, { active: false });
 };
