@@ -50,7 +50,10 @@ const setupLobby = (io) => {
       // get endpoints here
       const endpoints = req.endpoints ? req.endpoints : { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
         goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
-      GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
+
+      const name = req.username ? req.username : 'PG';
+      const isPrivate = req.isPrivate ? req.isPrivate : false;
+      GameController.createGame(name, endpoints, isPrivate, (results) => {
         pushGames();
         callback(results);
       });

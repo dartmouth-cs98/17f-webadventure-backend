@@ -36,6 +36,7 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
   newGame.startPage = endpoints.startPage;
   newGame.goalPage = endpoints.goalPage;
 
+  // this is a mess
   if (isPrivate) {
     User.findOne({ username })
     .then((user) => {
@@ -69,7 +70,7 @@ export const getNewGames = (callback) => {
         // get random endpoints here
         const endpoints = { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
           goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
-        createGame(`Game ${i + 1}`, false, endpoints, (game) => { return console.log(game); });
+        createGame(`Game ${i + 1}`, endpoints, false, (game) => { return console.log(game); });
         // combine promises of create game
       }
     }
