@@ -53,8 +53,9 @@ The backend stores 3 models using Mongoose with MongoDB:
 }
 ```
 
+## Socket Servers
 
-## Lobby Server
+### Lobby Server
 The player connects to the lobby server before playing the game. The lobby contains information about what public games are available and handles players joining or creating games.
 
 The events the server emits are:
@@ -69,7 +70,7 @@ The events the server responds to are:
 * 'leaveNewGame', (gameId, username), (game) => {}: user with provided username removed from the list of players in the games
 * 'startGame', (gameId), (game) => {}: starts a game by setting the game to active, logging out all the players in the game and emitting a start game event
 
-## Game Server
+### Game Server
 When the game begins the player connects to the game server.
 
 The events the server emits are:
@@ -77,3 +78,13 @@ The events the server emits are:
 
 The events the server responds to are:
 * 'updatePlayer', (gameId, username, playerInfo): updates the player's numClicks, curUrl and finishTime
+
+## API endpoints
+* `/api/endpoints`
+POST - expected params
+```
+{
+  endpoints: {startPage: 'URL', goalPage:'URL'}
+  path: ['']
+}
+```

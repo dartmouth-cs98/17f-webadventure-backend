@@ -8,7 +8,6 @@ const setupLobby = (io) => {
     console.log('connected');
     let username = socket.handshake.query.username;
     if (username && username !== null) {
-      console.log(`get User ${username}`);
       UserController.getOrCreateUser(username, (user) => {
         if (!user) {
           socket.close();
@@ -57,31 +56,33 @@ const setupLobby = (io) => {
     });
 
     socket.on('joinNewGame', (req, callback) => {
-      GameController.joinNewGame(req.gameId, req.username, (error, results) => {
-        if (error) {
-          callback(error);
-        }
-        pushGames();
+      GameController.joinNewGame(req.gameId, req.username, (results) => {
         callback(results);
+        socket.join(req.gameId, () => {
+          pushGames();
+        });
       });
     });
 
     socket.on('leaveNewGame', (req, callback) => {
       GameController.leaveNewGame(req.gameId, req.username, (results) => {
-        pushGames();
         callback(results);
+        socket.leave(req.gameId, () => {
+          pushGames();
+        });
       });
     });
 
 // Should only startGame if not started
     socket.on('startGame', (gameId, callback) => {
-      GameController.startGame(gameId).then((game) => {
+      GameController.startGame(gameId, (game) => {
         const logoutPlayers = game.players.map((player) => {
           return UserController.logoutUser(player.username);
         });
         Promise.all(logoutPlayers).then((values) => {
           pushGames();
           pushUsers();
+          lobby.to(gameId).emit('game started', game);
         });
       });
     });
