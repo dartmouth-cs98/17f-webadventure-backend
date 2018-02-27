@@ -57,7 +57,10 @@ const setupLobby = (io) => {
     });
 
     socket.on('joinNewGame', (req, callback) => {
-      GameController.joinNewGame(req.gameId, req.username, (results) => {
+      GameController.joinNewGame(req.gameId, req.username, (error, results) => {
+        if (error) {
+          callback(error);
+        }
         pushGames();
         callback(results);
       });
@@ -84,7 +87,7 @@ const setupLobby = (io) => {
     });
 
     socket.on('disconnect', () => {
-      UserController.logoutUser(username).then(() => {
+      UserController.deleteUser(username).then(() => {
         pushUsers();
       }).catch((err) => { console.log(err); });
     });

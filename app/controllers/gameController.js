@@ -94,12 +94,13 @@ export const joinNewGame = (gameId, username, callback) => {
     numClicks: 0,
     curUrl: '',
   };
-  Game.findByIdAndUpdate(gameId,
+  Game.findOneAndUpdate(
+    { _id: gameId, 'players.username': { $ne: username } },
     { $push: { players: newPlayer } },
     { new: true },
     (error, game) => {
-      if (error) {
-        console.log(error);
+      if (game === null) {
+        callback(new Error('Same username!'));
       }
       callback(cleanGame(game));
     });

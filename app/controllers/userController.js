@@ -44,6 +44,11 @@ export const logoutUser = (username) => {
   return User.findOneAndUpdate({ username }, { active: false });
 };
 
+// is active obsolete now?
+export const deleteUser = (username) => {
+  return User.remove({ username });
+};
+
 export const getOrCreateUser = (username, res) => {
   User.findOne({ username })
   .then((user) => {
