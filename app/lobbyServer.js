@@ -18,7 +18,8 @@ const setupLobby = (io) => {
     }
 
     const pushGames = () => {
-      GameController.getNewGames((games) => {
+      GameController.getNewGames();
+      GameController.getGames({ active: false }, (games) => {
         lobby.emit('games', games);
       });
     };
@@ -50,10 +51,7 @@ const setupLobby = (io) => {
       // get endpoints here
       const endpoints = req.endpoints ? req.endpoints : { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
         goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
-
-      const name = req.username ? req.username : 'PG';
-      const isPrivate = req.isPrivate ? req.isPrivate : false;
-      GameController.createGame(name, endpoints, isPrivate, (results) => {
+      GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
         pushGames();
         callback(results);
       });

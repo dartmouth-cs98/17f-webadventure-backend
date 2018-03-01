@@ -63,8 +63,8 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
   }
 };
 
-export const getNewGames = (callback) => {
-  getGames({ active: false }, (games) => {
+export const getNewGames = () => {
+  getGames({ active: false, isPrivate: false }, (games) => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
@@ -74,7 +74,6 @@ export const getNewGames = (callback) => {
         // combine promises of create game
       }
     }
-    callback(games);
   });
 };
 
