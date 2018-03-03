@@ -12,6 +12,7 @@ const GameSchema = new Schema({
     curUrl: String,
   }],
   active: { type: Boolean, default: false },
+  num: { type: Number },
 },
   {
     timestamps: { createdAt: 'created_at' },
