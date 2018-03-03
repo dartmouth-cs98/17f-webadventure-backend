@@ -53,7 +53,7 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
       });
     }).catch((err) => {
       console.log(err);
-      return null;
+      callback(null);
     });
   } else {
     newGame.host = username;
