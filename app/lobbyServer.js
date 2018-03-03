@@ -55,7 +55,6 @@ const setupLobby = (io) => {
         if (req.isPrivate) {
           socket.join(results.id);
         }
-
         pushGames();
         callback(results);
       });

@@ -48,8 +48,9 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
         username: user.username,
         curUrl: null,
       }];
-      newGame.save();
-      callback(cleanGame(newGame));
+      newGame.save((err, result) => {
+        callback(cleanGame(result));
+      });
     }).catch((err) => {
       console.log(err);
       callback(null);
@@ -58,8 +59,9 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
     newGame.host = username;
     newGame.isPrivate = false;
     newGame.players = [];
-    newGame.save();
-    callback(cleanGame(newGame));
+    newGame.save((err, result) => {
+      callback(cleanGame(result));
+    });
   }
 };
 
