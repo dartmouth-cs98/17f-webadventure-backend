@@ -52,6 +52,10 @@ const setupLobby = (io) => {
       const endpoints = req.endpoints ? req.endpoints : { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
         goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
       GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
+        if (req.isPrivate) {
+          socket.join(results.id);
+        }
+
         pushGames();
         callback(results);
       });
@@ -82,9 +86,9 @@ const setupLobby = (io) => {
           return UserController.logoutUser(player.username);
         });
         Promise.all(logoutPlayers).then((values) => {
+          io.of('/lobby').in(gameId).emit('game started', game);
           pushGames();
           pushUsers();
-          lobby.to(gameId).emit('game started', game);
         });
       });
     });
