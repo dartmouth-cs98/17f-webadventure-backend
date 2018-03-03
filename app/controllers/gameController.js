@@ -66,13 +66,22 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
 };
 
 export const getNewGames = () => {
-  getGames({ active: false, isPrivate: false }, (games) => {
+  // cleaner way to do this?
+  let gameNum;
+  Game.count({ isPrivate: false })
+  .exec((err, result) => {
+    gameNum = result + 1;
+  });
+
+  // get non active games that are public and have 0 players
+  getGames({ active: false, isPrivate: false, players: { $size: 0 } }, (games) => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
         const endpoints = { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
           goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
-        createGame(`Game ${i + 1}`, endpoints, false, (game) => { return console.log(game); });
+        createGame(`Game ${gameNum}`, endpoints, false, (game) => { return console.log(game); });
+        gameNum += 1;
         // combine promises of create game
       }
     }
