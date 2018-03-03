@@ -20,7 +20,6 @@ const setupLobby = (io) => {
     const pushGames = () => {
       GameController.getNewGames();
       GameController.getGames({ active: false }, (games) => {
-        console.log(games);
         lobby.emit('games', games);
       });
     };
@@ -53,7 +52,6 @@ const setupLobby = (io) => {
       const endpoints = req.endpoints ? req.endpoints : { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
         goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
       GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
-        console.log('createGame');
         if (req.isPrivate) {
           socket.join(results.id);
         }
