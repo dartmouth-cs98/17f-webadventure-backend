@@ -10,6 +10,8 @@ import setupLobby from './lobbyServer';
 import setupGameServer from './gameServer';
 import mockWiki from './mockWiki';
 
+import * as EndpointController from './controllers/EndpointController';
+
 // initialize
 const app = express();
 const server = http.createServer(app);
@@ -36,6 +38,12 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.send(mockWiki);
 });
+
+app.post('/api/endpoints', (req, res) => {
+  const graphPath = req.query.path ? req.query.path.split(',') : [];
+  EndpointController.insertEndpoint(req.query.startPage, req.query.goalPage, graphPath);
+});
+
 
 // START THE SERVER
 // =============================================================================
