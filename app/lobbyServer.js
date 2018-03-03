@@ -93,6 +93,11 @@ const setupLobby = (io) => {
       });
     });
 
+    socket.on('deleteGame', (gameId) => {
+      GameController.deleteGame(gameId).then(() => {
+      }).catch((err) => { console.log(err); });
+    });
+
     socket.on('disconnect', () => {
       UserController.deleteUser(username).then(() => {
         pushUsers();

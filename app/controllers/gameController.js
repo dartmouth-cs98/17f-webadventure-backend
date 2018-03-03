@@ -146,6 +146,10 @@ export const updatePlayer = (gameId, username,
   });
 };
 
+export const deleteGame = (gameId) => {
+  return Game.remove({ _id: gameId });
+};
+
 export const updateGame = (id, update, callback) => {
   return Game.findByIdAndUpdate(id, update, { new: true },
     (game) => { return callback(cleanGame(game)); });
