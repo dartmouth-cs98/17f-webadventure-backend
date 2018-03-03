@@ -74,7 +74,7 @@ export const getNewGames = () => {
   });
 
   // get non active games that are public and have 0 players
-  getGames({ active: false, isPrivate: false, players: { $where: 'this.players.length < 5' } }, (games) => {
+  getGames({ active: false, isPrivate: false, players: { $size: 0 } }, (games) => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
