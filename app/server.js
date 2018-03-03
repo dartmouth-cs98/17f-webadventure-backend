@@ -10,7 +10,7 @@ import setupLobby from './lobbyServer';
 import setupGameServer from './gameServer';
 import mockWiki from './mockWiki';
 
-import * as EndpointController from './controllers/EndpointController';
+import * as EndpointController from './controllers/endpointController';
 
 // initialize
 const app = express();
