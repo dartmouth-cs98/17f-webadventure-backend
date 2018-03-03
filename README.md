@@ -85,6 +85,6 @@ POST - expected params
 ```
 {
   endpoints: {startPage: 'URL', goalPage:'URL'}
-  path: ['']
+  path: 'string delimited by commas'
 }
 ```
