@@ -53,9 +53,7 @@ const setupLobby = (io) => {
         goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
       GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
         if (req.isPrivate) {
-          socket.join(results.id, () => {
-            console.log(`${req.username} joined`);
-          });
+          socket.join(results.id);
         }
 
         pushGames();
@@ -67,7 +65,6 @@ const setupLobby = (io) => {
       GameController.joinNewGame(req.gameId, req.username, (results) => {
         callback(results);
         socket.join(req.gameId, () => {
-          console.log(`${req.username} joined`);
           pushGames();
         });
       });
@@ -86,13 +83,9 @@ const setupLobby = (io) => {
     socket.on('startGame', (gameId, callback) => {
       GameController.startGame(gameId, (game) => {
         const logoutPlayers = game.players.map((player) => {
-          console.log(player.username);
           return UserController.logoutUser(player.username);
         });
         Promise.all(logoutPlayers).then((values) => {
-          const clients = lobby.adapter.rooms[gameId];
-          console.log(clients);
-          console.log(clients.length);
           io.of('/lobby').in(gameId).emit('game started', game);
           pushGames();
           pushUsers();
