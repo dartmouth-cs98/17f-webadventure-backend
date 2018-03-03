@@ -41,7 +41,15 @@ app.get('/', (req, res) => {
 
 app.post('/api/endpoints', (req, res) => {
   const graphPath = req.query.path ? req.query.path.split(',') : [];
-  EndpointController.insertEndpoint(req.query.startPage, req.query.goalPage, graphPath);
+  EndpointController.insertEndpoint(req.query.startPage, req.query.goalPage, graphPath, (endpoint) => {
+    res.send(endpoint);
+  });
+});
+
+app.get('/api/endpoints', (req, res) => {
+  EndpointController.getRandomEndpoint((endpoint) => {
+    res.send(endpoint);
+  });
 });
 
 
