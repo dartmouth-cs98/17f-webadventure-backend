@@ -48,11 +48,7 @@ const setupLobby = (io) => {
     });
 
     socket.on('createGame', (req, callback) => {
-      // get endpoints here
-      const endpoints = req.endpoints ? req.endpoints : {
-        startPage: 'https://en.wikipedia.org/wiki/China',
-        goalPage: 'https://en.wikipedia.org/wiki/East_Asia' };
-      GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
+      GameController.createGame(req.username, req.isPrivate, (results) => {
         if (req.isPrivate) {
           socket.join(results.id);
         }
@@ -82,6 +78,9 @@ const setupLobby = (io) => {
 // Should only startGame if not started
     socket.on('startGame', (gameId, callback) => {
       GameController.startGame(gameId, (game) => {
+        console.log('game in startGame');
+        console.log(game);
+        console.log('end');
         const logoutPlayers = game.players.map((player) => {
           return UserController.logoutUser(player.username);
         });

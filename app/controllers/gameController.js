@@ -1,5 +1,6 @@
 import Game from '../models/gameModel';
 import User from '../models/userModel';
+import { getRandomEndpoint } from '../controllers/endpointController';
 
 export const cleanGame = (game) => {
   if (game) {
@@ -29,16 +30,14 @@ export const getGames = (filter, callback) => {
 };
 
 
-export const createGame = (username, endpoints, isPrivate, callback) => {
+export const createGame = (username, isPrivate, callback) => {
   const newGame = new Game();
 
-  // Generate start and end here
-  newGame.startPage = endpoints.startPage;
-  newGame.goalPage = endpoints.goalPage;
-
-  // this is a mess
-  if (isPrivate) {
-    User.findOne({ username })
+  getRandomEndpoint((endpoint) => {
+    newGame.startPage = endpoint.startPage;
+    newGame.goalPage = endpoint.goalPage;
+    if (isPrivate) {
+      User.findOne({ username })
     .then((user) => {
       newGame.host = user.username;
       newGame.isPrivate = isPrivate;
@@ -55,14 +54,15 @@ export const createGame = (username, endpoints, isPrivate, callback) => {
       console.log(err);
       callback(null);
     });
-  } else {
-    newGame.host = username;
-    newGame.isPrivate = false;
-    newGame.players = [];
-    newGame.save((err, result) => {
-      callback(cleanGame(result));
-    });
-  }
+    } else {
+      newGame.host = username;
+      newGame.isPrivate = false;
+      newGame.players = [];
+      newGame.save((err, result) => {
+        callback(cleanGame(result));
+      });
+    }
+  });
 };
 
 export const getNewGames = () => {
@@ -78,9 +78,7 @@ export const getNewGames = () => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
-        const endpoints = { startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
-          goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
-        createGame(`Game ${gameNum}`, endpoints, false, (game) => { return console.log(game); });
+        createGame(`Game ${gameNum}`, false, (game) => { return console.log(game); });
         gameNum += 1;
         // combine promises of create game
       }
