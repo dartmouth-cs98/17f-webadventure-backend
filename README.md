@@ -81,7 +81,7 @@ The events the server responds to are:
 
 ## API endpoints
 * `/api/endpoints`
-POST - expected params
+POST - expected query object
 ```
 {
   endpoints: {startPage: 'URL', goalPage:'URL'}
