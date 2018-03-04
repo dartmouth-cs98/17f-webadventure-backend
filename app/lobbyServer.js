@@ -78,6 +78,9 @@ const setupLobby = (io) => {
 // Should only startGame if not started
     socket.on('startGame', (gameId, callback) => {
       GameController.startGame(gameId, (game) => {
+        console.log('game in startGame');
+        console.log(game);
+        console.log('end');
         const logoutPlayers = game.players.map((player) => {
           return UserController.logoutUser(player.username);
         });
@@ -87,6 +90,11 @@ const setupLobby = (io) => {
           pushUsers();
         });
       });
+    });
+
+    socket.on('deleteGame', (gameId) => {
+      GameController.deleteGame(gameId).then(() => {
+      }).catch((err) => { console.log(err); });
     });
 
     socket.on('disconnect', () => {

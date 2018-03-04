@@ -66,20 +66,12 @@ export const createGame = (username, isPrivate, callback) => {
 };
 
 export const getNewGames = () => {
-  // cleaner way to do this?
-  let gameNum;
-  Game.count({ isPrivate: false })
-  .exec((err, result) => {
-    gameNum = result + 1;
-  });
-
   // get non active games that are public and have 0 players
   getGames({ active: false, isPrivate: false, players: { $exists: true }, $where: 'this.players.length < 5' }, (games) => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
-        createGame(`Game ${gameNum}`, false, (game) => { return console.log(game); });
-        gameNum += 1;
+        createGame(`Game ${i}`, false, (game) => { return console.log(game); });
         // combine promises of create game
       }
     }
@@ -142,6 +134,10 @@ export const updatePlayer = (gameId, username,
       callback(cleanGame(updatedGame));
     });
   });
+};
+
+export const deleteGame = (gameId) => {
+  return Game.remove({ _id: gameId });
 };
 
 export const updateGame = (id, update, callback) => {
