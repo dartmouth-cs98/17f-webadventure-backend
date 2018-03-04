@@ -50,8 +50,8 @@ const setupLobby = (io) => {
     socket.on('createGame', (req, callback) => {
       // get endpoints here
       const endpoints = req.endpoints ? req.endpoints : {
-        startPage: 'https://en.wikipedia.org/wiki/Architectural_style',
-        goalPage: 'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes' };
+        startPage: 'https://en.wikipedia.org/wiki/China',
+        goalPage: 'https://en.wikipedia.org/wiki/East_Asia' };
       GameController.createGame(req.username, endpoints, req.isPrivate, (results) => {
         if (req.isPrivate) {
           socket.join(results.id);
