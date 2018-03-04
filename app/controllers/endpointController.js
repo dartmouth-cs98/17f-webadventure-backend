@@ -17,8 +17,8 @@ export const getRandomEndpoint = (callback) => {
     if (!endpoint) {
       callback({
         id: 'end',
-        startPage: 'https://en.wikipedia.org/wiki/China',
-        goalPage: 'https://en.wikipedia.org/wiki/East_Asia',
+        startPage: 'https://en.wikipedia.org/wiki/Mezzaluna',
+        goalPage: 'https://en.wikipedia.org/wiki/Knife',
         path: [],
       });
     } else {
