@@ -10,6 +10,6 @@ const EndpointSchema = new Schema({
   },
 });
 
-const EndpointModel = mongoose.model('GamePath', EndpointSchema);
+const EndpointModel = mongoose.model('Endpoint', EndpointSchema);
 
 export default EndpointModel;
