@@ -11,6 +11,7 @@ const GameSchema = new Schema({
     username: String,
     curUrl: String,
   }],
+  path: [String],
   active: { type: Boolean, default: false },
 },
   {

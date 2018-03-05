@@ -1,0 +1,1121 @@
+[{
+	"_id": {
+		"$oid": "5a9ca1c7c4680c002596d334"
+	},
+	"path": ["wikipedia.org/wiki/2012_FINA_World_Swimming_Championships_(25_m)_–_Men's_200_metre_breaststroke", "wikipedia.org/wiki/Istanbul", "wikipedia.org/wiki/Ottoman_architecture", "wikipedia.org/wiki/Church_of_the_Holy_Sepulchre", "wikipedia.org/wiki/David_Roberts_(painter)", "wikipedia.org/wiki/Royal_Coburg_Theatre"],
+	"startPage": "wikipedia.org/wiki/2012_FINA_World_Swimming_Championships_(25_m)_–_Men's_200_metre_breaststroke",
+	"goalPage": "wikipedia.org/wiki/Royal_Coburg_Theatre",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c7c4680c002596d335"
+	},
+	"path": ["wikipedia.org/wiki/Angst_der_Hellen_und_Friede_der_Seelen", "wikipedia.org/wiki/Christoph_Demantius", "wikipedia.org/wiki/Prague", "wikipedia.org/wiki/UNESCO", "wikipedia.org/wiki/Accessibility", "wikipedia.org/wiki/Web_accessibility", "wikipedia.org/wiki/Maguire_v_SOCOG_2000"],
+	"startPage": "wikipedia.org/wiki/Angst_der_Hellen_und_Friede_der_Seelen",
+	"goalPage": "wikipedia.org/wiki/Maguire_v_SOCOG_2000",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c8c4680c002596d336"
+	},
+	"path": ["wikipedia.org/wiki/Benny_Andrews", "wikipedia.org/wiki/G.I._Bill", "wikipedia.org/wiki/United_States_Merchant_Marine", "wikipedia.org/wiki/Course_(navigation)", "wikipedia.org/wiki/Navigation_room"],
+	"startPage": "wikipedia.org/wiki/Benny_Andrews",
+	"goalPage": "wikipedia.org/wiki/Navigation_room",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c8c4680c002596d337"
+	},
+	"path": ["wikipedia.org/wiki/Second_Turkic_Khaganate", "wikipedia.org/wiki/Sogdia", "wikipedia.org/wiki/Byzantine_coinage", "wikipedia.org/wiki/Depiction_of_Jesus", "wikipedia.org/wiki/Bridget_of_Sweden", "wikipedia.org/wiki/Cecilia_Ulvsdotter"],
+	"startPage": "wikipedia.org/wiki/Second_Turkic_Khaganate",
+	"goalPage": "wikipedia.org/wiki/Cecilia_Ulvsdotter",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c8c4680c002596d338"
+	},
+	"path": ["wikipedia.org/wiki/Strathclyde_(disambiguation)", "wikipedia.org/wiki/Kingdom_of_Strathclyde", "wikipedia.org/wiki/Wales", "wikipedia.org/wiki/Blaenau_Gwent", "wikipedia.org/wiki/Caerphilly_County_Borough", "wikipedia.org/wiki/List_of_places_in_Caerphilly_County_Borough", "wikipedia.org/wiki/Lansbury_Park"],
+	"startPage": "wikipedia.org/wiki/Strathclyde_(disambiguation)",
+	"goalPage": "wikipedia.org/wiki/Lansbury_Park",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c9c4680c002596d339"
+	},
+	"path": ["wikipedia.org/wiki/Cervières", "_Hautes-Alpes", "wikipedia.org/wiki/France", "wikipedia.org/wiki/Grand_Slam_(tennis)", "wikipedia.org/wiki/Grand_Slam_(golf)", "wikipedia.org/wiki/Patty_Berg", "wikipedia.org/wiki/Clock_Open"],
+	"startPage": "wikipedia.org/wiki/Cervières,_Hautes-Alpes",
+	"goalPage": "wikipedia.org/wiki/Clock_Open",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c9c4680c002596d33a"
+	},
+	"path": ["wikipedia.org/wiki/King_Kong_by_Starship", "wikipedia.org/wiki/Seoul", "wikipedia.org/wiki/Capital_city", "wikipedia.org/wiki/Bridgetown", "wikipedia.org/wiki/Diocese_of_Barbados", "wikipedia.org/wiki/Thomas_Parry_(bishop)"],
+	"startPage": "wikipedia.org/wiki/King_Kong_by_Starship",
+	"goalPage": "wikipedia.org/wiki/Thomas_Parry_(bishop)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1c9c4680c002596d33b"
+	},
+	"path": ["wikipedia.org/wiki/Baroness", "wikipedia.org/wiki/Baron", "wikipedia.org/wiki/Prince_William", "_Duke_of_Cambridge", "wikipedia.org/wiki/CTV_News", "wikipedia.org/wiki/Regina", "_Saskatchewan", "wikipedia.org/wiki/Holy_Rosary_Cathedral_(Regina)"],
+	"startPage": "wikipedia.org/wiki/Baroness",
+	"goalPage": "wikipedia.org/wiki/Holy_Rosary_Cathedral_(Regina)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cac4680c002596d33c"
+	},
+	"path": ["wikipedia.org/wiki/Bayes_linear_statistics", "wikipedia.org/wiki/Journal_of_the_Royal_Statistical_Society", "wikipedia.org/wiki/Manchester", "wikipedia.org/wiki/North_West_England", "wikipedia.org/wiki/Great_Britain_at_the_2016_Summer_Olympics", "wikipedia.org/wiki/Sailing_at_the_2016_Summer_Olympics_–_Nacra_17", "wikipedia.org/wiki/Pablo_Defazio"],
+	"startPage": "wikipedia.org/wiki/Bayes_linear_statistics",
+	"goalPage": "wikipedia.org/wiki/Pablo_Defazio",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cac4680c002596d33d"
+	},
+	"path": ["wikipedia.org/wiki/Hits_of_the_year", "wikipedia.org/wiki/Hits_of_the_Year", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/China", "wikipedia.org/wiki/2008_Summer_Olympics_medal_table", "wikipedia.org/wiki/Weightlifting_at_the_2008_Summer_Olympics_–_Men's_69_kg", "wikipedia.org/wiki/Kamal_Bahadur_Adhikari"],
+	"startPage": "wikipedia.org/wiki/Hits_of_the_year",
+	"goalPage": "wikipedia.org/wiki/Kamal_Bahadur_Adhikari",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cbc4680c002596d33e"
+	},
+	"path": ["wikipedia.org/wiki/Top_knot", "wikipedia.org/wiki/Topknot", "wikipedia.org/wiki/Māori_people", "wikipedia.org/wiki/McDonald's", "wikipedia.org/wiki/McDonald's_All-American_Game", "wikipedia.org/wiki/Orinda", "_California", "wikipedia.org/wiki/Orinda_Intermediate_School"],
+	"startPage": "wikipedia.org/wiki/Top_knot",
+	"goalPage": "wikipedia.org/wiki/Orinda_Intermediate_School",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cbc4680c002596d33f"
+	},
+	"path": ["wikipedia.org/wiki/Domenico_Tranaso", "wikipedia.org/wiki/Trani", "wikipedia.org/wiki/Judaism", "wikipedia.org/wiki/New_Age", "wikipedia.org/wiki/Physics_beyond_the_Standard_Model", "wikipedia.org/wiki/Dirac_mass"],
+	"startPage": "wikipedia.org/wiki/Domenico_Tranaso",
+	"goalPage": "wikipedia.org/wiki/Dirac_mass",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ccc4680c002596d340"
+	},
+	"path": ["wikipedia.org/wiki/Eucalyptus_marginata", "wikipedia.org/wiki/New_Zealand", "wikipedia.org/wiki/Hunt_for_the_Wilderpeople", "wikipedia.org/wiki/Twitter", "wikipedia.org/wiki/TwitPic", "wikipedia.org/wiki/Twitterrific"],
+	"startPage": "wikipedia.org/wiki/Eucalyptus_marginata",
+	"goalPage": "wikipedia.org/wiki/Twitterrific",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ccc4680c002596d341"
+	},
+	"path": ["wikipedia.org/wiki/Timothy_Huang", "wikipedia.org/wiki/Stephen_Sondheim", "wikipedia.org/wiki/YouTube", "wikipedia.org/wiki/2017_World_Series", "wikipedia.org/wiki/2017_Korean_Series", "wikipedia.org/wiki/Héctor_Noesí"],
+	"startPage": "wikipedia.org/wiki/Timothy_Huang",
+	"goalPage": "wikipedia.org/wiki/Héctor_Noesí",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cdc4680c002596d342"
+	},
+	"path": ["wikipedia.org/wiki/13th_Intelligence_Squadron", "wikipedia.org/wiki/Joint_Chiefs_of_Staff", "wikipedia.org/wiki/American_Civil_War", "wikipedia.org/wiki/Wheeling", "_West_Virginia", "wikipedia.org/wiki/Neil_Sedaka", "wikipedia.org/wiki/The_Things_We_Do_for_Love_(song)"],
+	"startPage": "wikipedia.org/wiki/13th_Intelligence_Squadron",
+	"goalPage": "wikipedia.org/wiki/The_Things_We_Do_for_Love_(song)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cdc4680c002596d343"
+	},
+	"path": ["wikipedia.org/wiki/William_Ambrose_(Baptist_minister)", "wikipedia.org/wiki/Liverpool", "wikipedia.org/wiki/Denmark", "wikipedia.org/wiki/Demographics_of_Turkey", "wikipedia.org/wiki/Kütahya_Province", "wikipedia.org/wiki/Hisarcık"],
+	"startPage": "wikipedia.org/wiki/William_Ambrose_(Baptist_minister)",
+	"goalPage": "wikipedia.org/wiki/Hisarcık",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cec4680c002596d344"
+	},
+	"path": ["wikipedia.org/wiki/Peter_Whigham", "wikipedia.org/wiki/1966_in_poetry", "wikipedia.org/wiki/The_New_York_Times", "wikipedia.org/wiki/2016_Democratic_National_Committee_email_leak", "wikipedia.org/wiki/2011–13_Russian_protests", "wikipedia.org/wiki/Gennady_Gudkov"],
+	"startPage": "wikipedia.org/wiki/Peter_Whigham",
+	"goalPage": "wikipedia.org/wiki/Gennady_Gudkov",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cec4680c002596d345"
+	},
+	"path": ["wikipedia.org/wiki/Cleonus_pigra", "wikipedia.org/wiki/Sluggish_weevil", "wikipedia.org/wiki/North_America", "wikipedia.org/wiki/Ice_hockey", "wikipedia.org/wiki/SM-liiga", "wikipedia.org/wiki/Lahti_Pelicans", "wikipedia.org/wiki/Team_Finland"],
+	"startPage": "wikipedia.org/wiki/Cleonus_pigra",
+	"goalPage": "wikipedia.org/wiki/Team_Finland",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cec4680c002596d346"
+	},
+	"path": ["wikipedia.org/wiki/Stephen_Clifford", "wikipedia.org/wiki/Port_Adelaide_Football_Club", "wikipedia.org/wiki/Stuart_O'Grady", "wikipedia.org/wiki/List_of_athletes_with_the_most_appearances_at_Olympic_Games", "wikipedia.org/wiki/Fencing_at_the_Summer_Olympics", "wikipedia.org/wiki/Fencing_at_the_1948_Summer_Olympics_–_Men's_team_épée", "wikipedia.org/wiki/Jean-Marie_Radoux"],
+	"startPage": "wikipedia.org/wiki/Stephen_Clifford",
+	"goalPage": "wikipedia.org/wiki/Jean-Marie_Radoux",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cfc4680c002596d347"
+	},
+	"path": ["wikipedia.org/wiki/Antoine_Girard", "_sieur_de_Saint_Amant", "wikipedia.org/wiki/Antoine_Girard_de_Saint-Amant", "wikipedia.org/wiki/England", "wikipedia.org/wiki/Royal_Society", "wikipedia.org/wiki/Cell_biology", "wikipedia.org/wiki/Spindle_apparatus", "wikipedia.org/wiki/Aurora_B"],
+	"startPage": "wikipedia.org/wiki/Antoine_Girard,_sieur_de_Saint_Amant",
+	"goalPage": "wikipedia.org/wiki/Aurora_B",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1cfc4680c002596d348"
+	},
+	"path": ["wikipedia.org/wiki/Radius_(computer)", "wikipedia.org/wiki/Radius_(disambiguation)", "wikipedia.org/wiki/Cylindrical_coordinate_system", "wikipedia.org/wiki/New_York_City", "wikipedia.org/wiki/Dutch_West_India_Company", "wikipedia.org/wiki/Dutch_Slave_Coast", "wikipedia.org/wiki/Savi"],
+	"startPage": "wikipedia.org/wiki/Radius_(computer)",
+	"goalPage": "wikipedia.org/wiki/Savi",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d0c4680c002596d349"
+	},
+	"path": ["wikipedia.org/wiki/March_2016_Dokuchaievsk_skirmish", "wikipedia.org/wiki/Timeline_of_the_war_in_Donbass_(January–March_2016)", "wikipedia.org/wiki/Paris", "wikipedia.org/wiki/Montreal", "wikipedia.org/wiki/Golden_Square_Mile", "wikipedia.org/wiki/Andrew_Frederick_Gault"],
+	"startPage": "wikipedia.org/wiki/March_2016_Dokuchaievsk_skirmish",
+	"goalPage": "wikipedia.org/wiki/Andrew_Frederick_Gault",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d0c4680c002596d34a"
+	},
+	"path": ["wikipedia.org/wiki/Name_brand_drug", "wikipedia.org/wiki/Pharmaceutical_drug", "wikipedia.org/wiki/World_Health_Organization", "wikipedia.org/wiki/Rod_of_Asclepius", "wikipedia.org/wiki/Aesculapian_snake", "wikipedia.org/wiki/List_of_snake_genera", "wikipedia.org/wiki/Dryophiops"],
+	"startPage": "wikipedia.org/wiki/Name_brand_drug",
+	"goalPage": "wikipedia.org/wiki/Dryophiops",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d1c4680c002596d34b"
+	},
+	"path": ["wikipedia.org/wiki/Władysławów", "_Pabianice_County", "wikipedia.org/wiki/Łódź", "wikipedia.org/wiki/Europe", "wikipedia.org/wiki/Fauna_of_Europe", "wikipedia.org/wiki/Hylidae", "wikipedia.org/wiki/Phasmahyla"],
+	"startPage": "wikipedia.org/wiki/Władysławów,_Pabianice_County",
+	"goalPage": "wikipedia.org/wiki/Phasmahyla",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d2c4680c002596d34c"
+	},
+	"path": ["wikipedia.org/wiki/Military_Police_of_Goiás_State", "wikipedia.org/wiki/City", "wikipedia.org/wiki/New_York_City", "wikipedia.org/wiki/List_of_films_set_in_New_York_City", "wikipedia.org/wiki/The_Unspeakable_Act", "wikipedia.org/wiki/College_major"],
+	"startPage": "wikipedia.org/wiki/Military_Police_of_Goiás_State",
+	"goalPage": "wikipedia.org/wiki/College_major",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d3c4680c002596d34d"
+	},
+	"path": ["wikipedia.org/wiki/Regina_Askia-Williams", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/Christopher_Columbus", "wikipedia.org/wiki/Eleanor_of_Viseu", "wikipedia.org/wiki/Igreja_da_Madre_de_Deus_(São_João)", "wikipedia.org/wiki/List_of_churches_in_Portugal", "wikipedia.org/wiki/Igreja_do_Convento_do_Louriçal"],
+	"startPage": "wikipedia.org/wiki/Regina_Askia-Williams",
+	"goalPage": "wikipedia.org/wiki/Igreja_do_Convento_do_Louriçal",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d4c4680c002596d34e"
+	},
+	"path": ["wikipedia.org/wiki/William_H_G_Bullard", "wikipedia.org/wiki/William_H._G._Bullard", "wikipedia.org/wiki/Washington", "_D.C.", "wikipedia.org/wiki/Amsterdam", "wikipedia.org/wiki/Armin_van_Buuren", "wikipedia.org/wiki/Krezip"],
+	"startPage": "wikipedia.org/wiki/William_H_G_Bullard",
+	"goalPage": "wikipedia.org/wiki/Krezip",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d4c4680c002596d34f"
+	},
+	"path": ["wikipedia.org/wiki/George_Hall_(American_football)", "wikipedia.org/wiki/Purdue_Boilermakers_football", "wikipedia.org/wiki/List_of_NCAA_Division_I_institutions", "wikipedia.org/wiki/Alabama_State_University", "wikipedia.org/wiki/Tonea_Stewart", "wikipedia.org/wiki/Cora_(American_Horror_Story)"],
+	"startPage": "wikipedia.org/wiki/George_Hall_(American_football)",
+	"goalPage": "wikipedia.org/wiki/Cora_(American_Horror_Story)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d5c4680c002596d350"
+	},
+	"path": ["wikipedia.org/wiki/List_of_football_clubs_in_Niue", "wikipedia.org/wiki/Mutalau", "wikipedia.org/wiki/YouTube", "wikipedia.org/wiki/Newshub", "wikipedia.org/wiki/Japan_Cup", "wikipedia.org/wiki/Half_Iced", "wikipedia.org/wiki/W_L_McKnight_Handicap"],
+	"startPage": "wikipedia.org/wiki/List_of_football_clubs_in_Niue",
+	"goalPage": "wikipedia.org/wiki/W_L_McKnight_Handicap",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d5c4680c002596d351"
+	},
+	"path": ["wikipedia.org/wiki/J2_(comics)", "wikipedia.org/wiki/X-People", "wikipedia.org/wiki/Australia", "wikipedia.org/wiki/Department_of_Defence_(Australia)", "wikipedia.org/wiki/Defence_Science_and_Technology_Group", "wikipedia.org/wiki/John_Farrands", "wikipedia.org/wiki/Department_of_Science_and_Technology_(Australia)"],
+	"startPage": "wikipedia.org/wiki/J2_(comics)",
+	"goalPage": "wikipedia.org/wiki/Department_of_Science_and_Technology_(Australia)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d5c4680c002596d352"
+	},
+	"path": ["wikipedia.org/wiki/Gun_laying", "wikipedia.org/wiki/Malta", "wikipedia.org/wiki/IPTV", "wikipedia.org/wiki/CenturyLink", "wikipedia.org/wiki/Pacific_Telecom", "wikipedia.org/wiki/Alascom"],
+	"startPage": "wikipedia.org/wiki/Gun_laying",
+	"goalPage": "wikipedia.org/wiki/Alascom",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d6c4680c002596d353"
+	},
+	"path": ["wikipedia.org/wiki/Skuter", "wikipedia.org/wiki/Skater_(band)", "wikipedia.org/wiki/Dance_music", "wikipedia.org/wiki/Tony_Wilson", "wikipedia.org/wiki/North_East_England", "wikipedia.org/wiki/Tanks_in_the_British_Army", "wikipedia.org/wiki/Light_Tank_Mk_I"],
+	"startPage": "wikipedia.org/wiki/Skuter",
+	"goalPage": "wikipedia.org/wiki/Light_Tank_Mk_I",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d6c4680c002596d354"
+	},
+	"path": ["wikipedia.org/wiki/Graca_Machel_Mandela", "wikipedia.org/wiki/Graça_Machel", "wikipedia.org/wiki/First_Lady_of_South_Africa", "wikipedia.org/wiki/Thabo_Mbeki", "wikipedia.org/wiki/Christopher_Robert_Nicholson", "wikipedia.org/wiki/Ravenor_Nicholson"],
+	"startPage": "wikipedia.org/wiki/Graca_Machel_Mandela",
+	"goalPage": "wikipedia.org/wiki/Ravenor_Nicholson",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d6c4680c002596d355"
+	},
+	"path": ["wikipedia.org/wiki/Mr._Video", "wikipedia.org/wiki/Mario", "wikipedia.org/wiki/Orlando", "_Florida", "wikipedia.org/wiki/Southern_Airways", "wikipedia.org/wiki/Greenville", "_Mississippi", "wikipedia.org/wiki/Frank_White_(baseball_player)"],
+	"startPage": "wikipedia.org/wiki/Mr._Video",
+	"goalPage": "wikipedia.org/wiki/Frank_White_(baseball_player)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d7c4680c002596d356"
+	},
+	"path": ["wikipedia.org/wiki/Now_That's_What_I_Call_Music!_40_(U.K._series)", "wikipedia.org/wiki/Now_That's_What_I_Call_Music!_40_(UK_series)", "wikipedia.org/wiki/I_Get_Lonely", "wikipedia.org/wiki/Italy", "wikipedia.org/wiki/Franco-Provençal_language", "wikipedia.org/wiki/Les_Hôpitaux-Vieux"],
+	"startPage": "wikipedia.org/wiki/Now_That's_What_I_Call_Music!_40_(U.K._series)",
+	"goalPage": "wikipedia.org/wiki/Les_Hôpitaux-Vieux",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d7c4680c002596d357"
+	},
+	"path": ["wikipedia.org/wiki/Mike_McCarron_(basketball)", "wikipedia.org/wiki/Mike_McCarron", "wikipedia.org/wiki/National_Basketball_Association", "wikipedia.org/wiki/Oregon", "wikipedia.org/wiki/Mediterranean_climate", "wikipedia.org/wiki/Helichrysum", "wikipedia.org/wiki/Helichrysum_secundiflorum"],
+	"startPage": "wikipedia.org/wiki/Mike_McCarron_(basketball)",
+	"goalPage": "wikipedia.org/wiki/Helichrysum_secundiflorum",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d8c4680c002596d358"
+	},
+	"path": ["wikipedia.org/wiki/GP_Czech_Republic", "wikipedia.org/wiki/Visegrad_4_Bicycle_Race", "wikipedia.org/wiki/Slovakia", "wikipedia.org/wiki/Volkswagen_Up", "wikipedia.org/wiki/Top_Gear_(2002_TV_series)", "wikipedia.org/wiki/James_May's_Cars_of_the_People"],
+	"startPage": "wikipedia.org/wiki/GP_Czech_Republic",
+	"goalPage": "wikipedia.org/wiki/James_May's_Cars_of_the_People",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d8c4680c002596d359"
+	},
+	"path": ["wikipedia.org/wiki/David_Dusa", "wikipedia.org/wiki/Norway", "wikipedia.org/wiki/Japanese_language", "wikipedia.org/wiki/Manyogana"],
+	"startPage": "wikipedia.org/wiki/David_Dusa",
+	"goalPage": "wikipedia.org/wiki/Manyogana",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d9c4680c002596d35a"
+	},
+	"path": ["wikipedia.org/wiki/Borlange_HK", "wikipedia.org/wiki/Borlänge_HK", "wikipedia.org/wiki/Sweden", "wikipedia.org/wiki/The_Washington_Times", "wikipedia.org/wiki/Media_in_Washington", "_D.C.", "wikipedia.org/wiki/WGOP"],
+	"startPage": "wikipedia.org/wiki/Borlange_HK",
+	"goalPage": "wikipedia.org/wiki/WGOP",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1d9c4680c002596d35b"
+	},
+	"path": ["wikipedia.org/wiki/2015_IS_Open_de_Tênis_–_Doubles", "wikipedia.org/wiki/Thiago_Monteiro_(tennis)", "wikipedia.org/wiki/Netherlands", "wikipedia.org/wiki/The_Voice_(TV_series)", "wikipedia.org/wiki/Michael_Poghosyan", "wikipedia.org/wiki/Lost_"],
+	"startPage": "wikipedia.org/wiki/2015_IS_Open_de_Tênis_–_Doubles",
+	"goalPage": "wikipedia.org/wiki/Levon_Haroutyunyan",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1dac4680c002596d35c"
+	},
+	"path": ["wikipedia.org/wiki/Damiao_Vinicius_Ribeiro", "wikipedia.org/wiki/Damião_Vinícius_Ribeiro", "wikipedia.org/wiki/Estádio_da_Gávea", "wikipedia.org/wiki/Metallica", "wikipedia.org/wiki/San_Francisco_Bay_Area", "wikipedia.org/wiki/Clayton-Marsh_Creek-Greenville_Fault"],
+	"startPage": "wikipedia.org/wiki/Damiao_Vinicius_Ribeiro",
+	"goalPage": "wikipedia.org/wiki/Clayton-Marsh_Creek-Greenville_Fault",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1dac4680c002596d35d"
+	},
+	"path": ["wikipedia.org/wiki/List_of_universities_in_Baku", "wikipedia.org/wiki/Baku_Slavic_University", "wikipedia.org/wiki/Commonwealth_Games", "wikipedia.org/wiki/The_Bahamas", "wikipedia.org/wiki/Index_of_Bahamas-related_articles", "wikipedia.org/wiki/Rose_Island", "_Bahamas"],
+	"startPage": "wikipedia.org/wiki/List_of_universities_in_Baku",
+	"goalPage": "wikipedia.org/wiki/Rose_Island,_Bahamas",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1dbc4680c002596d35e"
+	},
+	"path": ["wikipedia.org/wiki/Voyeur_(horse)", "wikipedia.org/wiki/Dutch_Warmblood", "wikipedia.org/wiki/Netherlands", "wikipedia.org/wiki/France_in_the_Middle_Ages", "wikipedia.org/wiki/Roman_Catholic_Archdiocese_of_Albi", "wikipedia.org/wiki/Henri_de_Nesmond"],
+	"startPage": "wikipedia.org/wiki/Voyeur_(horse)",
+	"goalPage": "wikipedia.org/wiki/Henri_de_Nesmond",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1dcc4680c002596d35f"
+	},
+	"path": ["wikipedia.org/wiki/Glass_bloodfin_tetra", "wikipedia.org/wiki/South_America", "wikipedia.org/wiki/Salvador", "_Bahia", "wikipedia.org/wiki/Ford_Fiesta", "wikipedia.org/wiki/Pirelli", "wikipedia.org/wiki/Formula_One_Championship"],
+	"startPage": "wikipedia.org/wiki/Glass_bloodfin_tetra",
+	"goalPage": "wikipedia.org/wiki/Formula_One_Championship",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ddc4680c002596d360"
+	},
+	"path": ["wikipedia.org/wiki/List_of_New_Hampshire_Historical_Markers_(1–25)", "wikipedia.org/wiki/List_of_New_Hampshire_historical_markers_(1–25)", "wikipedia.org/wiki/John_Smith_(explorer)", "wikipedia.org/wiki/Ottoman_Empire", "wikipedia.org/wiki/Fenerbahçe_S.K.", "wikipedia.org/wiki/Fenerbahçe_Women's_Volleyball", "wikipedia.org/wiki/Tatiana_Alves_dos_Santos"],
+	"startPage": "wikipedia.org/wiki/List_of_New_Hampshire_Historical_Markers_(1–25)",
+	"goalPage": "wikipedia.org/wiki/Tatiana_Alves_dos_Santos",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ddc4680c002596d361"
+	},
+	"path": ["wikipedia.org/wiki/Political_parties_in_Israel", "wikipedia.org/wiki/List_of_political_parties_in_Israel", "wikipedia.org/wiki/Haredi_Judaism", "wikipedia.org/wiki/New_York_City", "wikipedia.org/wiki/MTR", "wikipedia.org/wiki/South_Island_Line"],
+	"startPage": "wikipedia.org/wiki/Political_parties_in_Israel",
+	"goalPage": "wikipedia.org/wiki/South_Island_Line",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1dec4680c002596d362"
+	},
+	"path": ["wikipedia.org/wiki/Goodman_-_Nguyen_-_van_Fraassen_algebra", "wikipedia.org/wiki/Goodman–Nguyen–van_Fraassen_algebra", "wikipedia.org/wiki/Taylor_series", "wikipedia.org/wiki/YouTube", "wikipedia.org/wiki/Netflix", "wikipedia.org/wiki/List_of_original_programs_distributed_by_Netflix", "wikipedia.org/wiki/Nightflyers_(TV_series)"],
+	"startPage": "wikipedia.org/wiki/Goodman_-_Nguyen_-_van_Fraassen_algebra",
+	"goalPage": "wikipedia.org/wiki/Nightflyers_(TV_series)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1dec4680c002596d363"
+	},
+	"path": ["wikipedia.org/wiki/Clara_Ponsatí_i_Obiols", "wikipedia.org/wiki/Carles_Puigdemont", "wikipedia.org/wiki/FC_Barcelona", "wikipedia.org/wiki/Hugo_Sotil", "wikipedia.org/wiki/1982_Torneo_Descentralizado", "wikipedia.org/wiki/Club_Mariscal_Castilla"],
+	"startPage": "wikipedia.org/wiki/Clara_Ponsatí_i_Obiols",
+	"goalPage": "wikipedia.org/wiki/Club_Mariscal_Castilla",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e2c4680c002596d364"
+	},
+	"path": ["wikipedia.org/wiki/Opisthostoma_dormani", "wikipedia.org/wiki/Mollusca", "wikipedia.org/wiki/Tyrian_purple", "wikipedia.org/wiki/History", "wikipedia.org/wiki/List_of_history_journals", "wikipedia.org/wiki/List_of_historical_societies", "wikipedia.org/wiki/Cedar_Falls_Historical_Society"],
+	"startPage": "wikipedia.org/wiki/Opisthostoma_dormani",
+	"goalPage": "wikipedia.org/wiki/Cedar_Falls_Historical_Society",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e2c4680c002596d365"
+	},
+	"path": ["wikipedia.org/wiki/Nitrogen_Tetroxide", "wikipedia.org/wiki/Dinitrogen_tetroxide", "wikipedia.org/wiki/Copper", "wikipedia.org/wiki/Adenoviridae", "wikipedia.org/wiki/Arabian_horse", "wikipedia.org/wiki/Sport_horse", "wikipedia.org/wiki/World_Breeding_Federation_for_Sport_Horses"],
+	"startPage": "wikipedia.org/wiki/Nitrogen_Tetroxide",
+	"goalPage": "wikipedia.org/wiki/World_Breeding_Federation_for_Sport_Horses",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e3c4680c002596d366"
+	},
+	"path": ["wikipedia.org/wiki/James_Fullarton_Muirhead", "wikipedia.org/wiki/Baedeker", "wikipedia.org/wiki/Olympic_Games", "wikipedia.org/wiki/Jesse_Owens", "wikipedia.org/wiki/Athletics_at_the_1936_Summer_Olympics_–_Men's_4_×_100_metres_relay", "wikipedia.org/wiki/Gyula_Gyenes"],
+	"startPage": "wikipedia.org/wiki/James_Fullarton_Muirhead",
+	"goalPage": "wikipedia.org/wiki/Gyula_Gyenes",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e4c4680c002596d367"
+	},
+	"path": ["wikipedia.org/wiki/MOGiS", "wikipedia.org/wiki/MissbrauchsOpfer_Gegen_InternetSperren", "wikipedia.org/wiki/Germany", "wikipedia.org/wiki/Academy_Award_for_Best_Foreign_Language_Film", "wikipedia.org/wiki/Cinema_of_Hong_Kong", "wikipedia.org/wiki/Yam_Kim_Fai"],
+	"startPage": "wikipedia.org/wiki/MOGiS",
+	"goalPage": "wikipedia.org/wiki/Yam_Kim_Fai",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e4c4680c002596d368"
+	},
+	"path": ["wikipedia.org/wiki/Dino_Betti_van_der_Noot", "wikipedia.org/wiki/Bill_Evans", "wikipedia.org/wiki/Gunther_Schuller", "wikipedia.org/wiki/Houston_Grand_Opera", "wikipedia.org/wiki/Henry_Mollicone", "wikipedia.org/wiki/The_Face_on_the_Barroom_Floor_(painting)", "wikipedia.org/wiki/Hugh_Antoine_D'Arcy"],
+	"startPage": "wikipedia.org/wiki/Dino_Betti_van_der_Noot",
+	"goalPage": "wikipedia.org/wiki/Hugh_Antoine_D'Arcy",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e5c4680c002596d369"
+	},
+	"path": ["wikipedia.org/wiki/Divizia_A_1977-78", "wikipedia.org/wiki/1977–78_Divizia_A", "wikipedia.org/wiki/FC_Steaua_București", "wikipedia.org/wiki/England", "wikipedia.org/wiki/English_Americans", "wikipedia.org/wiki/Penny_(United_States_coin)", "wikipedia.org/wiki/2018_cent"],
+	"startPage": "wikipedia.org/wiki/Divizia_A_1977-78",
+	"goalPage": "wikipedia.org/wiki/2018_cent",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e5c4680c002596d36a"
+	},
+	"path": ["wikipedia.org/wiki/Qbank", "wikipedia.org/wiki/Stockholm", "wikipedia.org/wiki/Tyresö_Municipality", "wikipedia.org/wiki/Poland", "wikipedia.org/wiki/Polish_contribution_to_World_War_II", "wikipedia.org/wiki/Marceli_Struszyński"],
+	"startPage": "wikipedia.org/wiki/Qbank",
+	"goalPage": "wikipedia.org/wiki/Marceli_Struszyński",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e5c4680c002596d36b"
+	},
+	"path": ["wikipedia.org/wiki/Cue_sports_at_the_2006_Asian_Games_-_Women's_nine-ball_singles", "wikipedia.org/wiki/Cue_sports_at_the_2006_Asian_Games_–_Women's_nine-ball_singles", "wikipedia.org/wiki/2006_Asian_Games", "wikipedia.org/wiki/Equestrianism", "wikipedia.org/wiki/Horse_racing", "wikipedia.org/wiki/Northern_Dancer", "wikipedia.org/wiki/Invincible_Spirit"],
+	"startPage": "wikipedia.org/wiki/Cue_sports_at_the_2006_Asian_Games_-_Women's_nine-ball_singles",
+	"goalPage": "wikipedia.org/wiki/Invincible_Spirit",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e6c4680c002596d36c"
+	},
+	"path": ["wikipedia.org/wiki/Burton_Cove", "wikipedia.org/wiki/South_Georgia_Island", "wikipedia.org/wiki/Köppen_climate_classification", "wikipedia.org/wiki/Maharashtra", "wikipedia.org/wiki/Maharashtra_Legislative_Assembly_election", "_2014", "wikipedia.org/wiki/Melghat_(Vidhan_Sabha_constituency)"],
+	"startPage": "wikipedia.org/wiki/Burton_Cove",
+	"goalPage": "wikipedia.org/wiki/Melghat_(Vidhan_Sabha_constituency)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e6c4680c002596d36d"
+	},
+	"path": ["wikipedia.org/wiki/List_of_BAC_One-Eleven_operators", "wikipedia.org/wiki/Braniff_International_Airways", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/United_States_Senate_elections", "_2014", "wikipedia.org/wiki/United_States_Senate_elections", "_1918", "wikipedia.org/wiki/Charles_Henderson_(Nevada)"],
+	"startPage": "wikipedia.org/wiki/List_of_BAC_One-Eleven_operators",
+	"goalPage": "wikipedia.org/wiki/Charles_Henderson_(Nevada)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e7c4680c002596d36e"
+	},
+	"path": ["wikipedia.org/wiki/Palace_of_the_Moon_1", "wikipedia.org/wiki/Yuegong-1", "wikipedia.org/wiki/Beijing", "wikipedia.org/wiki/World_Digital_Library", "wikipedia.org/wiki/Arabic", "wikipedia.org/wiki/Moroccan_Arabic", "wikipedia.org/wiki/KtbDarija"],
+	"startPage": "wikipedia.org/wiki/Palace_of_the_Moon_1",
+	"goalPage": "wikipedia.org/wiki/KtbDarija",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e7c4680c002596d36f"
+	},
+	"path": ["wikipedia.org/wiki/Evander_B._McGilvary", "wikipedia.org/wiki/Evander_Bradley_McGilvary", "wikipedia.org/wiki/Princeton_Theological_Seminary", "wikipedia.org/wiki/New_York_City", "wikipedia.org/wiki/New_York_Giants", "wikipedia.org/wiki/1997–98_NFL_playoffs", "wikipedia.org/wiki/Travis_Davis"],
+	"startPage": "wikipedia.org/wiki/Evander_B._McGilvary",
+	"goalPage": "wikipedia.org/wiki/Travis_Davis",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e8c4680c002596d371"
+	},
+	"path": ["wikipedia.org/wiki/Nedumangad", "wikipedia.org/wiki/English_language", "wikipedia.org/wiki/Northern_Cities_Vowel_Shift", "wikipedia.org/wiki/Minneapolis–Saint_Paul", "wikipedia.org/wiki/Le_Sueur_County", "_Minnesota", "wikipedia.org/wiki/Cleveland_Township", "_Le_Sueur_County", "_Minnesota"],
+	"startPage": "wikipedia.org/wiki/Nedumangad",
+	"goalPage": "wikipedia.org/wiki/Cleveland_Township,_Le_Sueur_County,_Minnesota",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e9c4680c002596d372"
+	},
+	"path": ["wikipedia.org/wiki/Iraqi_political_parties", "wikipedia.org/wiki/List_of_political_parties_in_Iraq", "wikipedia.org/wiki/Jalal_Talabani", "wikipedia.org/wiki/CNN", "wikipedia.org/wiki/List_of_programs_broadcast_by_CNN", "wikipedia.org/wiki/Tom_Cassidy_(CNN)"],
+	"startPage": "wikipedia.org/wiki/Iraqi_political_parties",
+	"goalPage": "wikipedia.org/wiki/Tom_Cassidy_(CNN)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1e9c4680c002596d373"
+	},
+	"path": ["wikipedia.org/wiki/Financial_products", "wikipedia.org/wiki/Financial_services", "wikipedia.org/wiki/London", "wikipedia.org/wiki/Royal_Academy_of_Music", "wikipedia.org/wiki/Serenade_to_Music", "wikipedia.org/wiki/Frank_Titterton"],
+	"startPage": "wikipedia.org/wiki/Financial_products",
+	"goalPage": "wikipedia.org/wiki/Frank_Titterton",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1eac4680c002596d374"
+	},
+	"path": ["wikipedia.org/wiki/Proto-language_(historical_linguistics)", "wikipedia.org/wiki/Proto-language", "wikipedia.org/wiki/German_language", "wikipedia.org/wiki/Barossa_Valley", "wikipedia.org/wiki/Premier_of_South_Australia", "wikipedia.org/wiki/Electoral_district_of_Wallaroo", "wikipedia.org/wiki/Robert_Dalrymple_Ross"],
+	"startPage": "wikipedia.org/wiki/Proto-language_(historical_linguistics)",
+	"goalPage": "wikipedia.org/wiki/Robert_Dalrymple_Ross",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1eac4680c002596d375"
+	},
+	"path": ["wikipedia.org/wiki/Manja_(film)", "wikipedia.org/wiki/Sejo_John", "wikipedia.org/wiki/Pump_organ", "wikipedia.org/wiki/Christian_Gottlieb_Kratzenstein", "wikipedia.org/wiki/Copenhagen", "wikipedia.org/wiki/Copenhagen_Carnival"],
+	"startPage": "wikipedia.org/wiki/Manja_(film)",
+	"goalPage": "wikipedia.org/wiki/Copenhagen_Carnival",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1eac4680c002596d376"
+	},
+	"path": ["wikipedia.org/wiki/Chichibu_Tama_National_Park", "wikipedia.org/wiki/Chichibu_Tama_Kai_National_Park", "wikipedia.org/wiki/Tokyo", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/Joint_Comprehensive_Plan_of_Action", "wikipedia.org/wiki/Mike_Huckabee", "wikipedia.org/wiki/Arkansas_gubernatorial_election", "_1998"],
+	"startPage": "wikipedia.org/wiki/Chichibu_Tama_National_Park",
+	"goalPage": "wikipedia.org/wiki/Arkansas_gubernatorial_election,_1998",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ebc4680c002596d377"
+	},
+	"path": ["wikipedia.org/wiki/Bobby_Robinson_(footballer)", "wikipedia.org/wiki/Edinburgh", "wikipedia.org/wiki/5000_metres", "wikipedia.org/wiki/Stadio_Olimpico", "wikipedia.org/wiki/Into_the_Millennium_Tour", "wikipedia.org/wiki/Backstreet_Boys_\"For_the_Fans\""],
+	"startPage": "wikipedia.org/wiki/Bobby_Robinson_(footballer)",
+	"goalPage": "wikipedia.org/wiki/Backstreet_Boys_\"For_the_Fans\"",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ebc4680c002596d378"
+	},
+	"path": ["wikipedia.org/wiki/Mount_Airy", "_Philadelphia", "_Pennsylvania", "wikipedia.org/wiki/Mount_Airy", "_Philadelphia", "wikipedia.org/wiki/Oprah_Winfrey", "wikipedia.org/wiki/Baltimore", "wikipedia.org/wiki/BronyCon", "wikipedia.org/wiki/Lee_Tockar", "wikipedia.org/wiki/Flux_(comics)"],
+	"startPage": "wikipedia.org/wiki/Mount_Airy,_Philadelphia,_Pennsylvania",
+	"goalPage": "wikipedia.org/wiki/Flux_(comics)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ecc4680c002596d379"
+	},
+	"path": ["wikipedia.org/wiki/Church_of_São_Martinho", "wikipedia.org/wiki/Igreja_de_São_Martinho", "wikipedia.org/wiki/Madeira", "wikipedia.org/wiki/Azores", "wikipedia.org/wiki/Hurricane_Ophelia_(2017)", "wikipedia.org/wiki/RTÉ.ie"],
+	"startPage": "wikipedia.org/wiki/Church_of_São_Martinho",
+	"goalPage": "wikipedia.org/wiki/RTÉ.ie",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ecc4680c002596d37a"
+	},
+	"path": ["wikipedia.org/wiki/Sid_Mashburn", "wikipedia.org/wiki/Atlanta", "wikipedia.org/wiki/List_of_people_from_Atlanta", "wikipedia.org/wiki/Kasim_Reed", "wikipedia.org/wiki/Sarah-Elizabeth_Langford"],
+	"startPage": "wikipedia.org/wiki/Sid_Mashburn",
+	"goalPage": "wikipedia.org/wiki/Sarah-Elizabeth_Langford",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1edc4680c002596d37b"
+	},
+	"path": ["wikipedia.org/wiki/Tommaso_Cazzaniga", "wikipedia.org/wiki/Italy", "wikipedia.org/wiki/Giorgio_Moroder", "wikipedia.org/wiki/Janet_Jackson", "wikipedia.org/wiki/Nutrisystem"],
+	"startPage": "wikipedia.org/wiki/Tommaso_Cazzaniga",
+	"goalPage": "wikipedia.org/wiki/Nutrisystem",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1edc4680c002596d37c"
+	},
+	"path": ["wikipedia.org/wiki/North_Somerset_Council_elections", "wikipedia.org/wiki/England", "wikipedia.org/wiki/Pakistan", "wikipedia.org/wiki/Index_of_Pakistan-related_articles", "wikipedia.org/wiki/Farooq-e-Azam"],
+	"startPage": "wikipedia.org/wiki/North_Somerset_Council_elections",
+	"goalPage": "wikipedia.org/wiki/Farooq-e-Azam",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1eec4680c002596d37d"
+	},
+	"path": ["wikipedia.org/wiki/Henry_Howey_Robson", "wikipedia.org/wiki/England", "wikipedia.org/wiki/Justin_Rose", "wikipedia.org/wiki/2015_in_golf", "wikipedia.org/wiki/Natipong_Srithong"],
+	"startPage": "wikipedia.org/wiki/Henry_Howey_Robson",
+	"goalPage": "wikipedia.org/wiki/Natipong_Srithong",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1eec4680c002596d37e"
+	},
+	"path": ["wikipedia.org/wiki/100_Yue", "wikipedia.org/wiki/Baiyue", "wikipedia.org/wiki/Stratum_(linguistics)", "wikipedia.org/wiki/Belgium", "wikipedia.org/wiki/Euro", "wikipedia.org/wiki/Typewriter", "wikipedia.org/wiki/Button_(control)"],
+	"startPage": "wikipedia.org/wiki/100_Yue",
+	"goalPage": "wikipedia.org/wiki/Button_(control)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1eec4680c002596d37f"
+	},
+	"path": ["wikipedia.org/wiki/FIBA_Intercontinental_Cup_of_Clubs", "wikipedia.org/wiki/FIBA_Intercontinental_Cup", "wikipedia.org/wiki/North_America", "wikipedia.org/wiki/Alberta", "wikipedia.org/wiki/Blackfoot_Confederacy", "wikipedia.org/wiki/Kainai_people"],
+	"startPage": "wikipedia.org/wiki/FIBA_Intercontinental_Cup_of_Clubs",
+	"goalPage": "wikipedia.org/wiki/Kainai_people",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1efc4680c002596d380"
+	},
+	"path": ["wikipedia.org/wiki/Hibernate_(computing)", "wikipedia.org/wiki/Hibernation_(computing)", "wikipedia.org/wiki/Microsoft", "wikipedia.org/wiki/Washington_(state)", "wikipedia.org/wiki/Assemblies_of_God", "wikipedia.org/wiki/Samoan_Assemblies_of_God_in_New_Zealand_Incorporated", "wikipedia.org/wiki/Iliafi_Esera"],
+	"startPage": "wikipedia.org/wiki/Hibernate_(computing)",
+	"goalPage": "wikipedia.org/wiki/Iliafi_Esera",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1efc4680c002596d381"
+	},
+	"path": ["wikipedia.org/wiki/Sport_of_cross-country_skiing", "wikipedia.org/wiki/Cross-country_skiing_(sport)", "wikipedia.org/wiki/Japan", "wikipedia.org/wiki/National_Basketball_Association", "wikipedia.org/wiki/Baltimore_Ravens", "wikipedia.org/wiki/1976_Tampa_Bay_Buccaneers_season"],
+	"startPage": "wikipedia.org/wiki/Sport_of_cross-country_skiing",
+	"goalPage": "wikipedia.org/wiki/1976_Tampa_Bay_Buccaneers_season",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1efc4680c002596d382"
+	},
+	"path": ["wikipedia.org/wiki/Heritage_Week", "wikipedia.org/wiki/Republic_of_Ireland", "wikipedia.org/wiki/Georgetown_University", "wikipedia.org/wiki/Marshall_Scholarship", "wikipedia.org/wiki/Arthur_L._Haywood_III", "wikipedia.org/wiki/LeAnna_Washington"],
+	"startPage": "wikipedia.org/wiki/Heritage_Week",
+	"goalPage": "wikipedia.org/wiki/LeAnna_Washington",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1efc4680c002596d383"
+	},
+	"path": ["wikipedia.org/wiki/Criticism_of_windows_vista", "wikipedia.org/wiki/Criticism_of_Windows_Vista", "wikipedia.org/wiki/The_New_York_Times", "wikipedia.org/wiki/London", "wikipedia.org/wiki/Royal_Botanic_Gardens", "_Kew", "wikipedia.org/wiki/Directors_of_the_Royal_Botanic_Gardens", "_Kew", "wikipedia.org/wiki/John_Patrick_Micklethwait_Brenan"],
+	"startPage": "wikipedia.org/wiki/Criticism_of_windows_vista",
+	"goalPage": "wikipedia.org/wiki/John_Patrick_Micklethwait_Brenan",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f0c4680c002596d384"
+	},
+	"path": ["wikipedia.org/wiki/Stuart_Clarence_Graham", "wikipedia.org/wiki/London", "wikipedia.org/wiki/Olympic_Games", "wikipedia.org/wiki/Wrestling_at_the_Summer_Olympics", "wikipedia.org/wiki/Wrestling_at_the_1924_Summer_Olympics_–_Men's_Greco-Roman_lightweight", "wikipedia.org/wiki/Walter_Ranghieri"],
+	"startPage": "wikipedia.org/wiki/Stuart_Clarence_Graham",
+	"goalPage": "wikipedia.org/wiki/Walter_Ranghieri",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f0c4680c002596d385"
+	},
+	"path": ["wikipedia.org/wiki/GAGAS", "wikipedia.org/wiki/Government_Auditing_Standards", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/China", "wikipedia.org/wiki/List_of_mammals_of_China", "wikipedia.org/wiki/Dicerorhinus", "wikipedia.org/wiki/Sumatran_Rhino"],
+	"startPage": "wikipedia.org/wiki/GAGAS",
+	"goalPage": "wikipedia.org/wiki/Sumatran_Rhino",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f0c4680c002596d386"
+	},
+	"path": ["wikipedia.org/wiki/Maryland_hospital_payment_system", "wikipedia.org/wiki/Social_Security_Act", "wikipedia.org/wiki/Common_good", "wikipedia.org/wiki/Latin", "wikipedia.org/wiki/List_of_Latin_and_Greek_words_commonly_used_in_systematic_names", "wikipedia.org/wiki/Vicia_villosa", "wikipedia.org/wiki/Vicia_hirsuta"],
+	"startPage": "wikipedia.org/wiki/Maryland_hospital_payment_system",
+	"goalPage": "wikipedia.org/wiki/Vicia_hirsuta",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f0c4680c002596d387"
+	},
+	"path": ["wikipedia.org/wiki/Glenn_K._Rieth", "wikipedia.org/wiki/Jon_Corzine", "wikipedia.org/wiki/Illinois", "wikipedia.org/wiki/Power_station", "wikipedia.org/wiki/List_of_power_stations", "wikipedia.org/wiki/List_of_power_stations_in_Switzerland", "wikipedia.org/wiki/List_of_wind_farms_in_Switzerland"],
+	"startPage": "wikipedia.org/wiki/Glenn_K._Rieth",
+	"goalPage": "wikipedia.org/wiki/List_of_wind_farms_in_Switzerland",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f1c4680c002596d388"
+	},
+	"path": ["wikipedia.org/wiki/Village_of_Pinecrest", "_Florida", "wikipedia.org/wiki/Pinecrest", "_Florida", "wikipedia.org/wiki/List_of_sovereign_states", "wikipedia.org/wiki/List_of_country-name_etymologies", "wikipedia.org/wiki/Awal", "wikipedia.org/wiki/Aval_(1967_film)"],
+	"startPage": "wikipedia.org/wiki/Village_of_Pinecrest,_Florida",
+	"goalPage": "wikipedia.org/wiki/Aval_(1967_film)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f1c4680c002596d389"
+	},
+	"path": ["wikipedia.org/wiki/Falkenfels", "wikipedia.org/wiki/Germany", "wikipedia.org/wiki/Kosovo", "wikipedia.org/wiki/Endangered_species", "wikipedia.org/wiki/List_of_endangered_birds", "wikipedia.org/wiki/List_of_least_concern_birds", "wikipedia.org/wiki/Nectarinia_regia"],
+	"startPage": "wikipedia.org/wiki/Falkenfels",
+	"goalPage": "wikipedia.org/wiki/Nectarinia_regia",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f1c4680c002596d38a"
+	},
+	"path": ["wikipedia.org/wiki/Mürz", "wikipedia.org/wiki/Austria", "wikipedia.org/wiki/Islam", "wikipedia.org/wiki/The_New_York_Review_of_Books", "wikipedia.org/wiki/West_Village", "wikipedia.org/wiki/Morton_Street"],
+	"startPage": "wikipedia.org/wiki/Mürz",
+	"goalPage": "wikipedia.org/wiki/Morton_Street",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f1c4680c002596d38b"
+	},
+	"path": ["wikipedia.org/wiki/Tukufu_Zuberi", "wikipedia.org/wiki/University_of_Chicago", "wikipedia.org/wiki/Amos_Alonzo_Stagg", "wikipedia.org/wiki/1892_college_football_season", "wikipedia.org/wiki/William_H._Lewis", "wikipedia.org/wiki/The_Tucson_Citizen"],
+	"startPage": "wikipedia.org/wiki/Tukufu_Zuberi",
+	"goalPage": "wikipedia.org/wiki/The_Tucson_Citizen",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f1c4680c002596d38c"
+	},
+	"path": ["wikipedia.org/wiki/Incubent", "wikipedia.org/wiki/Incumbent", "wikipedia.org/wiki/Lists_of_office-holders", "wikipedia.org/wiki/Governor_of_Hong_Kong", "wikipedia.org/wiki/Philip_Haddon-Cave", "wikipedia.org/wiki/Jessie_Cave"],
+	"startPage": "wikipedia.org/wiki/Incubent",
+	"goalPage": "wikipedia.org/wiki/Jessie_Cave",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f2c4680c002596d38d"
+	},
+	"path": ["wikipedia.org/wiki/Toronto_subway_and_RT", "wikipedia.org/wiki/Toronto_subway", "wikipedia.org/wiki/Canada", "wikipedia.org/wiki/OPEC", "wikipedia.org/wiki/Conflict_in_the_Niger_Delta", "wikipedia.org/wiki/Kaiama_Declaration", "wikipedia.org/wiki/Abacha"],
+	"startPage": "wikipedia.org/wiki/Toronto_subway_and_RT",
+	"goalPage": "wikipedia.org/wiki/Abacha",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f2c4680c002596d38e"
+	},
+	"path": ["wikipedia.org/wiki/Rhinopias_eschmeyeri", "wikipedia.org/wiki/Rhinopias_frondosa", "wikipedia.org/wiki/South_Africa", "wikipedia.org/wiki/Vaal_River", "wikipedia.org/wiki/Mooi_River_(Vaal)", "wikipedia.org/wiki/Boskop_Dam"],
+	"startPage": "wikipedia.org/wiki/Rhinopias_eschmeyeri",
+	"goalPage": "wikipedia.org/wiki/Boskop_Dam",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f2c4680c002596d38f"
+	},
+	"path": ["wikipedia.org/wiki/Second_Firsts", "wikipedia.org/wiki/England", "wikipedia.org/wiki/Salisbury_Plain", "wikipedia.org/wiki/Iolanthe", "wikipedia.org/wiki/Iolanthe_(disambiguation)", "wikipedia.org/wiki/List_of_Lepidoptera_of_New_Zealand", "wikipedia.org/wiki/Harmologa_reticularis"],
+	"startPage": "wikipedia.org/wiki/Second_Firsts",
+	"goalPage": "wikipedia.org/wiki/Harmologa_reticularis",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f2c4680c002596d390"
+	},
+	"path": ["wikipedia.org/wiki/A.R._Luria", "wikipedia.org/wiki/Alexander_Luria", "wikipedia.org/wiki/Oliver_Sacks", "wikipedia.org/wiki/Oaxaca", "wikipedia.org/wiki/Lippia_alba", "wikipedia.org/wiki/Citral", "wikipedia.org/wiki/Alcohol_without_liquid"],
+	"startPage": "wikipedia.org/wiki/A.R._Luria",
+	"goalPage": "wikipedia.org/wiki/Alcohol_without_liquid",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f2c4680c002596d391"
+	},
+	"path": ["wikipedia.org/wiki/Tintinhull", "_New_South_Wales", "wikipedia.org/wiki/Tamworth", "_New_South_Wales", "wikipedia.org/wiki/Basketball", "wikipedia.org/wiki/Andrew_Gaze", "wikipedia.org/wiki/Pallalcesto_Amatori_Udine", "wikipedia.org/wiki/Mark_Crow", "wikipedia.org/wiki/LCB"],
+	"startPage": "wikipedia.org/wiki/Tintinhull,_New_South_Wales",
+	"goalPage": "wikipedia.org/wiki/LCB",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f2c4680c002596d392"
+	},
+	"path": ["wikipedia.org/wiki/In_Them_Old_Cotton_fields_Back_Home", "wikipedia.org/wiki/Cotton_Fields", "wikipedia.org/wiki/United_Kingdom", "wikipedia.org/wiki/Isaiah_Berlin", "wikipedia.org/wiki/Russian_literature", "wikipedia.org/wiki/Nikolay_Zabolotsky"],
+	"startPage": "wikipedia.org/wiki/In_Them_Old_Cotton_fields_Back_Home",
+	"goalPage": "wikipedia.org/wiki/Nikolay_Zabolotsky",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f3c4680c002596d393"
+	},
+	"path": ["wikipedia.org/wiki/Iurieveckii_Raion", "wikipedia.org/wiki/Yuryevetsky_District", "wikipedia.org/wiki/District", "wikipedia.org/wiki/Wales", "wikipedia.org/wiki/Snowdonia", "wikipedia.org/wiki/Glyderau", "wikipedia.org/wiki/River_Ogwen"],
+	"startPage": "wikipedia.org/wiki/Iurieveckii_Raion",
+	"goalPage": "wikipedia.org/wiki/River_Ogwen",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f3c4680c002596d394"
+	},
+	"path": ["wikipedia.org/wiki/Unskilled_work", "wikipedia.org/wiki/Laborer", "wikipedia.org/wiki/Road_traffic_control", "wikipedia.org/wiki/Sydney", "wikipedia.org/wiki/Capitol_Theatre", "_Sydney", "wikipedia.org/wiki/The_Wizard_of_Oz", "wikipedia.org/wiki/The_Wizard_of_Oz_(arcade_game)"],
+	"startPage": "wikipedia.org/wiki/Unskilled_work",
+	"goalPage": "wikipedia.org/wiki/The_Wizard_of_Oz_(arcade_game)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f3c4680c002596d395"
+	},
+	"path": ["wikipedia.org/wiki/Charles_Reiter", "wikipedia.org/wiki/Charlie_Reiter", "wikipedia.org/wiki/2010_United_Soccer_Leagues", "wikipedia.org/wiki/Richmond", "_Virginia", "wikipedia.org/wiki/Denny_Hamlin", "wikipedia.org/wiki/2012_Bank_of_America_500"],
+	"startPage": "wikipedia.org/wiki/Charles_Reiter",
+	"goalPage": "wikipedia.org/wiki/2012_Bank_of_America_500",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f3c4680c002596d396"
+	},
+	"path": ["wikipedia.org/wiki/SR-138", "wikipedia.org/wiki/List_of_highways_numbered_138", "wikipedia.org/wiki/Oregon_Route_138", "wikipedia.org/wiki/Central_Oregon", "wikipedia.org/wiki/Sacramento", "_California", "wikipedia.org/wiki/Papa_Roach", "wikipedia.org/wiki/Time_for_Annihilation"],
+	"startPage": "wikipedia.org/wiki/SR-138",
+	"goalPage": "wikipedia.org/wiki/Time_for_Annihilation",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f3c4680c002596d397"
+	},
+	"path": ["wikipedia.org/wiki/Petreni_(disambiguation)", "wikipedia.org/wiki/Petreni", "wikipedia.org/wiki/Mărtiniș", "wikipedia.org/wiki/Kingdom_of_Hungary", "wikipedia.org/wiki/Second_Polish_Republic", "wikipedia.org/wiki/Warsaw_University_of_Life_Sciences", "wikipedia.org/wiki/COST_-_European_Cooperation_in_Science_and_Technology"],
+	"startPage": "wikipedia.org/wiki/Petreni_(disambiguation)",
+	"goalPage": "wikipedia.org/wiki/COST_-_European_Cooperation_in_Science_and_Technology",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f4c4680c002596d398"
+	},
+	"path": ["wikipedia.org/wiki/Pontevedra_Club_de_Futbol", "wikipedia.org/wiki/Pontevedra_CF", "wikipedia.org/wiki/Galicia_(Spain)", "wikipedia.org/wiki/Köppen_climate_classification", "wikipedia.org/wiki/Nagano", "_Nagano", "wikipedia.org/wiki/Takeda_Shingen", "wikipedia.org/wiki/Battle_of_Shiojiritoge"],
+	"startPage": "wikipedia.org/wiki/Pontevedra_Club_de_Futbol",
+	"goalPage": "wikipedia.org/wiki/Battle_of_Shiojiritoge",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f4c4680c002596d399"
+	},
+	"path": ["wikipedia.org/wiki/Hallelujah", "_Baby!", "wikipedia.org/wiki/Great_Depression", "wikipedia.org/wiki/Federal_Reserve_System", "wikipedia.org/wiki/1951_Accord"],
+	"startPage": "wikipedia.org/wiki/Hallelujah,_Baby!",
+	"goalPage": "wikipedia.org/wiki/1951_Accord",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f4c4680c002596d39a"
+	},
+	"path": ["wikipedia.org/wiki/Music_theatre_Wales", "wikipedia.org/wiki/Music_Theatre_Wales", "wikipedia.org/wiki/Glasgow", "wikipedia.org/wiki/Municipal_corporation", "wikipedia.org/wiki/State_legislature_(United_States)", "wikipedia.org/wiki/List_of_current_U.S._state_legislators", "wikipedia.org/wiki/Eric_Redman"],
+	"startPage": "wikipedia.org/wiki/Music_theatre_Wales",
+	"goalPage": "wikipedia.org/wiki/Eric_Redman",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f4c4680c002596d39b"
+	},
+	"path": ["wikipedia.org/wiki/Tulipa_batalinii_'Bronze_Charm'", "wikipedia.org/wiki/Tulipa_linifolia", "wikipedia.org/wiki/Afghanistan", "wikipedia.org/wiki/Index_of_Afghanistan-related_articles", "wikipedia.org/wiki/Postage_stamps_and_postal_history_of_Afghanistan", "wikipedia.org/wiki/David_Parkes_Masson", "wikipedia.org/wiki/The_Royal_Philatelic_Society_London"],
+	"startPage": "wikipedia.org/wiki/Tulipa_batalinii_'Bronze_Charm'",
+	"goalPage": "wikipedia.org/wiki/The_Royal_Philatelic_Society_London",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f5c4680c002596d39c"
+	},
+	"path": ["wikipedia.org/wiki/Stern_des_südens", "wikipedia.org/wiki/Stern_des_Südens", "wikipedia.org/wiki/FC_Bayern_Munich", "wikipedia.org/wiki/Bavaria", "wikipedia.org/wiki/Lake_Constance", "wikipedia.org/wiki/Elbe_Germanic_tribe"],
+	"startPage": "wikipedia.org/wiki/Stern_des_südens",
+	"goalPage": "wikipedia.org/wiki/Elbe_Germanic_tribe",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f5c4680c002596d39d"
+	},
+	"path": ["wikipedia.org/wiki/Lake_of_Wangnitz", "wikipedia.org/wiki/Wangnitzsee", "wikipedia.org/wiki/Germany", "wikipedia.org/wiki/Nazi_Germany", "wikipedia.org/wiki/Catholic_Church_in_Germany", "wikipedia.org/wiki/Caritas_in_Veritate"],
+	"startPage": "wikipedia.org/wiki/Lake_of_Wangnitz",
+	"goalPage": "wikipedia.org/wiki/Caritas_in_Veritate",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f5c4680c002596d39e"
+	},
+	"path": ["wikipedia.org/wiki/Middle_Creek_(Opequon_Creek_tributary)", "wikipedia.org/wiki/Chesapeake_Bay", "wikipedia.org/wiki/Atlantic_sturgeon", "wikipedia.org/wiki/Disjunct_distribution", "wikipedia.org/wiki/Fauna_of_Ireland", "wikipedia.org/wiki/List_of_beetles_of_Ireland", "wikipedia.org/wiki/Apion_vorax"],
+	"startPage": "wikipedia.org/wiki/Middle_Creek_(Opequon_Creek_tributary)",
+	"goalPage": "wikipedia.org/wiki/Apion_vorax",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f6c4680c002596d39f"
+	},
+	"path": ["wikipedia.org/wiki/Behrooz_Gharibpoor", "wikipedia.org/wiki/Behrouz_Gharibpour", "wikipedia.org/wiki/Tehran", "wikipedia.org/wiki/List_of_stadiums_by_capacity", "wikipedia.org/wiki/FC_Cincinnati", "wikipedia.org/wiki/2016_FC_Cincinnati_season", "wikipedia.org/wiki/Schillo_Tshuma"],
+	"startPage": "wikipedia.org/wiki/Behrooz_Gharibpoor",
+	"goalPage": "wikipedia.org/wiki/Schillo_Tshuma",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f6c4680c002596d3a0"
+	},
+	"path": ["wikipedia.org/wiki/21st_Berlin_International_Film_Festival", "wikipedia.org/wiki/Richard_Harris", "wikipedia.org/wiki/Sean_Connery", "wikipedia.org/wiki/Rangers_F.C.", "wikipedia.org/wiki/1929–30_Scottish_Division_One"],
+	"startPage": "wikipedia.org/wiki/21st_Berlin_International_Film_Festival",
+	"goalPage": "wikipedia.org/wiki/1929–30_Scottish_Division_One",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f6c4680c002596d3a1"
+	},
+	"path": ["wikipedia.org/wiki/Stoke_City_F.C._season_1994–95", "wikipedia.org/wiki/1994–95_Stoke_City_F.C._season", "wikipedia.org/wiki/Bolton_Wanderers_F.C.", "wikipedia.org/wiki/The_Guardian", "wikipedia.org/wiki/PRISM_(surveillance_program)", "wikipedia.org/wiki/2013_mass_surveillance_disclosures"],
+	"startPage": "wikipedia.org/wiki/Stoke_City_F.C._season_1994–95",
+	"goalPage": "wikipedia.org/wiki/2013_mass_surveillance_disclosures",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f6c4680c002596d3a2"
+	},
+	"path": ["wikipedia.org/wiki/Ras_p21_protein", "wikipedia.org/wiki/Ras_subfamily", "wikipedia.org/wiki/Protein_Data_Bank", "wikipedia.org/wiki/Texas_A"],
+	"startPage": "wikipedia.org/wiki/Ras_p21_protein",
+	"goalPage": "wikipedia.org/wiki/Ernesto_Maceda,_Jr.",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f7c4680c002596d3a3"
+	},
+	"path": ["wikipedia.org/wiki/Bengal_cat", "wikipedia.org/wiki/United_Kingdom", "wikipedia.org/wiki/Brussels", "wikipedia.org/wiki/Pan-European_identity", "wikipedia.org/wiki/The_Raspberry_Ice_Cream_War"],
+	"startPage": "wikipedia.org/wiki/Bengal_cat",
+	"goalPage": "wikipedia.org/wiki/The_Raspberry_Ice_Cream_War",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f7c4680c002596d3a4"
+	},
+	"path": ["wikipedia.org/wiki/Lawrence_Persico", "wikipedia.org/wiki/Lawrence_Thomas_Persico", "wikipedia.org/wiki/Pope_Benedict_XVI", "wikipedia.org/wiki/George_W._Bush", "wikipedia.org/wiki/Fictionalized_portrayals_of_George_W._Bush", "wikipedia.org/wiki/2DTV"],
+	"startPage": "wikipedia.org/wiki/Lawrence_Persico",
+	"goalPage": "wikipedia.org/wiki/2DTV",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f7c4680c002596d3a5"
+	},
+	"path": ["wikipedia.org/wiki/Ben_Satterley", "wikipedia.org/wiki/Neville_(wrestler)", "wikipedia.org/wiki/Newcastle_upon_Tyne", "wikipedia.org/wiki/South_West_England", "wikipedia.org/wiki/Chipping_Campden", "wikipedia.org/wiki/Ernest_Henry_Wilson", "wikipedia.org/wiki/Aston_university"],
+	"startPage": "wikipedia.org/wiki/Ben_Satterley",
+	"goalPage": "wikipedia.org/wiki/Aston_university",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f7c4680c002596d3a6"
+	},
+	"path": ["wikipedia.org/wiki/Dinton_Castle", "wikipedia.org/wiki/Buckinghamshire", "wikipedia.org/wiki/John_Gielgud", "wikipedia.org/wiki/Academy_Award_for_Best_Supporting_Actor", "wikipedia.org/wiki/Walter_Brennan", "wikipedia.org/wiki/Affairs_of_Cappy_Ricks"],
+	"startPage": "wikipedia.org/wiki/Dinton_Castle",
+	"goalPage": "wikipedia.org/wiki/Affairs_of_Cappy_Ricks",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f8c4680c002596d3a7"
+	},
+	"path": ["wikipedia.org/wiki/One_Step_Lower", "wikipedia.org/wiki/D_tuning", "wikipedia.org/wiki/The_Alchemy_Index_Vols._I_"],
+	"startPage": "wikipedia.org/wiki/One_Step_Lower",
+	"goalPage": "wikipedia.org/wiki/Prasinophyte",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f8c4680c002596d3a8"
+	},
+	"path": ["wikipedia.org/wiki/Thomas_Sale", "wikipedia.org/wiki/Tommy_Sale", "wikipedia.org/wiki/Sheffield_United_F.C.", "wikipedia.org/wiki/Wadsley_Bridge", "wikipedia.org/wiki/Burger_King", "wikipedia.org/wiki/Oaxaca_de_Juarez"],
+	"startPage": "wikipedia.org/wiki/Thomas_Sale",
+	"goalPage": "wikipedia.org/wiki/Oaxaca_de_Juarez",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f8c4680c002596d3a9"
+	},
+	"path": ["wikipedia.org/wiki/Her_Story", "wikipedia.org/wiki/Her_story", "wikipedia.org/wiki/Her_Story_(video_game)", "wikipedia.org/wiki/Full_motion_video", "wikipedia.org/wiki/Universal_Entertainment_Corporation", "wikipedia.org/wiki/Mr._Do_series"],
+	"startPage": "wikipedia.org/wiki/Her_Story",
+	"goalPage": "wikipedia.org/wiki/Mr._Do_series",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f8c4680c002596d3aa"
+	},
+	"path": ["wikipedia.org/wiki/Straffan", "_Ireland", "wikipedia.org/wiki/Straffan", "wikipedia.org/wiki/Kilkenny", "wikipedia.org/wiki/Power_baronets", "wikipedia.org/wiki/The_Pirates_of_Penzance", "wikipedia.org/wiki/Chicago_Lyric_Opera"],
+	"startPage": "wikipedia.org/wiki/Straffan,_Ireland",
+	"goalPage": "wikipedia.org/wiki/Chicago_Lyric_Opera",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f8c4680c002596d3ab"
+	},
+	"path": ["wikipedia.org/wiki/Hillevi_Martinpelto", "wikipedia.org/wiki/Barnes_"],
+	"startPage": "wikipedia.org/wiki/Hillevi_Martinpelto",
+	"goalPage": "wikipedia.org/wiki/Carolynne_Poole",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f9c4680c002596d3ac"
+	},
+	"path": ["wikipedia.org/wiki/Tingmo", "wikipedia.org/wiki/India", "wikipedia.org/wiki/International_Union_for_Conservation_of_Nature", "wikipedia.org/wiki/Fontainebleau", "wikipedia.org/wiki/Milly-la-Forêt", "wikipedia.org/wiki/Hugues_III_de_Bouville"],
+	"startPage": "wikipedia.org/wiki/Tingmo",
+	"goalPage": "wikipedia.org/wiki/Hugues_III_de_Bouville",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f9c4680c002596d3ad"
+	},
+	"path": ["wikipedia.org/wiki/San_Giovanni_Battista_delle_Monache", "wikipedia.org/wiki/Naples", "wikipedia.org/wiki/Mediterranean_climate", "wikipedia.org/wiki/Portugal", "wikipedia.org/wiki/Portuguese_Navy", "wikipedia.org/wiki/Maritime_Authority_System"],
+	"startPage": "wikipedia.org/wiki/San_Giovanni_Battista_delle_Monache",
+	"goalPage": "wikipedia.org/wiki/Maritime_Authority_System",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f9c4680c002596d3ae"
+	},
+	"path": ["wikipedia.org/wiki/Peary–MacMillan_Arctic_Museum", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/Woodrow_Wilson", "wikipedia.org/wiki/Joseph_Patrick_Tumulty"],
+	"startPage": "wikipedia.org/wiki/Peary–MacMillan_Arctic_Museum",
+	"goalPage": "wikipedia.org/wiki/Joseph_Patrick_Tumulty",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1f9c4680c002596d3af"
+	},
+	"path": ["wikipedia.org/wiki/Ordono_Ramirez", "wikipedia.org/wiki/Ordoño_Ramírez", "wikipedia.org/wiki/Oviedo", "wikipedia.org/wiki/Bob_Dylan", "wikipedia.org/wiki/We_Are_the_World", "wikipedia.org/wiki/The_Pointer_Sisters", "wikipedia.org/wiki/Pinball_Number_Count"],
+	"startPage": "wikipedia.org/wiki/Ordono_Ramirez",
+	"goalPage": "wikipedia.org/wiki/Pinball_Number_Count",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fac4680c002596d3b0"
+	},
+	"path": ["wikipedia.org/wiki/Aegopinella_epipedostoma", "wikipedia.org/wiki/List_of_non-marine_molluscs_of_Ukraine", "wikipedia.org/wiki/Bivalvia", "wikipedia.org/wiki/Food_and_Agriculture_Organization", "wikipedia.org/wiki/Peter_Finch", "wikipedia.org/wiki/Charles_Finch_(producer)", "wikipedia.org/wiki/Charles_P._Finch"],
+	"startPage": "wikipedia.org/wiki/Aegopinella_epipedostoma",
+	"goalPage": "wikipedia.org/wiki/Charles_P._Finch",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fac4680c002596d3b1"
+	},
+	"path": ["wikipedia.org/wiki/Old_Anatolian_Turkish", "wikipedia.org/wiki/Turkish_language", "wikipedia.org/wiki/Romania", "wikipedia.org/wiki/2011_military_intervention_in_Libya", "wikipedia.org/wiki/History_of_Libya_under_Muammar_Gaddafi", "wikipedia.org/wiki/Hissein_Habré"],
+	"startPage": "wikipedia.org/wiki/Old_Anatolian_Turkish",
+	"goalPage": "wikipedia.org/wiki/Hissein_Habré",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fac4680c002596d3b2"
+	},
+	"path": ["wikipedia.org/wiki/43rd_(Monmouthshire)_Regiment_of_Foot", "wikipedia.org/wiki/Indian_Rebellion_of_1857", "wikipedia.org/wiki/Khyber_Pakhtunkhwa", "wikipedia.org/wiki/Pakistani_Pashtuns"],
+	"startPage": "wikipedia.org/wiki/43rd_(Monmouthshire)_Regiment_of_Foot",
+	"goalPage": "wikipedia.org/wiki/Pakistani_Pashtuns",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fac4680c002596d3b3"
+	},
+	"path": ["wikipedia.org/wiki/Hamish_Hamilton_Limited", "wikipedia.org/wiki/Hamish_Hamilton", "wikipedia.org/wiki/United_States", "wikipedia.org/wiki/Hawaiian_language", "wikipedia.org/wiki/Adelbert_von_Chamisso", "wikipedia.org/wiki/Diederich_Franz_Leonhard_von_Schlechtendal", "wikipedia.org/wiki/Schlechtendalia_(plant)"],
+	"startPage": "wikipedia.org/wiki/Hamish_Hamilton_Limited",
+	"goalPage": "wikipedia.org/wiki/Schlechtendalia_(plant)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fac4680c002596d3b4"
+	},
+	"path": ["wikipedia.org/wiki/Hazard_(Marvel_Comics)", "wikipedia.org/wiki/Marvel_Comics", "wikipedia.org/wiki/Cold_War", "wikipedia.org/wiki/Berlin_Blockade", "wikipedia.org/wiki/Ernst_Reuter"],
+	"startPage": "wikipedia.org/wiki/Hazard_(Marvel_Comics)",
+	"goalPage": "wikipedia.org/wiki/Ernst_Reuter",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fbc4680c002596d3b5"
+	},
+	"path": ["wikipedia.org/wiki/Big_Owe", "wikipedia.org/wiki/Olympic_Stadium_(Montreal)", "wikipedia.org/wiki/List_of_Canadian_Football_League_stadiums", "wikipedia.org/wiki/Shreveport", "_Louisiana", "wikipedia.org/wiki/Barksdale_Air_Force_Base", "wikipedia.org/wiki/26th_Operational_Weather_Squadron"],
+	"startPage": "wikipedia.org/wiki/Big_Owe",
+	"goalPage": "wikipedia.org/wiki/26th_Operational_Weather_Squadron",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fbc4680c002596d3b6"
+	},
+	"path": ["wikipedia.org/wiki/Târgu_Mureş", "wikipedia.org/wiki/Târgu_Mureș", "wikipedia.org/wiki/Jewish_ghettos_in_Europe", "wikipedia.org/wiki/Calabria", "wikipedia.org/wiki/Raf_Vallone", "wikipedia.org/wiki/Andrea_Chénier_(film)"],
+	"startPage": "wikipedia.org/wiki/Târgu_Mureş",
+	"goalPage": "wikipedia.org/wiki/Andrea_Chénier_(film)",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fbc4680c002596d3b7"
+	},
+	"path": ["wikipedia.org/wiki/Huillice", "wikipedia.org/wiki/Huilliche_language", "wikipedia.org/wiki/Araucanian_languages", "wikipedia.org/wiki/Argentina", "wikipedia.org/wiki/Grammatical_gender", "wikipedia.org/wiki/Odia_language", "wikipedia.org/wiki/Kalahandi_District"],
+	"startPage": "wikipedia.org/wiki/Huillice",
+	"goalPage": "wikipedia.org/wiki/Kalahandi_District",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fcc4680c002596d3b8"
+	},
+	"path": ["wikipedia.org/wiki/Australian_67th_Battalion", "wikipedia.org/wiki/3rd_Battalion", "_Royal_Australian_Regiment", "wikipedia.org/wiki/Queen's_Royal_Hussars", "wikipedia.org/wiki/Princess_of_Wales's_Royal_Regiment", "wikipedia.org/wiki/Victor_McLaglen", "wikipedia.org/wiki/Little_Brother_of_God", "wikipedia.org/wiki/Floyd_Martin_Thornton"],
+	"startPage": "wikipedia.org/wiki/Australian_67th_Battalion",
+	"goalPage": "wikipedia.org/wiki/Floyd_Martin_Thornton",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fcc4680c002596d3b9"
+	},
+	"path": ["wikipedia.org/wiki/Malsch_station", "wikipedia.org/wiki/Forbach", "wikipedia.org/wiki/Germany", "wikipedia.org/wiki/Magdeburg", "wikipedia.org/wiki/Discus_throw", "wikipedia.org/wiki/1989_in_athletics_(track_and_field)", "wikipedia.org/wiki/Bradley_Camp"],
+	"startPage": "wikipedia.org/wiki/Malsch_station",
+	"goalPage": "wikipedia.org/wiki/Bradley_Camp",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fcc4680c002596d3ba"
+	},
+	"path": ["wikipedia.org/wiki/Menachem_Youlus", "wikipedia.org/wiki/Manhattan", "wikipedia.org/wiki/Waldorf_Astoria_New_York", "wikipedia.org/wiki/Dmitri_Shostakovich", "wikipedia.org/wiki/Seraphim_Records"],
+	"startPage": "wikipedia.org/wiki/Menachem_Youlus",
+	"goalPage": "wikipedia.org/wiki/Seraphim_Records",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fdc4680c002596d3bb"
+	},
+	"path": ["wikipedia.org/wiki/OSGi_Specification_Implementations", "wikipedia.org/wiki/GlassFish", "wikipedia.org/wiki/Ericsson", "wikipedia.org/wiki/YouTube", "wikipedia.org/wiki/Universal_Music_Group", "wikipedia.org/wiki/ZTT_Records"],
+	"startPage": "wikipedia.org/wiki/OSGi_Specification_Implementations",
+	"goalPage": "wikipedia.org/wiki/ZTT_Records",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fec4680c002596d3bc"
+	},
+	"path": ["wikipedia.org/wiki/Een_Ander_Zijn_Geluk", "wikipedia.org/wiki/Someone_Else's_Happiness", "wikipedia.org/wiki/2005_in_film", "wikipedia.org/wiki/Sienna_Miller", "wikipedia.org/wiki/English_Americans", "wikipedia.org/wiki/Aoife_MacMurrough", "wikipedia.org/wiki/Mor_O'Toole"],
+	"startPage": "wikipedia.org/wiki/Een_Ander_Zijn_Geluk",
+	"goalPage": "wikipedia.org/wiki/Mor_O'Toole",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fec4680c002596d3bd"
+	},
+	"path": ["wikipedia.org/wiki/Copley_Station", "wikipedia.org/wiki/Copley_(MBTA_station)", "wikipedia.org/wiki/Red_Line_(MBTA)", "wikipedia.org/wiki/Brockton", "_Massachusetts", "wikipedia.org/wiki/Wyatt_Tee_Walker", "wikipedia.org/wiki/Frederick_B._Williams"],
+	"startPage": "wikipedia.org/wiki/Copley_Station",
+	"goalPage": "wikipedia.org/wiki/Frederick_B._Williams",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fec4680c002596d3be"
+	},
+	"path": ["wikipedia.org/wiki/Inge_Brück", "wikipedia.org/wiki/Germany", "wikipedia.org/wiki/Black_Death", "wikipedia.org/wiki/Leprosy", "wikipedia.org/wiki/Carl_Wilhelm_Boeck"],
+	"startPage": "wikipedia.org/wiki/Inge_Brück",
+	"goalPage": "wikipedia.org/wiki/Carl_Wilhelm_Boeck",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1fec4680c002596d3bf"
+	},
+	"path": ["wikipedia.org/wiki/Yegyanzin", "wikipedia.org/wiki/Microsoft", "wikipedia.org/wiki/London", "wikipedia.org/wiki/Bubonic_plague", "wikipedia.org/wiki/List_of_cutaneous_conditions", "wikipedia.org/wiki/Desmoid_tumor", "wikipedia.org/wiki/Aggressive_fibromatosis"],
+	"startPage": "wikipedia.org/wiki/Yegyanzin",
+	"goalPage": "wikipedia.org/wiki/Aggressive_fibromatosis",
+	"__v": 0
+}, {
+	"_id": {
+		"$oid": "5a9ca1ffc4680c002596d3c0"
+	},
+	"path": ["wikipedia.org/wiki/Institut_Canadien_de_Montréal", "wikipedia.org/wiki/Institut_canadien_de_Montréal", "wikipedia.org/wiki/Denis_Diderot", "wikipedia.org/wiki/Karl_Marx", "wikipedia.org/wiki/Salvador_Allende", "wikipedia.org/wiki/List_of_Chileans", "wikipedia.org/wiki/Francisco_Coloane"],
+	"startPage": "wikipedia.org/wiki/Institut_Canadien_de_Montréal",
+	"goalPage": "wikipedia.org/wiki/Francisco_Coloane",
+	"__v": 0
+}]

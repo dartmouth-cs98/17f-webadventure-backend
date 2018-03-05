@@ -8,6 +8,7 @@ export const cleanGame = (game) => {
       id: game._id,
       startPage: game.startPage,
       goalPage: game.goalPage,
+      path: game.path,
       host: game.host,
       isPrivate: game.isPrivate,
       players: game.players,
@@ -36,6 +37,7 @@ export const createGame = (username, isPrivate, callback) => {
   getRandomEndpoint((endpoint) => {
     newGame.startPage = endpoint.startPage;
     newGame.goalPage = endpoint.goalPage;
+    newGame.path = endpoint.path;
     if (isPrivate) {
       User.findOne({ username })
     .then((user) => {
