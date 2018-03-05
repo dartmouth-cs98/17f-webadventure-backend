@@ -71,7 +71,8 @@ export const getNewGames = () => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
-        createGame(`Open Game`, false, (game) => { return console.log(game); });
+        const num = Math.floor(Math.random() * 500);
+        createGame(`Game ${num}`, false, (game) => { return console.log(game); });
         // combine promises of create game
       }
     }

@@ -2,10 +2,12 @@ import Endpoint from '../models/endpointModel';
 
 const cleanEndpoint = (endpoint) => {
   if (endpoint) {
+    const start = `https://en.${endpoint.startPage}`;
+    const goal = `https://en.${endpoint.goalPage}`;
     return {
       id: endpoint._id,
-      startPage: endpoint.startPage,
-      goalPage: endpoint.goalPage,
+      startPage: start,
+      goalPage: goal,
       path: endpoint.path,
     };
   }
