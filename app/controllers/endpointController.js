@@ -19,11 +19,23 @@ export const getRandomEndpoint = (callback) => {
         id: 'end',
         startPage: 'wikipedia.org/wiki/Mezzaluna',
         goalPage: 'wikipedia.org/wiki/Knife',
-        path: [],
+        path: [
+          'wikipedia.org/wiki/Mezzaluna',
+          'wikipedia.org/wiki/Knife',
+        ],
       });
     } else {
-      endpoint.remove();
-      callback(cleanEndpoint(endpoint));
+      // endpoint.remove();
+      // callback(cleanEndpoint(endpoint));
+      callback({
+        id: 'end',
+        startPage: 'wikipedia.org/wiki/Mezzaluna',
+        goalPage: 'wikipedia.org/wiki/Knife',
+        path: [
+          'wikipedia.org/wiki/Mezzaluna',
+          'wikipedia.org/wiki/Knife',
+        ],
+      });
     }
   }).catch((err) => {
     console.log(err);
