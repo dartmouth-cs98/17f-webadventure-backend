@@ -70,7 +70,7 @@ export const createGame = (username, isPrivate, callback) => {
 export const getNewGames = () => {
   // get non active games that are public and have 0 players
   getGames({ active: false, isPrivate: false, players: { $exists: true }, $where: 'this.players.length < 5' }, (games) => {
-    if (games.length < 5) {
+    if (games.length < 6) {
       for (let i = games.length; i < 5; i += 1) {
         createGame('Open Game', false, (game) => { /* return console.log(game); */ });
         // combine promises of create game
