@@ -95,12 +95,7 @@ const setupLobby = (io) => {
     });
 
     socket.on('disconnect', () => {
-      console.log('DISCONNECTED!');
-      console.log('------------');
-      console.log(`username is ${username}`);
       GameController.getGames({ 'players.username': username }, (games) => {
-        console.log('games');
-        console.log(games);
       });
       // UserController.logoutUser(username).then(() => {
       //   pushUsers();

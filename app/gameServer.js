@@ -8,11 +8,7 @@ const setupGameServer = (io) => {
 
     const pushGame = () => {
       GameController.getGame(gameId, (game) => {
-        // console.log('pushGame');
-        // console.log(game);
         io.to(gameId).emit('game', game);
-        console.log('pushedGame');
-        console.log(game);
       });
     };
 

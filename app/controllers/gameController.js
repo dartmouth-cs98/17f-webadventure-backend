@@ -1,5 +1,3 @@
-/* eslint prefer-const:0 */
-
 import Game from '../models/gameModel';
 import User from '../models/userModel';
 import { getRandomEndpoint } from '../controllers/endpointController';
@@ -54,8 +52,6 @@ export const createGame = (username, isPrivate, callback) => {
         curUrl: null,
       }];
       newGame.save((err, result) => {
-        console.log('new game created -- private?');
-        console.log(newGame);
         callback(cleanGame(result));
       });
     }).catch((err) => {
@@ -67,8 +63,6 @@ export const createGame = (username, isPrivate, callback) => {
       newGame.isPrivate = false;
       newGame.players = [];
       newGame.save((err, result) => {
-        console.log('new game created -- public?');
-        console.log(newGame);
         callback(cleanGame(result));
       });
     }
@@ -131,11 +125,6 @@ export const updatePlayer = (gameId, username,
   playerInfo = { finishTime: -1, numClicks: 0, curUrl: '' }, callback) => {
   Game.findById(gameId, (err, game) => {
     if (err) { console.log(err); }
-    console.log('updatePlayer--just found');
-    console.log(gameId);
-    console.log(game);
-    console.log(playerInfo);
-    console.log('------------------------------------------');
     let found = false;
     const newPlayers = game.players.map((player) => {
       const updatedPlayer = player;
@@ -168,7 +157,6 @@ export const deleteGame = (gameId) => {
 };
 
 export const updateGame = (id, update, callback) => {
-  console.log('updateGameCalled');
   Game.findByIdAndUpdate(id, update, { new: true },
     (game) => { return callback(cleanGame(game)); });
 };
@@ -176,8 +164,6 @@ export const updateGame = (id, update, callback) => {
 export const startGame = (gameId, callback) => {
   Game.findByIdAndUpdate(gameId, { active: true }, { new: true })
   .then((game) => {
-    console.log('startGame');
-    console.log(game);
     return callback(cleanGame(game));
   });
 };
