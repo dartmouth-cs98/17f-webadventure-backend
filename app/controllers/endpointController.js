@@ -18,7 +18,7 @@ export const getRandomEndpoint = (callback) => {
       callback({
         id: 'end',
         startPage: 'wikipedia.org/wiki/Mezzaluna',
-        goalPage: 'wikipedia.org/wiki/Knife',
+        goalPage: 'wikipedia.org/wiki/Pizza',
         path: [
           'wikipedia.org/wiki/Mezzaluna',
           'wikipedia.org/wiki/Knife',
@@ -30,7 +30,7 @@ export const getRandomEndpoint = (callback) => {
       callback({
         id: 'end',
         startPage: 'wikipedia.org/wiki/Mezzaluna',
-        goalPage: 'wikipedia.org/wiki/Knife',
+        goalPage: 'wikipedia.org/wiki/Pizza',
         path: [
           'wikipedia.org/wiki/Mezzaluna',
           'wikipedia.org/wiki/Knife',
