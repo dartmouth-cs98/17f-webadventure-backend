@@ -17,8 +17,8 @@ export const getRandomEndpoint = (callback) => {
     if (!endpoint) {
       callback({
         id: 'end',
-        startPage: 'https://en.wikipedia.org/wiki/Mezzaluna',
-        goalPage: 'https://en.wikipedia.org/wiki/Knife',
+        startPage: 'wikipedia.org/wiki/Mezzaluna',
+        goalPage: 'wikipedia.org/wiki/Knife',
         path: [],
       });
     } else {
@@ -26,8 +26,8 @@ export const getRandomEndpoint = (callback) => {
       // callback(cleanEndpoint(endpoint));
       callback({
         id: 'end',
-        startPage: 'https://en.wikipedia.org/wiki/Mezzaluna',
-        goalPage: 'https://en.wikipedia.org/wiki/Knife',
+        startPage: 'wikipedia.org/wiki/Mezzaluna',
+        goalPage: 'wikipedia.org/wiki/Knife',
         path: [],
       });
     }
