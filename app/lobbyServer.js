@@ -5,7 +5,7 @@ const setupLobby = (io) => {
   const lobby = io.of('/lobby');
 
   lobby.on('connection', (socket) => {
-    console.log('connected');
+    console.log('lobby connected');
     let username = socket.handshake.query.username;
     if (username && username !== null) {
       UserController.getOrCreateUser(username, (user) => {
@@ -78,9 +78,6 @@ const setupLobby = (io) => {
 // Should only startGame if not started
     socket.on('startGame', (gameId, callback) => {
       GameController.startGame(gameId, (game) => {
-        console.log('game in startGame');
-        console.log(game);
-        console.log('end');
         const logoutPlayers = game.players.map((player) => {
           return UserController.logoutUser(player.username);
         });
@@ -98,7 +95,8 @@ const setupLobby = (io) => {
     });
 
     socket.on('disconnect', () => {
-      UserController.deleteUser(username).then(() => {
+      // may cause issues
+      UserController.logoutUser(username).then(() => {
         pushUsers();
       }).catch((err) => { console.log(err); });
     });
