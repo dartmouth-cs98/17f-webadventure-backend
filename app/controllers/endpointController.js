@@ -22,14 +22,8 @@ export const getRandomEndpoint = (callback) => {
         path: [],
       });
     } else {
-      // endpoint.remove();
-      // callback(cleanEndpoint(endpoint));
-      callback({
-        id: 'end',
-        startPage: 'wikipedia.org/wiki/Mezzaluna',
-        goalPage: 'wikipedia.org/wiki/Knife',
-        path: [],
-      });
+      endpoint.remove();
+      callback(cleanEndpoint(endpoint));
     }
   }).catch((err) => {
     console.log(err);
