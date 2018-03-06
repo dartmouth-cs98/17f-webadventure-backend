@@ -4,7 +4,7 @@ import { getRandomEndpoint } from '../controllers/endpointController';
 
 export const cleanGame = (game) => {
   if (game) {
-    return {
+    const cleaned = {
       id: game._id,
       startPage: game.startPage,
       goalPage: game.goalPage,
@@ -14,6 +14,7 @@ export const cleanGame = (game) => {
       players: game.players,
       active: game.active,
     };
+    return cleaned;
   }
   return new Error('game does not exist');
 };
@@ -32,6 +33,7 @@ export const getGames = (filter, callback) => {
 
 
 export const createGame = (username, isPrivate, callback) => {
+  console.log('CREATE GAME CALLED');
   const newGame = new Game();
 
   getRandomEndpoint((endpoint) => {
@@ -50,6 +52,8 @@ export const createGame = (username, isPrivate, callback) => {
         curUrl: null,
       }];
       newGame.save((err, result) => {
+        console.log('new game created -- private?');
+        console.log(newGame);
         callback(cleanGame(result));
       });
     }).catch((err) => {
@@ -61,6 +65,8 @@ export const createGame = (username, isPrivate, callback) => {
       newGame.isPrivate = false;
       newGame.players = [];
       newGame.save((err, result) => {
+        console.log('new game created -- public?');
+        console.log(newGame);
         callback(cleanGame(result));
       });
     }
@@ -73,7 +79,7 @@ export const getNewGames = () => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
         // get random endpoints here
-        createGame('Open Game', false, (game) => { return console.log(game); });
+        createGame('Open Game', false, (game) => { /* return console.log(game); */ });
         // combine promises of create game
       }
     }
@@ -82,6 +88,7 @@ export const getNewGames = () => {
 
 export const getGame = (id, res) => {
   Game.findById(id, (err, result) => {
+    console.log(result);
     if (err) { console.log(err); return; }
     res(cleanGame(result));
   });
@@ -120,17 +127,34 @@ export const leaveNewGame = (gameId, username, callback) => {
 
 export const updatePlayer = (gameId, username,
   playerInfo = { finishTime: -1, numClicks: 0, curUrl: '' }, callback) => {
-  return Game.findById(gameId, (err, game) => {
+  Game.findById(gameId, (err, game) => {
     if (err) { console.log(err); }
-    const newPlayers = game.players.map((player) => {
-      const updatedPlayer = player;
-      if (player.username === username) {
-        Object.keys(playerInfo).forEach((key) => {
-          updatedPlayer[key] = playerInfo[key];
-        });
-      }
-      return updatedPlayer;
-    });
+    console.log('updatePlayer--just found');
+    console.log(gameId);
+    console.log(game);
+    console.log(playerInfo);
+    console.log('------------------------------------------');
+    let newPlayers;
+    if (game.players.length !== 0) {
+      newPlayers = game.players.map((player) => {
+        const updatedPlayer = player;
+        if (player.username === username) {
+          Object.keys(playerInfo).forEach((key) => {
+            updatedPlayer[key] = playerInfo[key];
+          });
+        }
+        return updatedPlayer;
+      });
+    } else {
+      newPlayers = [
+        {
+          username,
+          finishTime: playerInfo.finishTime,
+          numClicks: playerInfo.numClicks,
+          curUrl: playerInfo.curUrl,
+        },
+      ];
+    }
     game.players = newPlayers;
     game.save((err, updatedGame) => {
       callback(cleanGame(updatedGame));
@@ -143,11 +167,16 @@ export const deleteGame = (gameId) => {
 };
 
 export const updateGame = (id, update, callback) => {
-  return Game.findByIdAndUpdate(id, update, { new: true },
+  console.log('updateGameCalled');
+  Game.findByIdAndUpdate(id, update, { new: true },
     (game) => { return callback(cleanGame(game)); });
 };
 
 export const startGame = (gameId, callback) => {
-  return Game.findByIdAndUpdate(gameId, { active: true }, { new: true })
-  .then((game) => { return callback(cleanGame(game)); });
+  Game.findByIdAndUpdate(gameId, { active: true }, { new: true })
+  .then((game) => {
+    console.log('startGame');
+    console.log(game);
+    return callback(cleanGame(game));
+  });
 };
