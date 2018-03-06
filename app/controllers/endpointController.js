@@ -21,7 +21,7 @@ export const getRandomEndpoint = (callback) => {
         goalPage: 'wikipedia.org/wiki/Pizza',
         path: [
           'wikipedia.org/wiki/Mezzaluna',
-          'wikipedia.org/wiki/Knife',
+          'wikipedia.org/wiki/Pizza',
         ],
       });
     } else {
@@ -33,7 +33,7 @@ export const getRandomEndpoint = (callback) => {
         goalPage: 'wikipedia.org/wiki/Pizza',
         path: [
           'wikipedia.org/wiki/Mezzaluna',
-          'wikipedia.org/wiki/Knife',
+          'wikipedia.org/wiki/Pizza',
         ],
       });
     }

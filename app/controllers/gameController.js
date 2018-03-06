@@ -72,7 +72,6 @@ export const getNewGames = () => {
   getGames({ active: false, isPrivate: false, players: { $exists: true }, $where: 'this.players.length < 5' }, (games) => {
     if (games.length < 5) {
       for (let i = games.length; i < 5; i += 1) {
-        // get random endpoints here
         createGame('Open Game', false, (game) => { /* return console.log(game); */ });
         // combine promises of create game
       }
