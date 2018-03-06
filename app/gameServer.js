@@ -17,7 +17,10 @@ const setupGameServer = (io) => {
 
     socket.on('updatePlayer', (req, callback) => {
       GameController.updatePlayer(req.gameId, req.username, req.playerInfo, (game) => {
-        if (callback) { callback(game); }
+        if (callback) {
+          console.log(game);
+          callback(game);
+        }
         pushGame();
       });
     });
