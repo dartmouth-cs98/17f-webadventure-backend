@@ -1,3 +1,5 @@
+/* eslint prefer-const:0 */
+
 import Game from '../models/gameModel';
 import User from '../models/userModel';
 import { getRandomEndpoint } from '../controllers/endpointController';
@@ -134,27 +136,26 @@ export const updatePlayer = (gameId, username,
     console.log(game);
     console.log(playerInfo);
     console.log('------------------------------------------');
-    let newPlayers;
-    if (game.players.length !== 0) {
-      newPlayers = game.players.map((player) => {
-        const updatedPlayer = player;
-        if (player.username === username) {
-          Object.keys(playerInfo).forEach((key) => {
-            updatedPlayer[key] = playerInfo[key];
-          });
-        }
-        return updatedPlayer;
+    let found = false;
+    const newPlayers = game.players.map((player) => {
+      const updatedPlayer = player;
+      if (player.username === username) {
+        found = true;
+        Object.keys(playerInfo).forEach((key) => {
+          updatedPlayer[key] = playerInfo[key];
+        });
+      }
+      return updatedPlayer;
+    });
+    if (!found) {
+      newPlayers.push({
+        username,
+        finishTime: playerInfo.finishTime,
+        numClicks: playerInfo.numClicks,
+        curUrl: playerInfo.curUrl,
       });
-    } else {
-      newPlayers = [
-        {
-          username,
-          finishTime: playerInfo.finishTime,
-          numClicks: playerInfo.numClicks,
-          curUrl: playerInfo.curUrl,
-        },
-      ];
     }
+
     game.players = newPlayers;
     game.save((err, updatedGame) => {
       callback(cleanGame(updatedGame));
