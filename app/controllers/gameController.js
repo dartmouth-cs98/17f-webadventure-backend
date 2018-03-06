@@ -4,7 +4,7 @@ import { getRandomEndpoint } from '../controllers/endpointController';
 
 export const cleanGame = (game) => {
   if (game) {
-    const cleaned = {
+    return {
       id: game._id,
       startPage: game.startPage,
       goalPage: game.goalPage,
@@ -14,7 +14,6 @@ export const cleanGame = (game) => {
       players: game.players,
       active: game.active,
     };
-    return cleaned;
   }
   return new Error('game does not exist');
 };
@@ -33,7 +32,6 @@ export const getGames = (filter, callback) => {
 
 
 export const createGame = (username, isPrivate, callback) => {
-  console.log('CREATE GAME CALLED');
   const newGame = new Game();
 
   getRandomEndpoint((endpoint) => {
@@ -84,7 +82,6 @@ export const getNewGames = () => {
 
 export const getGame = (id, res) => {
   Game.findById(id, (err, result) => {
-    console.log(result);
     if (err) { console.log(err); return; }
     res(cleanGame(result));
   });

@@ -95,11 +95,10 @@ const setupLobby = (io) => {
     });
 
     socket.on('disconnect', () => {
-      GameController.getGames({ 'players.username': username }, (games) => {
-      });
-      // UserController.logoutUser(username).then(() => {
-      //   pushUsers();
-      // }).catch((err) => { console.log(err); });
+      // may cause issues
+      UserController.logoutUser(username).then(() => {
+        pushUsers();
+      }).catch((err) => { console.log(err); });
     });
   });
 };
