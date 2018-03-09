@@ -15,8 +15,6 @@ mongod
 Then `npm install` and `npm start` the repo.
 The backend server should now be running on localhost:9090
 
-Testing remote url
-
 ## Models:
 The backend stores 3 models using Mongoose with MongoDB:
 * Game : represents a game
@@ -84,7 +82,8 @@ The events the server responds to are:
 POST - expected query object
 ```
 {
-  endpoints: {startPage: 'URL', goalPage:'URL'}
+  startPage: 'URL',
+  goalPage:'URL'
   path: 'string delimited by commas'
 }
 ```
